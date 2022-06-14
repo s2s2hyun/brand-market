@@ -11,7 +11,10 @@ export const Sliderimage = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 600px;
-    height: 400px;
     background-color: #fff;
+`;
+
+export const Img = styled.img`
+    width: 800px;
+    height: 700px;
 `;

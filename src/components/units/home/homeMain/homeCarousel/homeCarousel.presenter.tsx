@@ -16,22 +16,22 @@ export default function HomeCarouselUI() {
         <S.Wrapper>
             <Slider {...settings}>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car1.jpg" alt="fashion" />
                 </S.Sliderimage>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car2.jpg" alt="fashion" />
                 </S.Sliderimage>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car3.jpg" alt="fashion" />
                 </S.Sliderimage>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car4.jpg" alt="fashion" />
                 </S.Sliderimage>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car5.jpg" alt="fashion" />
                 </S.Sliderimage>
                 <S.Sliderimage>
-                    <img src="" />
+                    <S.Img src="/images/car1.jpg" alt="fashion" />
                 </S.Sliderimage>
             </Slider>
         </S.Wrapper>
