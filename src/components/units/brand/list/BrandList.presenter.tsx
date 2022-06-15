@@ -22,14 +22,21 @@ export default function BrandListUI(props: IBrandListUIProps) {
                             <S.ItemWrapper key={el._id} id={el._id}>
                                 <S.Picture
                                     src={
-                                        el.images?.length > 0 && el.images[0] !== ""
+                                        el.images?.length > 0 && el.images?.[0] !== ""
                                             ? `https://storage.googleapis.com/${el.images[0]}`
                                             : `/images/dingCoLogo.png`
                                     }
                                 />
                                 {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
-                                <S.Name>{el.name}</S.Name>
-                                <S.Price>{el.price}</S.Price>
+                                <S.SellerProduct>
+                                    <S.BestTag>{el.tags?.[0] || "대표태그"}</S.BestTag>
+                                    <S.Price>{el.price}</S.Price>
+                                </S.SellerProduct>
+                                <S.Name>{el.name || "조이조이"}</S.Name>
+                                <S.Remark>
+                                    {el.remarks ||
+                                        "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}
+                                </S.Remark>
                             </S.ItemWrapper>
                         ))}
                     </S.MainList>

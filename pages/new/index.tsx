@@ -1,5 +1,5 @@
-import UsedWrite from "../../src/components/units/used/write/UsedWrite.container";
+import BrandWriteContainer from "../../src/components/units/brand/write/BrandWrite.container";
 
 export default function UsedNewPage() {
-    return <UsedWrite isEdit={false} />;
+    return <BrandWriteContainer isEdit={false} />;
 }

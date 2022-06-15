@@ -17,8 +17,15 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
                                 }
                             />
                             {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
-                            <S.BestName>{el.name}</S.BestName>
-                            <S.BestPrice>{el.price}</S.BestPrice>
+
+                            <S.SellerProduct>
+                                <S.BestTag>{el.tags[0] || "대표태그"}</S.BestTag>
+                                <S.BestPrice>{el.price}</S.BestPrice>
+                            </S.SellerProduct>
+                            <S.BestName>{el.name || "조이조이"}</S.BestName>
+                            <S.BestRemark>
+                                {el.remarks || "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}
+                            </S.BestRemark>
                         </S.ItemBestWrapper>
                     ))}
                 </S.BestList>

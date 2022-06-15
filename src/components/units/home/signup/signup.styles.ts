@@ -99,8 +99,11 @@ export const SignInput = styled.input`
 `;
 
 export const SignUpButtonWrapper = styled.div`
+    display: flex;
     margin-top: 68px;
     margin-bottom: 101px;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const CancleButton = styled.button`

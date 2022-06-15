@@ -10,7 +10,13 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
             <S.ListWrapper>
                 <S.NewArrival>New Arrival</S.NewArrival>
                 <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
-                    <S.MainList style={{ display: "flex", flexWrap: "wrap" }}>
+                    <S.MainList
+                        style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         {props.data?.fetchUseditems.map((el) => (
                             <S.ItemWrapper key={el._id} id={el._id}>
                                 <S.Picture
@@ -21,8 +27,16 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
                                     }
                                 />
                                 {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
-                                <S.Name>{el.name}</S.Name>
-                                <S.Price>{el.price}</S.Price>
+
+                                <S.SellerProduct>
+                                    <S.BestTag>{el.tags[0] || "대표태그"}</S.BestTag>
+                                    <S.Price>{el.price}</S.Price>
+                                </S.SellerProduct>
+                                <S.Name>{el.name || "조이조이"}</S.Name>
+                                <S.Remark>
+                                    {el.remarks ||
+                                        "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}
+                                </S.Remark>
                             </S.ItemWrapper>
                         ))}
                     </S.MainList>

@@ -5,8 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function HomeCarouselUI() {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
         speed: 100,
         slidesToShow: 3,
         slidesToScroll: 1,

@@ -30,12 +30,45 @@ export const BestPicture = styled.img`
     height: 466px;
 `;
 
-export const BestName = styled.div``;
+export const SellerProduct = styled.div`
+    display: flex;
+    margin-top: 18px;
+    padding-left: 20px;
+`;
+
+export const BestName = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    padding-top: 13px;
+    padding-left: 20px;
+    color: #555555;
+`;
 
 export const BestPrice = styled.div`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
     letter-spacing: -0.05em;
+
     color: #000000;
+`;
+
+export const BestTag = styled.div`
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    margin-right: 15px;
+    color: #f65656;
+`;
+
+export const BestRemark = styled.div`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    padding-top: 13px;
+    padding-left: 20px;
+    color: #555555;
 `;
