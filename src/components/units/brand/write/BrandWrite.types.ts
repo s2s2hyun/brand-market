@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, MouseEventHandler } from "react";
 import {
     FieldValues,
     UseFormGetValues,
@@ -54,7 +54,8 @@ export interface IBrandWriteUIProps {
     address: string;
     zipcode: string;
     hashArr: string[];
-    onClickImageDelete: (index: any) => () => void;
+    onClickImageDelete: (index: number) => () => void;
+    onClickDeleteHash: any;
 }
 
 export interface IBrandProps {

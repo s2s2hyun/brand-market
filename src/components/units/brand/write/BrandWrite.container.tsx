@@ -1,7 +1,7 @@
 import BrandWriteUI from "./BrandWrite.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
@@ -95,6 +95,17 @@ export default function BrandWriteContainer(props: any) {
     const onChangeTags = (event: ChangeEvent<HTMLInputElement>) => {
         const tagArr = event.target.value.split(" ");
         setHashArr(tagArr);
+    };
+
+    // const onClickHatagDelete = (event: MouseEventHandler<HTMLButtonElement>, index: number) => {
+    //     const newTagarr = event.target.value.split(" ");
+    //     newTagarr.splice(index, 1);
+    //     setHashArr(newTagarr);
+    // };
+
+    const onClickDeleteHash = (event: any) => {
+        hashArr.splice(Number(event.target.id), 1);
+        setHashArr([...hashArr]);
     };
 
     // 해쉬태그
@@ -259,6 +270,7 @@ export default function BrandWriteContainer(props: any) {
             data={undefined}
             isEdit={false}
             onClickImageDelete={onClickImageDelete}
+            onClickDeleteHash={onClickDeleteHash}
         />
     );
 }

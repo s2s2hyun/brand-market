@@ -92,8 +92,18 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                         <S.Tag>태그입력</S.Tag>
                         <S.BrandTagInnerWrapper>
                             <S.BrandTags>
-                                {props.hashArr.map((el) => (
-                                    <span key={uuidv4()}>{el}</span>
+                                {props.hashArr.map((el, idx) => (
+                                    <>
+                                        <span key={idx}>{el}</span>
+
+                                        <button
+                                            type="button"
+                                            id={idx}
+                                            onClick={props.onClickDeleteHash}
+                                        >
+                                            X
+                                        </button>
+                                    </>
                                 ))}
                             </S.BrandTags>{" "}
                             <S.BrandInput
@@ -166,23 +176,34 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                         {props.fileUrls.map((el: string, index: number) => {
                             if (index === 0)
                                 return (
-                                    <Uploads01
-                                        type="upload"
-                                        key={uuidv4()}
-                                        index={index}
-                                        fileUrl={el}
-                                        onChangeFileUrls={props.onChangeFileUrls}
-                                    />
+                                    <>
+                                        <Uploads01
+                                            type="upload"
+                                            key={uuidv4()}
+                                            index={index}
+                                            fileUrl={el}
+                                            onChangeFileUrls={props.onChangeFileUrls}
+                                        />
+                                        <button onClick={props.onClickImageDelete(index)}>X</button>
+                                    </>
                                 );
                             if (index !== 0 && props.fileUrls[index - 1] !== "")
                                 return (
-                                    <Uploads01
-                                        type="upload"
-                                        key={uuidv4()}
-                                        index={index}
-                                        fileUrl={el}
-                                        onChangeFileUrls={props.onChangeFileUrls}
-                                    />
+                                    <>
+                                        <Uploads01
+                                            type="upload"
+                                            key={uuidv4()}
+                                            index={index}
+                                            fileUrl={el}
+                                            onChangeFileUrls={props.onChangeFileUrls}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={props.onClickImageDelete(index)}
+                                        >
+                                            X
+                                        </button>
+                                    </>
                                 );
                         })}
                     </S.ImageWrapper>
