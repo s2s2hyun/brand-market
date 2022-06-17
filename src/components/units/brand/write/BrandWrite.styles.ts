@@ -40,20 +40,59 @@ export const DivderLine = styled.div`
     margin-left: 91px;
 `;
 
+export const WriteForm = styled.form``;
+
 export const BrandNameWarpper = styled.div`
     display: flex;
     align-items: center;
 `;
 
 export const Name = styled.div`
+    width: 5%;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
-    letter-spacing: -0.05em;
+    /* letter-spacing: -0.05em; */
     margin-top: 60px;
     margin-bottom: 53px;
     margin-left: 134px;
     color: #000000;
+`;
+
+export const BrandTagInnerWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    input {
+        border: 1px solid #767676;
+        border-left: none;
+        :focus {
+            outline: none;
+        }
+    }
+`;
+
+export const BrandTags = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 1px 2px;
+    height: 56px;
+    background: #e9e9e9;
+    border: 1px solid #767676;
+    border-right: none;
+
+    span {
+        padding: 1px 2px;
+        margin-right: 10px;
+        background: #ffffff;
+        border-radius: 1rem;
+        word-break: keep-all;
+        width: max-content;
+    }
+
+    span:last-of-type {
+        margin-right: 0;
+    }
 `;
 
 export const BrandInput = styled.input`
@@ -75,13 +114,14 @@ export const BrandRemarkWrapper = styled.div`
 `;
 
 export const Remark = styled.div`
+    width: 6%;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
     letter-spacing: -0.05em;
     margin-top: 55px;
     margin-bottom: 53px;
-    margin-left: 134px;
+    margin-left: 120px;
 
     color: #000000;
 `;
@@ -92,13 +132,14 @@ export const BrandContentsWrapper = styled.div`
 `;
 
 export const Contents = styled.div`
+    width: 6%;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
     letter-spacing: -0.05em;
     margin-top: 55px;
     margin-bottom: 415px;
-    margin-left: 134px;
+    margin-left: 120px;
 
     color: #000000;
 `;
@@ -109,13 +150,15 @@ export const BrandPriceWrapper = styled.div`
 `;
 
 export const Price = styled.div`
+    width: 7%;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
     letter-spacing: -0.05em;
     margin-top: 55px;
     margin-bottom: 53px;
-    margin-left: 134px;
+    margin-left: 115px;
+    padding-left: 15px;
 
     color: #000000;
 `;
@@ -126,6 +169,7 @@ export const BrandTagWrapper = styled.div`
 `;
 
 export const Tag = styled.div`
+    width: 6%;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
@@ -186,6 +230,13 @@ export const SearchButton = styled.button`
 `;
 
 export const MapInput = styled.input`
+    width: 100%;
+    height: 56px;
+    margin-bottom: 25px;
+    background: #e9e9e9;
+`;
+
+export const Input = styled.input`
     width: 100%;
     height: 56px;
     margin-bottom: 25px;

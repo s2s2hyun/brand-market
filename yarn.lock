@@ -7510,10 +7510,10 @@ react-calendar@^3.7.0:
     merge-class-names "^1.1.1"
     prop-types "^15.6.0"
 
-react-daum-postcode@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-daum-postcode/-/react-daum-postcode-3.0.1.tgz#1d87145a4c82fe107ad041c855b857e45c0555e1"
-  integrity sha512-TBA6p+5yFy4YrH3jneNPyqNR+9igCb/XhQfnDBOABX38Hgf4n5EMmXf3NZptPSqg3UldHQ+8HPHCJ5L6zjskkg==
+react-daum-postcode@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-daum-postcode/-/react-daum-postcode-3.1.0.tgz#cb3f93dc2e4e206231d0c1e9da48b9c22be3f015"
+  integrity sha512-7HUSo4gQdqbZ0Uaan0WGZuRdMd7oD6eXJpKQCaQ0VZ15/ZkqsiOBUUKkM6GeG28mXzABGnoILOf0GXZylQNIcA==
   dependencies:
     prop-types "^15.7.2"
     react "^17.0.2"

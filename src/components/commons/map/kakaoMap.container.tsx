@@ -47,7 +47,7 @@ export default function KakaoMapPage(props: any) {
                 });
             });
         };
-    }, [props.address, props.data?.fetchProject.address?.address]);
+    }, [props.address]);
 
     return <KakaoMapUI />;
 }

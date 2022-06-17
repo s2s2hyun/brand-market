@@ -8,6 +8,7 @@ export const BestWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 130px;
 `;
 
 export const Best = styled.div`
@@ -15,6 +16,7 @@ export const Best = styled.div`
     font-size: 22px;
     line-height: 100%;
     color: #000000;
+    margin-top: 73px;
 `;
 
 export const BestList = styled.div`

@@ -41,3 +41,29 @@ export const UPDATE_PRODUCT_ITEM = gql`
         }
     }
 `;
+
+export const FETCH_USEDITEM = gql`
+    query fetchUseditem($useditemId: ID!) {
+        fetchUseditem(useditemId: $useditemId) {
+            _id
+            name
+            remarks
+            contents
+            price
+            pickedCount
+            tags
+            images
+            seller {
+                _id
+                name
+            }
+            useditemAddress {
+                lat
+                lng
+                zipcode
+                address
+                addressDetail
+            }
+        }
+    }
+`;

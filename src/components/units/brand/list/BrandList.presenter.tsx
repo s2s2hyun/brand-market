@@ -2,15 +2,19 @@ import InfiniteScroll from "react-infinite-scroller";
 import * as S from "./BrandList.styles";
 import { IBrandListUIProps } from "./BrandList.types";
 import BrandListBest from "./listBest/BrandListBest.container";
+import { v4 as uuidv4 } from "uuid";
+import { Useditem } from "../../../../commons/types/generated/types";
+
+const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 
 export default function BrandListUI(props: IBrandListUIProps) {
     return (
         <S.Wrapper>
             <BrandListBest />
             <S.TopWrapper>
-                <S.BrandWrite>상품등록</S.BrandWrite>
+                <S.BrandWrite onClick={props.onClickMoveToNew}>상품등록</S.BrandWrite>
                 <S.SearchWrapper>
-                    <S.Search></S.Search>
+                    <S.Search type="text" onChange={props.onChangeSearch}></S.Search>
                     <S.Lense src="/images/Icon@2x.png" />
                 </S.SearchWrapper>
             </S.TopWrapper>
@@ -18,12 +22,16 @@ export default function BrandListUI(props: IBrandListUIProps) {
             <S.ListWrapper>
                 <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
                     <S.MainList style={{ display: "flex", flexWrap: "wrap" }}>
-                        {props.data?.fetchUseditems.map((el) => (
-                            <S.ItemWrapper key={el._id} id={el._id}>
+                        {props.data?.fetchUseditems.map((el: Useditem) => (
+                            <S.ItemWrapper
+                                key={el._id}
+                                id={el._id}
+                                onClick={props.onClickMoveToBrandDetail}
+                            >
                                 <S.Picture
                                     src={
                                         el.images?.length > 0 && el.images?.[0] !== ""
-                                            ? `https://storage.googleapis.com/${el.images[0]}`
+                                            ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
                                             : `/images/dingCoLogo.png`
                                     }
                                 />
@@ -32,7 +40,20 @@ export default function BrandListUI(props: IBrandListUIProps) {
                                     <S.BestTag>{el.tags?.[0] || "대표태그"}</S.BestTag>
                                     <S.Price>{el.price}</S.Price>
                                 </S.SellerProduct>
-                                <S.Name>{el.name || "조이조이"}</S.Name>
+                                <S.Name>
+                                    {el.name ||
+                                        "조이조이"
+                                            .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
+                                            .split("#$%")
+                                            .map((el) => (
+                                                <S.Word
+                                                    key={uuidv4()}
+                                                    isMatched={props.keyword === el}
+                                                >
+                                                    {el}
+                                                </S.Word>
+                                            ))}
+                                </S.Name>
                                 <S.Remark>
                                     {el.remarks ||
                                         "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}

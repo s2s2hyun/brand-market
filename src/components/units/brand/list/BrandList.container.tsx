@@ -1,9 +1,33 @@
 import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
+import { ChangeEvent, useState, MouseEvent } from "react";
 import BrandListUI from "./BrandList.presenter";
 import { FETCH_USEDITEMS } from "./BrandList.queries";
+import { Query, QueryFetchUseditemsArgs } from "../../../../commons/types/generated/types";
+import _ from "lodash";
 
 export default function BrandList() {
-    const { data, fetchMore } = useQuery(FETCH_USEDITEMS);
+    const router = useRouter();
+    const { data, fetchMore, refetch } = useQuery<
+        Pick<Query, "fetchUseditems">,
+        QueryFetchUseditemsArgs
+    >(FETCH_USEDITEMS);
+
+    const onClickMoveToNew = () => {
+        router.push("/new");
+    };
+
+    const [keyword, setKeyword] = useState("");
+
+    const getDebounce = _.debounce((data) => {
+        refetch({ search: data, page: 1 });
+        setKeyword(data);
+    }, 200);
+
+    const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.value);
+        getDebounce(event.target.value);
+    };
 
     const onLoadMore = () => {
         if (!data) return;
@@ -20,5 +44,20 @@ export default function BrandList() {
         });
     };
 
-    return <BrandListUI data={data} onLoadMore={onLoadMore} />;
+    const onClickMoveToBrandDetail = (event: MouseEvent<HTMLDivElement>) => {
+        router.push(`/brands/${event.currentTarget.id}`);
+    };
+
+    return (
+        <BrandListUI
+            data={data}
+            onLoadMore={onLoadMore}
+            keyword={keyword}
+            setKeyword={setKeyword}
+            onClickMoveToNew={onClickMoveToNew}
+            onChangeSearch={onChangeSearch}
+            isMatched={false}
+            onClickMoveToBrandDetail={onClickMoveToBrandDetail}
+        />
+    );
 }
