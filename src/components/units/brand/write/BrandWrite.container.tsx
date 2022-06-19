@@ -44,7 +44,7 @@ export default function BrandWriteContainer(props: any) {
     };
 
     const [hashArr, setHashArr] = useState<string[]>([]);
-    const [fileUrls, setFileUrls] = useState(["", "", ""]);
+    const [fileUrls, setFileUrls] = useState(["", "", "", "", ""]);
     const [isActive] = useState(false);
 
     const [createUseditem] = useMutation(CREAT_PRODUCT_ITEM);

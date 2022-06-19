@@ -1,9 +1,9 @@
-import UsedDetail from "../../src/components/units/used/detail/UsedDetail.container";
+import BrandDetail from "../../../src/components/units/brand/detail/BrandDetail.container";
 
-export default function UsedDetailPage() {
+export default function BrandDetailPage() {
     return (
         <>
-            <UsedDetail />
+            <BrandDetail />
         </>
     );
 }

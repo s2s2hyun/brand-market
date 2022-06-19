@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { FETCH_USEDITEM } from "../../../src/components/units/used/detail/UsedDetail.queries";
-import UsedWrite from "../../../src/components/units/used/write/UsedWrite.container";
+import { FETCH_USEDITEM } from "../../../../src/components/units/brand/write/BrandWrite.queries";
+import BrandWrite from "../../../../src/components/units/brand/write/BrandWrite.container";
 
-export default function UsedEditPage() {
+export default function BrandWriteEditPage() {
     const router = useRouter();
     const { data } = useQuery(FETCH_USEDITEM, {
         variables: {
@@ -11,5 +11,5 @@ export default function UsedEditPage() {
         },
     });
 
-    return <UsedWrite isEdit={true} data={data?.fetchUseditem} />;
+    return <BrandWrite isEdit={true} data={data?.fetchUseditem} />;
 }
