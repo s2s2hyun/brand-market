@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Modal } from "antd";
 import { useState } from "react";
 import DOMPurify from "dompurify";
+import BrandCommentWrite from "../detailComment/write/BrandCommnetWirte.container";
 
 export default function BrandDetailUI(props: IBrandDetailUI) {
     const [isOpen, setIsOpen] = useState(false);
@@ -143,6 +144,7 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                     </p>
                 </S.DeliveryWrapper>
             </S.BottomWrapper>
+            <BrandCommentWrite />
         </S.Wrapper>
     );
 }
