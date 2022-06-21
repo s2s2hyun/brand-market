@@ -1,5 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
-import { FieldValues, SubmitHandler, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import {
+    FieldValues,
+    SubmitHandler,
+    UseFormHandleSubmit,
+    UseFormRegister,
+    UseFormStateReturn,
+} from "react-hook-form";
 import {
     CreateUseditemQuestionInput,
     MutationCreateUseditemQuestionArgs,
@@ -11,12 +17,13 @@ import {
 export interface IBrandCommentWriteProps {
     isEdit?: boolean;
     setIsEdit?: Dispatch<SetStateAction<boolean>>;
-    el?: UseditemQuestion;
+    el: UseditemQuestion;
 }
 
 export interface IBrandCommentWriteUIProps {
-    onClickCommentSubmit: (data: MutationCreateUseditemQuestionArgs) => Promise<void>;
-    onClickCommentUpdate: (data: MutationUpdateUseditemQuestionArgs) => Promise<void>;
+    formState: UseFormStateReturn<FieldValues>;
+    onClickCommentUpdate: (data: UseditemQuestion) => Promise<void>;
+    onClickCommentSubmit: (data: UseditemQuestion) => Promise<void>;
     isEdit?: boolean;
     handleSubmit: UseFormHandleSubmit<FieldValues> | ((data: any) => Promise<void>);
     register: UseFormRegister<FieldValues>;

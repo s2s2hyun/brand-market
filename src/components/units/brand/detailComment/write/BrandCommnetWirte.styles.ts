@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div``;
 
+export const CommentForm = styled.form``;
+
 export const QnaWrapper = styled.div``;
 
 export const Qna = styled.div`

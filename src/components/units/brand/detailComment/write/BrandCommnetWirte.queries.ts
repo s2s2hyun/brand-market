@@ -10,6 +10,15 @@ export const CREATE_BRAND_COMMENT = gql`
             useditemId: $useditemId
         ) {
             _id
+            contents
+            user {
+                _id
+                name
+            }
+            useditem {
+                _id
+            }
+            createdAt
         }
     }
 `;

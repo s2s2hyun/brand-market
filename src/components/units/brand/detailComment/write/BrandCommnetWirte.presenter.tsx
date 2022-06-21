@@ -2,6 +2,7 @@ import * as S from "./BrandCommnetWirte.styles";
 import { IBrandCommentWriteUIProps } from "./BrandCommnetWirte.types";
 
 export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
+    console.log(data.contents, "data.contents");
     return (
         <form
             onSubmit={props.handleSubmit(
@@ -15,8 +16,13 @@ export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
                 <S.QnaDivider />
                 <S.QnaCommentWrapper>
                     <S.QnaCommentInputWrapper>
-                        <S.QnaContentsInput placeholder="내용을 입력해주세요."></S.QnaContentsInput>
-                        <S.QnaButton>{props.isEdit ? "수정하기" : "작성하기"}</S.QnaButton>
+                        <S.QnaContentsInput
+                            {...props.register("contents")}
+                            placeholder="내용을 입력해주세요."
+                        ></S.QnaContentsInput>
+                        <S.QnaButton title="submit" type="submit">
+                            {props.isEdit ? "수정하기" : "작성하기"}
+                        </S.QnaButton>
                     </S.QnaCommentInputWrapper>
                 </S.QnaCommentWrapper>
                 <S.SubDidvier />

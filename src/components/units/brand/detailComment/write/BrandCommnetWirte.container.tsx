@@ -1,13 +1,15 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import {
-    CreateUseditemInput,
     CreateUseditemQuestionInput,
+    Mutation,
     MutationCreateUseditemQuestionArgs,
     MutationUpdateUseditemQuestionArgs,
     UpdateUseditemQuestionInput,
+    UseditemQuestion,
 } from "../../../../../commons/types/generated/types";
 import BrandCommentWriteUI from "./BrandCommnetWirte.presenter";
 import {
@@ -17,8 +19,13 @@ import {
 } from "./BrandCommnetWirte.queries";
 import { IBrandCommentWriteProps } from "./BrandCommnetWirte.types";
 
+const schema = yup.object({
+    contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
+});
+
 export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
-    const { register, handleSubmit, setValue } = useForm({
+    const { register, handleSubmit, setValue, formState } = useForm({
+        resolver: yupResolver(schema),
         mode: "onChange",
     });
 
@@ -27,14 +34,15 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
     const [updateUseditemQuestion] = useMutation(UPDATE_BRAND_COMMENT);
 
     // 문의하기
-    const onClickCommentSubmit = async (data: MutationCreateUseditemQuestionArgs) => {
-        if (!data.createUseditemQuestionInput.contents) return alert("댓글을 입력해주세요.");
+    const onClickCommentSubmit = async (data: CreateUseditemQuestionInput) => {
+        if (!data.contents) return alert("댓글을 입력해주세요.");
         try {
             await createUseditemQuestion({
                 variables: {
                     useditemId: String(router.query.productId),
+
                     createUseditemQuestionInput: {
-                        contents: data.createUseditemQuestionInput.contents,
+                        contents: data.contents,
                     },
                 },
                 refetchQueries: [
@@ -53,13 +61,14 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         }
     };
 
-    const onClickCommentUpdate = async (data: MutationUpdateUseditemQuestionArgs) => {
+    const onClickCommentUpdate = async (data: UpdateUseditemQuestionInput) => {
         try {
+            if (!props.el?._id) return;
             await updateUseditemQuestion({
                 variables: {
-                    useditemQuestionId: props.el?._id,
+                    useditemQuestionId: props.el._id,
                     updateUseditemQuestionInput: {
-                        contents: data.updateUseditemQuestionInput?.contents,
+                        contents: data.contents,
                     },
                 },
                 refetchQueries: [
@@ -82,6 +91,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         <BrandCommentWriteUI
             register={register}
             handleSubmit={handleSubmit}
+            formState={formState}
             onClickCommentUpdate={onClickCommentUpdate}
             onClickCommentSubmit={onClickCommentSubmit}
         />
