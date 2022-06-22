@@ -107,8 +107,12 @@ export const Price = styled.div`
 `;
 
 export const MainList = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     height: 80%;
+    margin-top: 46px;
 `;
 
 export const SellerProduct = styled.div`

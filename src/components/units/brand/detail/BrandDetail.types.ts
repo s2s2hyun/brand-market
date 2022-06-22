@@ -7,4 +7,5 @@ export interface IBrandDetailUI {
     // userData: any;
     onChangePassword: (event: any) => void;
     onClickUsedItemDelete: () => Promise<void>;
+    isPicked: boolean;
 }

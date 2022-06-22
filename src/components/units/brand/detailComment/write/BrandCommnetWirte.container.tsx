@@ -5,11 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
     CreateUseditemQuestionInput,
-    Mutation,
-    MutationCreateUseditemQuestionArgs,
-    MutationUpdateUseditemQuestionArgs,
     UpdateUseditemQuestionInput,
-    UseditemQuestion,
 } from "../../../../../commons/types/generated/types";
 import BrandCommentWriteUI from "./BrandCommnetWirte.presenter";
 import {
@@ -18,13 +14,14 @@ import {
     UPDATE_BRAND_COMMENT,
 } from "./BrandCommnetWirte.queries";
 import { IBrandCommentWriteProps } from "./BrandCommnetWirte.types";
+import { useEffect } from "react";
 
 const schema = yup.object({
     contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
 });
 
 export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
-    const { register, handleSubmit, setValue, formState } = useForm({
+    const { register, handleSubmit, setValue, formState, reset } = useForm({
         resolver: yupResolver(schema),
         mode: "onChange",
     });
@@ -39,7 +36,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         try {
             await createUseditemQuestion({
                 variables: {
-                    useditemId: String(router.query.productId),
+                    useditemId: String(router.query.brandId),
 
                     createUseditemQuestionInput: {
                         contents: data.contents,
@@ -49,7 +46,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
                     {
                         query: FETCH_BRAND_COMMENTS,
                         variables: {
-                            useditemId: String(router.query.productId),
+                            useditemId: String(router.query.brandId),
                         },
                     },
                 ],
@@ -87,6 +84,12 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         }
     };
 
+    useEffect(() => {
+        reset({
+            contents: props.el?.contents,
+        });
+    }, []);
+
     return (
         <BrandCommentWriteUI
             register={register}
@@ -94,6 +97,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
             formState={formState}
             onClickCommentUpdate={onClickCommentUpdate}
             onClickCommentSubmit={onClickCommentSubmit}
+            isEdit={props.isEdit}
         />
     );
 }

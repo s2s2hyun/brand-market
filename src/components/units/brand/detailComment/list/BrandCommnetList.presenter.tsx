@@ -1,14 +1,18 @@
 import InfiniteScroll from "react-infinite-scroller";
 import BrandCommentListUIItem from "./BrandCommnetList.presenterItem";
 import { IBrandCommentListUIProps } from "./BrandCommnetList.tpyes";
-
+import { v4 as uuidv4 } from "uuid";
+import * as S from "./BrandCommnetList.styles";
 export default function BrandCommentListUI(props: IBrandCommentListUIProps) {
+    console.log(props.data, "data");
     if (!props.data) return <div />;
     return (
-        <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
-            {props.data?.fetchUseditemQuestions.map((el) => (
-                <BrandCommentListUIItem key={el._id} el={el} />
-            ))}
-        </InfiniteScroll>
+        <S.Scroll>
+            <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
+                {props.data?.fetchUseditemQuestions.map((el) => (
+                    <BrandCommentListUIItem key={uuidv4()} el={el} />
+                ))}
+            </InfiniteScroll>
+        </S.Scroll>
     );
 }

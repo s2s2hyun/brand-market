@@ -4,17 +4,18 @@ const BlockLo = styled.div`
     display: flex;
 `;
 const MapBox = styled.div`
-    width: 384px;
-    height: 252px;
     margin-right: 30px;
     margin-left: 128px;
     margin-bottom: 37px;
 `;
 
-export default function KakaoMapUI(props: any) {
+export default function KakaoMapUI(props: { width: number; height: number }) {
     return (
         <BlockLo>
-            <MapBox id="map"></MapBox>
+            <MapBox
+                id="map"
+                style={{ width: `${props.width}px`, height: `${props.height}px` }}
+            ></MapBox>
         </BlockLo>
     );
 }

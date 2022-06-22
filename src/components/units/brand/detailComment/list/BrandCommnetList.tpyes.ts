@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { Query, UseditemQuestion } from "../../../../../commons/types/generated/types";
 
 export interface IBrandCommentListUIProps {
@@ -7,4 +8,5 @@ export interface IBrandCommentListUIProps {
 
 export interface IBrandCommentListUIItemProps {
     el: UseditemQuestion;
+    // setIsEdit: Dispatch<SetStateAction<boolean>>;
 }

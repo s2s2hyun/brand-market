@@ -2,7 +2,6 @@ import * as S from "./BrandCommnetWirte.styles";
 import { IBrandCommentWriteUIProps } from "./BrandCommnetWirte.types";
 
 export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
-    console.log(data.contents, "data.contents");
     return (
         <form
             onSubmit={props.handleSubmit(
@@ -25,7 +24,7 @@ export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
                         </S.QnaButton>
                     </S.QnaCommentInputWrapper>
                 </S.QnaCommentWrapper>
-                <S.SubDidvier />
+                {/* <S.SubDidvier /> */}
             </S.Wrapper>
         </form>
     );

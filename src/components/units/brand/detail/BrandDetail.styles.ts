@@ -68,6 +68,7 @@ export const ProductPrice = styled.div`
     font-size: 14px;
     line-height: 100%;
     letter-spacing: -0.05em;
+    padding-left: 65px;
 
     color: #000000;
 `;
@@ -80,12 +81,26 @@ export const MyHeart = styled.div`
     font-weight: 700;
     font-size: 12px;
     line-height: 100%;
+    padding-right: 11px;
+`;
+
+export const Zzim = styled.img`
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+
+    :hover,
+    &.isActive {
+        filter: invert(39%) sepia(94%) saturate(6479%) hue-rotate(1deg) brightness(102%)
+            contrast(107%);
+    }
 `;
 
 export const Heart = styled.div`
     font-weight: 700;
     font-size: 12px;
     line-height: 100%;
+    padding-left: 11px;
 `;
 
 export const Remark = styled.div`
@@ -125,6 +140,18 @@ export const BuyButton = styled.button`
     color: #ffffff;
 `;
 
+export const DelteButton = styled.button`
+    width: 309px;
+    height: 100px;
+    background: #000000;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+
+    color: #ffffff;
+`;
+
 export const ShoppingBag = styled.button`
     width: 436px;
     height: 100px;
@@ -133,7 +160,20 @@ export const ShoppingBag = styled.button`
     font-size: 30px;
     line-height: 100%;
     letter-spacing: -0.05em;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+`;
 
+export const Retouch = styled.button`
+    width: 436px;
+    height: 100px;
+    background: #c4c4c4;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    margin-left: 20px;
     color: #ffffff;
 `;
 
@@ -167,11 +207,20 @@ export const ThreeDivider = styled.div`
 `;
 export const BottomWrapper = styled.div``;
 
-export const ImageBottomWrapper = styled.div``;
+export const ImageBottomWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 export const DeliveryWrapper = styled.div``;
 
-export const ContentsWrapper = styled.div``;
+export const ContentsWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
 
 export const ContentsTitle = styled.div`
     font-weight: 700;
@@ -191,5 +240,26 @@ export const Contents = styled.div`
     color: #000000;
 `;
 
-export const DeliveryNote = styled.div``;
-export const DeliveryNoteContent = styled.div``;
+export const DeliveryNoteWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const DeliveryNote = styled.div`
+    padding-left: 100px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+`;
+export const DeliveryNoteContent = styled.div`
+    padding-left: 100px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    padding-bottom: 10px;
+
+    color: #000000;
+`;

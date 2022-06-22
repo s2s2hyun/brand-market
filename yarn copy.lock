@@ -7511,9 +7511,12 @@ react-calendar@^3.7.0:
     prop-types "^15.6.0"
 
 react-daum-postcode@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-daum-postcode/-/react-daum-postcode-3.1.1.tgz#8d349a45177cc88cc69e9f94dcc56ebc41a1d420"
-  integrity sha512-IFlC8XBSK+uobSIBHaWlxeecYpv9RhCFNu4YJ3+CrfGyEVdc4+yaaUH6BIfJbTZOybVx0V3s4nUeAEsssXBNJg==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-daum-postcode/-/react-daum-postcode-3.1.0.tgz#cb3f93dc2e4e206231d0c1e9da48b9c22be3f015"
+  integrity sha512-7HUSo4gQdqbZ0Uaan0WGZuRdMd7oD6eXJpKQCaQ0VZ15/ZkqsiOBUUKkM6GeG28mXzABGnoILOf0GXZylQNIcA==
+  dependencies:
+    prop-types "^15.7.2"
+    react "^17.0.2"
 
 react-day-picker@^8.0.5:
   version "8.0.5"
@@ -7664,7 +7667,7 @@ react-transition-group@^4.4.0, react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@17.0.2:
+react@17.0.2, react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==

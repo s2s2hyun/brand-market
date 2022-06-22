@@ -40,8 +40,10 @@ export default function BrandDetail() {
             alert(error.message);
         }
     };
+    const [isPicked, setIsPicked] = useState(false);
 
     const onClickPick = async () => {
+        setIsPicked((prev) => !prev);
         try {
             await toggleUsedItemPick({
                 variables: { useditemId: String(router.query.brandId) },
@@ -78,6 +80,7 @@ export default function BrandDetail() {
             data={data}
             onChangePassword={onChangePassword}
             onClickUsedItemDelete={onClickUsedItemDelete}
+            isPicked={isPicked}
         />
     );
 }

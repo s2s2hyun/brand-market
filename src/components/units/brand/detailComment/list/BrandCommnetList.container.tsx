@@ -14,7 +14,7 @@ export default function BrandCommentList() {
         QueryFetchUseditemQuestionsArgs
     >(FETCH_BRAND_COMMENTS, {
         variables: {
-            useditemId: String(router.query.id),
+            useditemId: String(router.query.brandId),
         },
     });
     const onLoadMore = () => {
@@ -36,6 +36,5 @@ export default function BrandCommentList() {
             },
         });
     };
-
     return <BrandCommentListUI data={data} onLoadMore={onLoadMore} />;
 }
