@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
-export const Scroll = styled.div``;
+export const Scroll = styled.div`
+    height: auto;
+`;
 
 export const Wrapper = styled.div``;
 

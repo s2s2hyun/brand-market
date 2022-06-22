@@ -9,7 +9,11 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
                 <S.Best>BEST</S.Best>
                 <S.BestList>
                     {props.data?.fetchUseditemsOfTheBest.map((el: Useditem) => (
-                        <S.ItemBestWrapper key={el._id} id={el._id}>
+                        <S.ItemBestWrapper
+                            key={el._id}
+                            id={el._id}
+                            onClick={props.onClickMoveToBrandDetail}
+                        >
                             <S.BestPicture
                                 src={
                                     el.images?.length > 0 && el.images?.[0] !== ""

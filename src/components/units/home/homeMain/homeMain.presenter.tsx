@@ -18,18 +18,22 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
                         }}
                     >
                         {props.data?.fetchUseditems.map((el) => (
-                            <S.ItemWrapper key={el._id} id={el._id}>
+                            <S.ItemWrapper
+                                key={el._id}
+                                id={el._id}
+                                onClick={props.onClickMoveToBrandDetail}
+                            >
                                 <S.Picture
                                     src={
-                                        el.images?.length > 0 && el.images[0] !== ""
-                                            ? `https://storage.googleapis.com/${el.images[0]}`
+                                        el.images?.length > 0 && el.images?.[0] !== ""
+                                            ? `https://storage.googleapis.com/${el.images?.[0]}`
                                             : `/images/dingCoLogo.png`
                                     }
                                 />
                                 {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
 
                                 <S.SellerProduct>
-                                    <S.BestTag>{el.tags[0] || "대표태그"}</S.BestTag>
+                                    <S.BestTag>{el.tags?.[0] || "대표태그"}</S.BestTag>
                                     <S.Price>{el.price}</S.Price>
                                 </S.SellerProduct>
                                 <S.Name>{el.name || "조이조이"}</S.Name>

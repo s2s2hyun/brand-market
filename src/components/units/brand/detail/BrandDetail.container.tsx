@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { setgroups } from "process";
 import { useState } from "react";
 import { Query, QueryFetchUseditemArgs } from "../../../../commons/types/generated/types";
 import BrandDetailUI from "./BrandDetail.presenter";
@@ -27,6 +28,31 @@ export default function BrandDetail() {
 
     const [modalPassword, setModalPassword] = useState("");
 
+    // 얼럿모달
+    const [alertModal, setAlertModal] = useState(false);
+    const [modalContents, setModalContents] = useState("");
+    const [errorAlertModal, setErrorAlertModal] = useState(false);
+    const [go, setGo] = useState(false);
+    const onClickExitAlertModal = () => {
+        setAlertModal(false);
+    };
+
+    // 에러 모달
+    const onClickExitErrorModal = () => {
+        setErrorAlertModal(false);
+    };
+
+    // 확인 모달
+    const onClickconfirmModal = () => {
+        setAlertModal(false);
+    };
+
+    // 이동 모달
+    const onClickRoutingBrandModal = () => {
+        setAlertModal(false);
+        router.push("/brand");
+    };
+    console.log(data);
     const onClickDelete = async () => {
         try {
             await deleteProduct({
@@ -34,10 +60,12 @@ export default function BrandDetail() {
                     useditemId: router?.query.brandId,
                 },
             });
-            alert("상품이 정상적으로 삭제되었습니다");
-            router.push("/brand");
+            setModalContents("상품이 정상적으로 삭제되었습니다");
+            setAlertModal(true);
+            setGo(true);
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
     const [isPicked, setIsPicked] = useState(false);
@@ -49,9 +77,10 @@ export default function BrandDetail() {
                 variables: { useditemId: String(router.query.brandId) },
             });
             refetch();
-            alert("이 상품을 찜 했어요!");
+            setModalContents("이 상품을 찜 했어요!");
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
 
@@ -68,8 +97,10 @@ export default function BrandDetail() {
                 },
             });
             onClickDelete();
+            setModalContents("삭제 완료");
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
 
@@ -81,6 +112,15 @@ export default function BrandDetail() {
             onChangePassword={onChangePassword}
             onClickUsedItemDelete={onClickUsedItemDelete}
             isPicked={isPicked}
+            onClickExitErrorModal={onClickExitErrorModal}
+            onClickExitAlertModal={onClickExitAlertModal}
+            alertModal={alertModal}
+            modalContents={modalContents}
+            errorAlertModal={errorAlertModal}
+            onClickconfirmModal={onClickconfirmModal}
+            onClickRoutingBrandModal={onClickRoutingBrandModal}
+            go={go}
+            isMy={data?.fetchUseditem?.seller?._id === userData?.fetchUserLoggedIn?._id}
         />
     );
 }

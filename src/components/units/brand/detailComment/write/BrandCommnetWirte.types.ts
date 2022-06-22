@@ -21,4 +21,9 @@ export interface IBrandCommentWriteUIProps {
     isEdit?: boolean;
     handleSubmit: UseFormHandleSubmit<FieldValues> | ((data: any) => Promise<void>);
     register: UseFormRegister<FieldValues>;
+    onClickExitAlertModal: () => void;
+    alertModal: boolean;
+    modalContents?: string;
+    onClickExitErrorModal: () => void;
+    errorAlertModal: boolean;
 }

@@ -10,7 +10,7 @@ export default function HomeNavigationUI(props: ILayoutHomeNavagationUIProps) {
                 <S.Logo src="/images/HomeNavi.png" alt="logo" onClick={props.onClickMain}></S.Logo>
             </S.LogoWrapper>
             <S.Categories>
-                <S.Brand>BRAND</S.Brand>
+                <S.Brand onClick={props.onClickBrand}>BRAND</S.Brand>
                 <S.Category>CATEGORY</S.Category>
                 <S.Life>LIFE</S.Life>
                 <S.Beauty>BEAUTY</S.Beauty>

@@ -8,4 +8,13 @@ export interface IBrandDetailUI {
     onChangePassword: (event: any) => void;
     onClickUsedItemDelete: () => Promise<void>;
     isPicked: boolean;
+    alertModal: boolean;
+    modalContents?: string;
+    onClickExitErrorModal: () => void;
+    errorAlertModal: boolean;
+    onClickExitAlertModal: () => void;
+    onClickconfirmModal: () => void;
+    onClickRoutingBrandModal: () => void;
+    go: boolean;
+    isMy: boolean | undefined;
 }

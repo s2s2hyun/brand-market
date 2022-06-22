@@ -17,6 +17,7 @@ export default function BrandCommentList() {
             useditemId: String(router.query.brandId),
         },
     });
+
     const onLoadMore = () => {
         if (!data) return;
 

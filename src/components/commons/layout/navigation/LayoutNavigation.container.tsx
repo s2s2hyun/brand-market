@@ -8,5 +8,9 @@ export default function NavigationContainer() {
         router.push(`/`);
     };
 
-    return <NavigationUI onClickMain={onClickMain} />;
+    const onClickBrand = () => {
+        router.push(`/brand`);
+    };
+
+    return <NavigationUI onClickMain={onClickMain} onClickBrand={onClickBrand} />;
 }

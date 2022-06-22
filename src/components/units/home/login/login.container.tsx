@@ -36,7 +36,7 @@ export default function LoginContainer() {
     const [alertModal, setAlertModal] = useState(false);
     const [modalContents, setModalContents] = useState("");
     const [errorAlertModal, setErrorAlertModal] = useState(false);
-    // const [go, setGo] = useState(false);
+    const [go, setGo] = useState(false);
     const onClickExitAlertModal = () => {
         setAlertModal(false);
     };
@@ -44,6 +44,17 @@ export default function LoginContainer() {
     // 에러 모달
     const onClickExitErrorModal = () => {
         setErrorAlertModal(false);
+    };
+
+    // 확인 모달
+    const onClickconfirmModal = () => {
+        setAlertModal(false);
+    };
+
+    // 이동 모달
+    const onClickRoutingModal = () => {
+        setAlertModal(false);
+        router.push("/");
     };
 
     const onClickLogin = async (data: MutationLoginUserArgs) => {
@@ -54,11 +65,11 @@ export default function LoginContainer() {
                     password: data.password,
                 },
             });
-            const accessToken = result.data.login;
+            const accessToken = result.data.loginUser.accessToken;
             setAccessToken(accessToken);
             setModalContents("로그인 완료");
             setAlertModal(true);
-            router.push("/");
+            setGo(true);
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);
@@ -76,6 +87,9 @@ export default function LoginContainer() {
             modalContents={modalContents}
             onClickExitErrorModal={onClickExitErrorModal}
             errorAlertModal={errorAlertModal}
+            go={go}
+            onClickconfirmModal={onClickconfirmModal}
+            onClickRoutingModal={onClickRoutingModal}
         />
     );
 }

@@ -8,5 +8,7 @@ export interface IBrandCommentListUIProps {
 
 export interface IBrandCommentListUIItemProps {
     el: UseditemQuestion;
+    modalContents?: string;
+    isOpenDeleteModal?: boolean;
     // setIsEdit: Dispatch<SetStateAction<boolean>>;
 }

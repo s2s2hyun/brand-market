@@ -14,7 +14,7 @@ import {
     UPDATE_BRAND_COMMENT,
 } from "./BrandCommnetWirte.queries";
 import { IBrandCommentWriteProps } from "./BrandCommnetWirte.types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const schema = yup.object({
     contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
@@ -29,6 +29,20 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
     const router = useRouter();
     const [createUseditemQuestion] = useMutation(CREATE_BRAND_COMMENT);
     const [updateUseditemQuestion] = useMutation(UPDATE_BRAND_COMMENT);
+
+    // 얼럿모달
+    const [alertModal, setAlertModal] = useState(false);
+    const [modalContents, setModalContents] = useState("");
+    const [errorAlertModal, setErrorAlertModal] = useState(false);
+    // const [go, setGo] = useState(false);
+    const onClickExitAlertModal = () => {
+        setAlertModal(false);
+    };
+
+    // 에러 모달
+    const onClickExitErrorModal = () => {
+        setErrorAlertModal(false);
+    };
 
     // 문의하기
     const onClickCommentSubmit = async (data: CreateUseditemQuestionInput) => {
@@ -52,9 +66,11 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
                 ],
             });
             setValue("contents", "");
-            alert("문의가 성공적으로 등록이 되었습니다.");
+            setModalContents("문의가 성공적으로 등록이 되었습니다.");
+            setAlertModal(true);
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
 
@@ -77,10 +93,12 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
                     },
                 ],
             });
-            alert("문의가 성공적으로 수정 되었습니다.");
+            setModalContents("문의가 성공적으로 수정 되었습니다.");
+            setAlertModal(true);
             props.setIsEdit?.(false);
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
 
@@ -98,6 +116,11 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
             onClickCommentUpdate={onClickCommentUpdate}
             onClickCommentSubmit={onClickCommentSubmit}
             isEdit={props.isEdit}
+            onClickExitAlertModal={onClickExitAlertModal}
+            alertModal={alertModal}
+            modalContents={modalContents}
+            onClickExitErrorModal={onClickExitErrorModal}
+            errorAlertModal={errorAlertModal}
         />
     );
 }

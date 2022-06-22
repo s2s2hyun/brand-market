@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import { Useditem } from "../../../../commons/types/generated/types";
 
 export interface IHomeMainUIProps {
@@ -5,4 +6,5 @@ export interface IHomeMainUIProps {
         fetchUseditems: Array<Useditem>;
     };
     onLoadMore: (page: number) => void;
+    onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
 }

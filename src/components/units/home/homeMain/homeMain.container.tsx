@@ -2,10 +2,14 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import HomeMainUI from "./homeMain.presenter";
 import { FETCH_USEDITEMS } from "./homeMain.queries";
+import { MouseEvent } from "react";
 
 export default function HomeMain() {
     const router = useRouter();
     const { data, fetchMore } = useQuery(FETCH_USEDITEMS);
+    const onClickMoveToBrandDetail = (event: MouseEvent<HTMLDivElement>) => {
+        router.push(`/brands/${event.currentTarget.id}`);
+    };
 
     const onLoadMore = () => {
         if (!data) return;
@@ -22,5 +26,11 @@ export default function HomeMain() {
         });
     };
 
-    return <HomeMainUI data={data} onLoadMore={onLoadMore} />;
+    return (
+        <HomeMainUI
+            data={data}
+            onLoadMore={onLoadMore}
+            onClickMoveToBrandDetail={onClickMoveToBrandDetail}
+        />
+    );
 }

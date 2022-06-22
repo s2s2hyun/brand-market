@@ -21,4 +21,7 @@ export interface ILoginUIProps {
     modalContents?: string;
     onClickExitErrorModal: () => void;
     errorAlertModal: boolean;
+    go: boolean;
+    onClickconfirmModal: () => void;
+    onClickRoutingModal: () => void;
 }

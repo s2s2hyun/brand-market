@@ -12,6 +12,8 @@ import { IBrandCommentListUIItemProps } from "./BrandCommnetList.tpyes";
 import { Modal } from "antd";
 import BrandCommentWrite from "../write/BrandCommnetWirte.container";
 import { getDate } from "../../../../../commons/utils";
+import Alert from "../../../../commons/modal/alert/alert";
+import ErrorAlert from "../../../../commons/modal/errorModal/errorAlert";
 
 export default function BrandCommentListUIItem(props: IBrandCommentListUIItemProps) {
     const router = useRouter();
@@ -29,6 +31,20 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
 
     const onClickUpdate = () => {
         setIsEdit(true);
+    };
+
+    // 얼럿모달
+    const [alertModal, setAlertModal] = useState(false);
+    const [modalContents, setModalContents] = useState("");
+    const [errorAlertModal, setErrorAlertModal] = useState(false);
+    // const [go, setGo] = useState(false);
+    const onClickExitAlertModal = () => {
+        setAlertModal(false);
+    };
+
+    // 에러 모달
+    const onClickExitErrorModal = () => {
+        setErrorAlertModal(false);
     };
 
     const onClickDelete = async () => {
@@ -67,8 +83,10 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                 },
             });
             onClickDelete();
+            setModalContents("삭제 완료");
         } catch (error: any) {
-            alert(error.message);
+            setModalContents(error.message);
+            setErrorAlertModal(true);
         }
     };
 
@@ -77,6 +95,13 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
     };
     return (
         <>
+            {alertModal && (
+                <Alert onClickExit={onClickExitAlertModal} contents={props.modalContents} />
+            )}
+
+            {errorAlertModal && (
+                <ErrorAlert onClickExit={onClickExitErrorModal} contents={modalContents} />
+            )}
             {isOpen && (
                 <Modal visible={true} onOk={onClickUsedItemDelete} onCancel={onToggleModal}>
                     비밀번호 입력:{" "}
@@ -111,7 +136,14 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                     </S.CommentWrapper>
                 </S.ItemWrapper>
             )}
-            {isEdit && <BrandCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />}
+            {isEdit && (
+                <BrandCommentWrite
+                    isEdit={true}
+                    setIsEdit={setIsEdit}
+                    el={props.el}
+                    isOpenDeleteModal={isOpenDeleteModal}
+                />
+            )}
         </>
     );
 }

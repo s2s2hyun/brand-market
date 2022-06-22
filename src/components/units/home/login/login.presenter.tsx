@@ -4,13 +4,14 @@ import * as S from "./login.styles";
 import { ILoginUIProps } from "./login.types";
 
 export default function LoginUI(props: ILoginUIProps) {
-    console.log("로그인");
     return (
         <>
             {props.alertModal && (
-                <Alert onClickExit={props.onClickExitAlertModal} contents={props.modalContents} />
+                <Alert
+                    onClickExit={props.go ? props.onClickRoutingModal : props.onClickconfirmModal}
+                    contents={props.modalContents}
+                />
             )}
-
             {props.errorAlertModal && (
                 <ErrorAlert
                     onClickExit={props.onClickExitErrorModal}

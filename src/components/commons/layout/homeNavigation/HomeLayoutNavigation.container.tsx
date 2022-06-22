@@ -8,5 +8,11 @@ export default function HomeNavigationContainer() {
         router.push(`/`);
     };
 
-    return <HomeNavigationUI onClickMain={onClickMain} router={router} />;
+    const onClickBrand = () => {
+        router.push(`/brand`);
+    };
+
+    return (
+        <HomeNavigationUI onClickMain={onClickMain} onClickBrand={onClickBrand} router={router} />
+    );
 }

@@ -4,7 +4,6 @@ import { IBrandCommentListUIProps } from "./BrandCommnetList.tpyes";
 import { v4 as uuidv4 } from "uuid";
 import * as S from "./BrandCommnetList.styles";
 export default function BrandCommentListUI(props: IBrandCommentListUIProps) {
-    console.log(props.data, "data");
     if (!props.data) return <div />;
     return (
         <S.Scroll>
