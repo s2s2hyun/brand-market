@@ -10,6 +10,7 @@ export const FETCH_BRAND_COMMENTS_ANSWERS = gql`
                 contents
                 useditem
                 user
+
                 createdAt
                 updatedAt
             }
@@ -45,8 +46,6 @@ export const BRAND_COMMENTS_ANSWERS_CREATE = gql`
                     name
                     remarks
                 }
-                user
-                createdAt
             }
             user
             createdAt

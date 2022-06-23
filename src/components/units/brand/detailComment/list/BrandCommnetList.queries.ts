@@ -37,7 +37,6 @@ export const FETCH_BRAND_COMMENTS_ANSWERS = gql`
             user {
                 _id
                 email
-                name
                 createdAt
                 updatedAt
             }

@@ -77,7 +77,7 @@ export default function BrandDetail() {
                 variables: { useditemId: String(router.query.brandId) },
             });
             refetch();
-            setModalContents("이 상품을 찜 했어요!");
+            alert("이 상품을 찜 했어요!");
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);
@@ -97,7 +97,6 @@ export default function BrandDetail() {
                 },
             });
             onClickDelete();
-            setModalContents("삭제 완료");
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);

@@ -4,11 +4,13 @@ import {
     Query,
     QueryFetchUseditemQuestionsArgs,
 } from "../../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../detail/BrandDetail.queries";
 import BrandCommentListUI from "./BrandCommnetList.presenter";
 import { FETCH_BRAND_COMMENTS } from "./BrandCommnetList.queries";
 
 export default function BrandCommentList() {
     const router = useRouter();
+    const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
     const { data, fetchMore } = useQuery<
         Pick<Query, "fetchUseditemQuestions">,
         QueryFetchUseditemQuestionsArgs
@@ -37,5 +39,11 @@ export default function BrandCommentList() {
             },
         });
     };
-    return <BrandCommentListUI data={data} onLoadMore={onLoadMore} />;
+    return (
+        <BrandCommentListUI
+            data={data}
+            onLoadMore={onLoadMore}
+            // myComment={data?.fetchUseditemQuestions?.user?._id === userData?.fetchUserLoggedIn?._id}
+        />
+    );
 }

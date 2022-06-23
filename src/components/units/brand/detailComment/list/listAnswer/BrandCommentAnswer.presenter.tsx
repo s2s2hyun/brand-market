@@ -3,6 +3,7 @@ import CommentAnswerListUIItem from "./BrandCommentAnswer.presenteritem";
 import { ICommentAnswerListUIProps } from "./BrandCommentAnswer.types";
 
 export default function CommentAnswerListUI(props: ICommentAnswerListUIProps) {
+    if (!props.data) return <div />;
     return (
         <>
             {props.data?.fetchUseditemQuestionAnswers.map((el) => (

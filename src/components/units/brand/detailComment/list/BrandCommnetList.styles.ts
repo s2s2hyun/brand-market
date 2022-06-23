@@ -72,6 +72,11 @@ export const CommentCreateAt = styled.div`
     color: #000000;
 `;
 
+export const CommentWrite = styled.img`
+    width: 20px;
+    height: 20px;
+`;
+
 export const CommentUpdate = styled.img`
     width: 20px;
     height: 20px;

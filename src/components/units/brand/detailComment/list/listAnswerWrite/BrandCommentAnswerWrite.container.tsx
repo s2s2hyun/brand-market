@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import BrandCommentAnswerWriteUI from "./BrandCommentAnswerWrite.presenter";
@@ -10,13 +10,16 @@ import {
 } from "./BrandCommentAnswerWrite.queries";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FETCH_BRAND_COMMENTS_ANSWERS } from "../listAnswer/BrandCommentAnswer.queries";
-import { CreateUseditemQuestionAnswerInput } from "../../../../../../commons/types/generated/types";
+import {
+    CreateUseditemQuestionAnswerInput,
+    UpdateUseditemQuestionAnswerInput,
+} from "../../../../../../commons/types/generated/types";
 
 const schema = yup.object({
     contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
 });
 
-export default function BrandCommentAnswerWrite() {
+export default function BrandCommentAnswerWrite(props: any) {
     const { register, handleSubmit, setValue, formState, reset } = useForm({
         resolver: yupResolver(schema),
         mode: "onChange",
@@ -24,6 +27,9 @@ export default function BrandCommentAnswerWrite() {
     const router = useRouter();
     const [createUseditemQuestionAnswer] = useMutation(BRAND_COMMENTS_ANSWERS_CREATE);
     const [updateUseditemQuestionAnswer] = useMutation(BRAND_COMMENTS_ANSWERS_UPDATE);
+
+    const [contents, setContents] = useState(props.el?.contents || "");
+    const [isValid, setIsValid] = useState(false);
 
     // 얼럿모달
     const [alertModal, setAlertModal] = useState(false);
@@ -67,6 +73,48 @@ export default function BrandCommentAnswerWrite() {
         }
     };
 
+    const onChangeContents = (event: any) => {
+        if (event.target.value === "") {
+            setIsValid(false);
+        } else {
+            setContents(event.target.value);
+            setIsValid(true);
+        }
+    };
+
+    const onClickCommentAnswerUpdate = async (data: UpdateUseditemQuestionAnswerInput) => {
+        if (!data.contents) return alert("답글을 수정 해주세요");
+        try {
+            await updateUseditemQuestionAnswer({
+                variables: {
+                    useditemQuestionId: String(router.query.brandId),
+                    updateUseditemQuestionAnswerInput: {
+                        contents: data.contents,
+                    },
+                },
+                refetchQueries: [
+                    {
+                        query: FETCH_BRAND_COMMENTS_ANSWERS,
+                        variables: {
+                            useditemQuestionId: String(router.query.brandId),
+                        },
+                    },
+                ],
+            });
+            setValue("contents", "");
+            setModalContents("문의 수정이  등록이 되었습니다.");
+            setAlertModal(true);
+        } catch (error: any) {
+            setModalContents(error.message);
+            setErrorAlertModal(true);
+        }
+    };
+    useEffect(() => {
+        reset({
+            contents: props.el?.contents,
+        });
+    }, []);
+
     return (
         <BrandCommentAnswerWriteUI
             onClickExitAlertModal={onClickExitAlertModal}
@@ -74,6 +122,13 @@ export default function BrandCommentAnswerWrite() {
             modalContents={modalContents}
             onClickExitErrorModal={onClickExitErrorModal}
             errorAlertModal={errorAlertModal}
+            onClickCommentAnswerSubmit={onClickCommentAnswerSubmit}
+            onClickCommentAnswerUpdate={onClickCommentAnswerUpdate}
+            onChangeContents={onChangeContents}
+            contents={contents}
+            register={register}
+            handleSubmit={handleSubmit}
+            formState={formState}
         />
     );
 }

@@ -14,16 +14,16 @@ export const BRAND_COMMENTS_ANSWERS_CREATE = gql`
             useditemQuestion {
                 _id
                 contents
+
                 useditem {
                     _id
-                    name
                     remarks
                 }
                 user
+                _id
+                name
                 createdAt
             }
-            user
-            createdAt
         }
     }
 `;
