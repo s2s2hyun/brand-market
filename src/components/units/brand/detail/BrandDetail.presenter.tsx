@@ -103,7 +103,9 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                                     <S.DelteButton type="button" onClick={onToggleModal}>
                                         DELETE
                                     </S.DelteButton>
-                                    <S.Retouch>RETOUCH</S.Retouch>
+                                    <S.Retouch type="button" onClick={props.onClickBrandEdit}>
+                                        RETOUCH
+                                    </S.Retouch>
                                 </>
                             )}
                         </S.ButtonWrapper>

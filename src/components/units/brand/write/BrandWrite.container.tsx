@@ -205,7 +205,7 @@ export default function BrandWriteContainer(props: any) {
 
     const onClickUpdate = async (data: UpdateUseditemInput) => {
         const currentFiles = fileUrls;
-        const defaultFiles = data.fetchUseditem?.images;
+        const defaultFiles = data?.images;
         const isChangedFiles = currentFiles !== defaultFiles;
 
         if (!data.name && !data.remarks && !data.contents && !isChangedFiles && data.price) {
@@ -229,7 +229,7 @@ export default function BrandWriteContainer(props: any) {
             setModalContents("상품 수정에 성공하였습니다.");
             setAlertModal(true);
             setGo(false);
-            setUpdate(router.query.usedId);
+            setUpdate(router.query.brandId);
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);

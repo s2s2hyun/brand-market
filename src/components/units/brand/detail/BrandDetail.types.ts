@@ -19,4 +19,5 @@ export interface IBrandDetailUI {
     isMy: boolean | undefined;
     onClickBasket: (el: any) => () => void;
     onClickBuyBrand: () => Promise<void>;
+    onClickBrandEdit: () => void;
 }

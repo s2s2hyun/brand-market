@@ -34,6 +34,29 @@ export const DELETE_PRODUCT = gql`
     }
 `;
 
+// 업데이트
+
+export const UPDATE_PRODUCT_ITEM = gql`
+    mutation updateUseditem($updateUseditemInput: UpdateUseditemInput!, $useditemId: ID!) {
+        updateUseditem(updateUseditemInput: $updateUseditemInput, useditemId: $useditemId) {
+            _id
+            name
+            remarks
+            contents
+            price
+            tags
+            images
+            useditemAddress {
+                lat
+                lng
+                zipcode
+                address
+                addressDetail
+            }
+        }
+    }
+`;
+
 // ♡찜하기
 export const TOGGLE_USEDITEM_PICK = gql`
     mutation toggleUseditemPick($useditemId: ID!) {

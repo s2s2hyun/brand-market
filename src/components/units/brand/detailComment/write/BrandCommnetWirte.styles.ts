@@ -59,6 +59,8 @@ export const QnaButton = styled.button`
     margin-top: 17px;
     align-self: flex-end;
     color: #ffffff;
+
+    cursor: pointer;
 `;
 
 export const SubDidvier = styled.div`

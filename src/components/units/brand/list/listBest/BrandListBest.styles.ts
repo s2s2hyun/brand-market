@@ -25,6 +25,7 @@ export const BestList = styled.div`
 
 export const ItemBestWrapper = styled.div`
     margin-right: 116px;
+    cursor: pointer;
 `;
 
 export const BestPicture = styled.img`
@@ -73,4 +74,7 @@ export const BestRemark = styled.div`
     padding-top: 13px;
     padding-left: 20px;
     color: #555555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;

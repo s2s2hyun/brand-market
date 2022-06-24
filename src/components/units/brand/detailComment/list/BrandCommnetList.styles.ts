@@ -75,15 +75,21 @@ export const CommentCreateAt = styled.div`
 export const CommentWrite = styled.img`
     width: 20px;
     height: 20px;
+
+    cursor: pointer;
 `;
 
 export const CommentUpdate = styled.img`
     width: 20px;
     height: 20px;
     margin-right: 16px;
+
+    cursor: pointer;
 `;
 
 export const CommentDelete = styled.img`
     width: 20px;
     height: 20px;
+
+    cursor: pointer;
 `;

@@ -7,7 +7,7 @@ export default function BrandWriteEditPage() {
     const router = useRouter();
     const { data } = useQuery(FETCH_USEDITEM, {
         variables: {
-            useditemId: String(router.query.usedId),
+            useditemId: String(router.query.brandId),
         },
     });
 

@@ -16,5 +16,5 @@ export const Sliderimage = styled.div`
 
 export const Img = styled.img`
     width: 800px;
-    height: 700px;
+    height: 750px;
 `;

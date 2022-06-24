@@ -133,11 +133,18 @@ export default function BrandDetail() {
     const onClickBuyBrand = async () => {
         try {
             await createPointTransactionOfBuyingAndSelling({
-                variables: { useritemId: router.query.productId },
+                variables: { useritemId: router?.query.brandId },
             });
+            alert("상품구매");
         } catch (error: any) {
             alert(error.message);
         }
+    };
+
+    // 수정하기
+
+    const onClickBrandEdit = () => {
+        router.push(`/brands/${router?.query.brandId}/edit`);
     };
 
     return (
@@ -159,6 +166,7 @@ export default function BrandDetail() {
             isMy={data?.fetchUseditem?.seller?._id === userData?.fetchUserLoggedIn?._id}
             onClickBasket={onClickBasket}
             onClickBuyBrand={onClickBuyBrand}
+            onClickBrandEdit={onClickBrandEdit}
         />
     );
 }

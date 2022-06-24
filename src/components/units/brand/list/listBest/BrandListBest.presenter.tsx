@@ -25,7 +25,9 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
 
                             <S.SellerProduct>
                                 <S.BestTag>{el.tags?.[0] || "대표태그"}</S.BestTag>
-                                <S.BestPrice>{el.price}</S.BestPrice>
+                                <S.BestPrice>
+                                    {el.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
+                                </S.BestPrice>
                             </S.SellerProduct>
                             <S.BestName>{el.name || "조이조이"}</S.BestName>
                             <S.BestRemark>

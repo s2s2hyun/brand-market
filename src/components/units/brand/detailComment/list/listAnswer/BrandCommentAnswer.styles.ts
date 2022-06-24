@@ -70,11 +70,15 @@ export const AnswerCommentDelete = styled.img`
     width: 20px;
     height: 20px;
     margin-right: 15px;
+
+    cursor: pointer;
 `;
 
 export const AnswerCommentUpdate = styled.img`
     width: 20px;
     height: 20px;
+
+    cursor: pointer;
 `;
 
 export const AnswerCommentOption = styled.div`

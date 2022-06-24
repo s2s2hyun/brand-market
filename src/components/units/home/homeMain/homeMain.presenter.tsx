@@ -34,7 +34,10 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
 
                                 <S.SellerProduct>
                                     <S.BestTag>{el.tags?.[0] || "대표태그"}</S.BestTag>
-                                    <S.Price>{el.price}</S.Price>
+                                    <S.Price>
+                                        {el.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                        원
+                                    </S.Price>
                                 </S.SellerProduct>
                                 <S.Name>{el.name || "조이조이"}</S.Name>
                                 <S.Remark>

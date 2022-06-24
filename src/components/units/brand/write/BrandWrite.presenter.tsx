@@ -35,7 +35,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                 <S.WriteForm
                     onSubmit={props.handleSubmit(
                         props.isEdit
-                            ? props.onClickUpdate
+                            ? (props.onClickUpdate as unknown as () => void)
                             : (props.onClickSubmit as unknown as () => void)
                     )}
                 >

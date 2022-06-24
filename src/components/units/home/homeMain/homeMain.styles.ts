@@ -26,6 +26,7 @@ export const ItemWrapper = styled.div`
     height: 560px;
     margin-right: 116px;
     margin-bottom: 50px;
+    cursor: pointer;
 `;
 
 export const Picture = styled.img`
@@ -75,6 +76,9 @@ export const Remark = styled.div`
     padding-top: 13px;
     padding-left: 20px;
     color: #555555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export const MainList = styled.div`

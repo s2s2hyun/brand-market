@@ -1,7 +1,7 @@
 import * as S from "./BrandCommentAnswer.styles";
 import { ICommentAnswerListUIItemProps } from "./BrandCommentAnswer.types";
 import { getDate } from "../../../../../../commons/utils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@apollo/client";
 import { FETCH_USER_LOGGED_IN, LOGIN_USER_FOR_DELETE } from "../../../detail/BrandDetail.queries";
@@ -13,7 +13,6 @@ import { FETCH_BRAND_COMMENTS } from "../BrandCommnetList.queries";
 import Alert from "../../../../../commons/modal/alert/alert";
 import ErrorAlert from "../../../../../commons/modal/errorModal/errorAlert";
 import { Modal } from "antd";
-import { UpdateUseditemQuestionAnswerInput } from "../../../../../../commons/types/generated/types";
 import BrandCommentAnswerWrite from "../listAnswerWrite/BrandCommentAnswerWrite.container";
 
 export default function CommentAnswerListUIItem(props: ICommentAnswerListUIItemProps) {
@@ -99,40 +98,6 @@ export default function CommentAnswerListUIItem(props: ICommentAnswerListUIItemP
     const onChangePassword = (event: any) => {
         setModalPassword(event?.target.value);
     };
-
-    // const onClickCommentAnswerUpdate = async (data: UpdateUseditemQuestionAnswerInput) => {
-    //     try {
-    //         if (!props.el?._id) return;
-    //         await updateUseditemQuestionAnswer({
-    //             variables: {
-    //                 useditemQuestionAnswerId: props.el._id,
-    //                 updateUseditemQuestionAnswerInput: {
-    //                     contents: data.contents,
-    //                 },
-    //             },
-    //             refetchQueries: [
-    //                 {
-    //                     query: FETCH_BRAND_COMMENTS,
-    //                     variables: {
-    //                         useditemId: String(router.query.productId),
-    //                     },
-    //                 },
-    //             ],
-    //         });
-    //         setModalContents("문의가 성공적으로 수정 되었습니다.");
-    //         setAlertModal(true);
-    //         props.setIsEdit?.(false);
-    //     } catch (error: any) {
-    //         setModalContents(error.message);
-    //         setErrorAlertModal(true);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     props.reset({
-    //         contents: props.el?.contents,
-    //     });
-    // }, []);
 
     return (
         <>

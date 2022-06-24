@@ -138,6 +138,8 @@ export const BuyButton = styled.button`
     letter-spacing: -0.05em;
 
     color: #ffffff;
+
+    cursor: pointer;
 `;
 
 export const DelteButton = styled.button`
@@ -163,6 +165,8 @@ export const ShoppingBag = styled.button`
     margin-left: 20px;
     margin-bottom: 20px;
     color: #ffffff;
+
+    cursor: pointer;
 `;
 
 export const Retouch = styled.button`

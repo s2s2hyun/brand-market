@@ -5,12 +5,43 @@ export const Wrapper = styled.div``;
 export const AnswerDivier = styled.div``;
 
 export const AnswerCommentWrite = styled.textarea`
+    width: 100%;
     height: 152px;
     background: #e9e9e9;
+    resize: none;
 `;
 
-export const ButtonWrapper = styled.div``;
+export const ButtonWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+`;
 
-export const CancleButton = styled.button``;
+export const CancleButton = styled.button`
+    width: 195px;
+    height: 77px;
 
-export const Submit = styled.button``;
+    background: #ffffff;
+    border: 1px solid #000000;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+
+    letter-spacing: -0.05em;
+
+    color: #000000;
+`;
+
+export const Submit = styled.button`
+    width: 195px;
+    height: 77px;
+    background: #000000;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+
+    letter-spacing: -0.05em;
+    cursor: pointer;
+    color: #ffffff;
+`;
