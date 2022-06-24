@@ -1,4 +1,4 @@
-import { User } from "../../../../commons/types/generated/types";
+import { Query, Useditem, User } from "../../../../commons/types/generated/types";
 
 export interface ILayoutHeaderUIProps {
     onClickMain: () => void;
@@ -7,4 +7,6 @@ export interface ILayoutHeaderUIProps {
     onClickBasket: () => void;
     myData: { fetchUserLoggedIn: User } | undefined;
     onClickLogOut: () => void;
+    // data: Pick<Query, "fetchUseditemsIPicked">;
+    baskets: never[];
 }

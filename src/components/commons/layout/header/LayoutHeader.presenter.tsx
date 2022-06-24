@@ -42,7 +42,7 @@ export default function HeaderUI(props: ILayoutHeaderUIProps) {
                     )}
                     <S.BasketWrapper>
                         <S.Basket>장바구니</S.Basket>
-                        <S.BasketCount>0</S.BasketCount>
+                        <S.BasketCount>{props.baskets}</S.BasketCount>
                     </S.BasketWrapper>
                 </S.OptionWrapper>
             </S.Wrapper>

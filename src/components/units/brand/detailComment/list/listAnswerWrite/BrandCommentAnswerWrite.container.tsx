@@ -50,7 +50,7 @@ export default function BrandCommentAnswerWrite(props: any) {
         try {
             await createUseditemQuestionAnswer({
                 variables: {
-                    useditemQuestionId: String(router.query.brandId),
+                    useditemQuestionId: String(props.elAnswer?._id),
                     createUseditemQuestionAnswerInput: {
                         contents: data.contents,
                     },
@@ -59,7 +59,7 @@ export default function BrandCommentAnswerWrite(props: any) {
                     {
                         query: FETCH_BRAND_COMMENTS_ANSWERS,
                         variables: {
-                            useditemQuestionId: String(router.query.brandId),
+                            useditemQuestionId: String(props.elAnswer?._id),
                         },
                     },
                 ],
@@ -67,9 +67,11 @@ export default function BrandCommentAnswerWrite(props: any) {
             setValue("contents", "");
             setModalContents("문의 답글을 성공적으로 등록이 되었습니다.");
             setAlertModal(true);
+            props.setIsNewComment(false);
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);
+            props.setIsNewComment(false);
         }
     };
 
@@ -87,7 +89,7 @@ export default function BrandCommentAnswerWrite(props: any) {
         try {
             await updateUseditemQuestionAnswer({
                 variables: {
-                    useditemQuestionId: String(router.query.brandId),
+                    useditemQuestionAnswerId: String(props.el?._id),
                     updateUseditemQuestionAnswerInput: {
                         contents: data.contents,
                     },
@@ -96,7 +98,7 @@ export default function BrandCommentAnswerWrite(props: any) {
                     {
                         query: FETCH_BRAND_COMMENTS_ANSWERS,
                         variables: {
-                            useditemQuestionId: String(router.query.brandId),
+                            useditemQuestionId: String(props?.commentId),
                         },
                     },
                 ],
@@ -104,9 +106,11 @@ export default function BrandCommentAnswerWrite(props: any) {
             setValue("contents", "");
             setModalContents("문의 수정이  등록이 되었습니다.");
             setAlertModal(true);
+            props.setIsEdit(false);
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);
+            props.setIsEdit(false);
         }
     };
     useEffect(() => {
@@ -129,6 +133,7 @@ export default function BrandCommentAnswerWrite(props: any) {
             register={register}
             handleSubmit={handleSubmit}
             formState={formState}
+            isEdit={props.isEdit}
         />
     );
 }

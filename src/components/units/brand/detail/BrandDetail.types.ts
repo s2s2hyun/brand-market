@@ -17,4 +17,6 @@ export interface IBrandDetailUI {
     onClickRoutingBrandModal: () => void;
     go: boolean;
     isMy: boolean | undefined;
+    onClickBasket: (el: any) => () => void;
+    onClickBuyBrand: () => Promise<void>;
 }

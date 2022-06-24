@@ -1,15 +1,24 @@
 import HeaderUI from "./LayoutHeader.presenter";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@apollo/client";
-import { User } from "../../../../commons/types/generated/types";
+import { Useditem, User } from "../../../../commons/types/generated/types";
 import { FETCH_LOGIN_USER, LOGOUT } from "./LayoutHeader.queries";
 import { accessTokenState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
+import { useEffect, useState } from "react";
 
 export default function HeaderContainer() {
     const router = useRouter();
     // const [, setAccessToken] = useRecoilState(accessTokenState);
     const { data: myData } = useQuery<{ fetchUserLoggedIn: User }>(FETCH_LOGIN_USER);
+
+    // 장바구니 카운팅
+    const [baskets, setbaskets] = useState([]);
+
+    useEffect(() => {
+        const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
+        setbaskets(baskets.length);
+    }, []);
 
     const onClickMain = () => {
         router.push(`/`);
@@ -43,6 +52,7 @@ export default function HeaderContainer() {
             onClickBasket={onClickBasket}
             myData={myData}
             onClickLogOut={onClickLogOut}
+            baskets={baskets}
         />
     );
 }

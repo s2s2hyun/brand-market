@@ -92,8 +92,12 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                         </S.Tags>
                         <S.SubDivider />
                         <S.ButtonWrapper>
-                            <S.BuyButton>BUY NOW</S.BuyButton>
-                            <S.ShoppingBag>SHOPPING BAG</S.ShoppingBag>
+                            <S.BuyButton type="button" onClick={props.onClickBuyBrand}>
+                                BUY NOW
+                            </S.BuyButton>
+                            <S.ShoppingBag type="button" onClick={props.onClickBasket(props.data)}>
+                                SHOPPING BAG
+                            </S.ShoppingBag>
                             {props.isMy && (
                                 <>
                                     <S.DelteButton type="button" onClick={onToggleModal}>

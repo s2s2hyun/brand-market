@@ -10,6 +10,7 @@ import {
     FETCH_USER_LOGGED_IN,
     TOGGLE_USEDITEM_PICK,
     LOGIN_USER_FOR_DELETE,
+    CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
 } from "./BrandDetail.queries";
 
 export default function BrandDetail() {
@@ -21,7 +22,9 @@ export default function BrandDetail() {
             variables: { useditemId: String(router.query.brandId) },
         }
     );
-
+    const [createPointTransactionOfBuyingAndSelling] = useMutation(
+        CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING
+    );
     const [deleteProduct] = useMutation(DELETE_PRODUCT);
     const [toggleUsedItemPick] = useMutation(TOGGLE_USEDITEM_PICK);
     const [loginUserForDelete] = useMutation(LOGIN_USER_FOR_DELETE);
@@ -103,6 +106,40 @@ export default function BrandDetail() {
         }
     };
 
+    //  장바구니
+    const onClickBasket = (el: any) => () => {
+        console.log(el);
+
+        // 1. 기존 장바구니 가져오기
+        const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
+
+        // 2. 이미 담겼는지 확인하기
+
+        const temp = baskets.filter(
+            (basketEl: any) => basketEl.fetchUseditem._id === el.fetchUseditem._id
+        );
+        if (temp.length === 1) {
+            alert("이미 담은 물품입니다");
+            return;
+        }
+        // 3. 장바구니 담기
+        const { __typename, ...newEl } = el;
+        baskets.push(newEl);
+        localStorage.setItem("baskets", JSON.stringify(baskets));
+    };
+
+    // 구매하기
+
+    const onClickBuyBrand = async () => {
+        try {
+            await createPointTransactionOfBuyingAndSelling({
+                variables: { useritemId: router.query.productId },
+            });
+        } catch (error: any) {
+            alert(error.message);
+        }
+    };
+
     return (
         <BrandDetailUI
             onClickDelete={onClickDelete}
@@ -120,6 +157,8 @@ export default function BrandDetail() {
             onClickRoutingBrandModal={onClickRoutingBrandModal}
             go={go}
             isMy={data?.fetchUseditem?.seller?._id === userData?.fetchUserLoggedIn?._id}
+            onClickBasket={onClickBasket}
+            onClickBuyBrand={onClickBuyBrand}
         />
     );
 }

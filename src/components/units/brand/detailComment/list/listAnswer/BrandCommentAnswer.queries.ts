@@ -5,24 +5,11 @@ export const FETCH_BRAND_COMMENTS_ANSWERS = gql`
         fetchUseditemQuestionAnswers(page: $page, useditemQuestionId: $useditemQuestionId) {
             _id
             contents
-            useditemQuestion {
-                _id
-                contents
-                useditem
-                user
-
-                createdAt
-                updatedAt
-            }
             user {
                 _id
-                email
                 name
-                createdAt
-                updatedAt
             }
             createdAt
-            updatedAt
         }
     }
 `;
@@ -38,15 +25,7 @@ export const BRAND_COMMENTS_ANSWERS_CREATE = gql`
         ) {
             _id
             contents
-            useditemQuestion {
-                _id
-                contents
-                useditem {
-                    _id
-                    name
-                    remarks
-                }
-            }
+
             user
             createdAt
         }

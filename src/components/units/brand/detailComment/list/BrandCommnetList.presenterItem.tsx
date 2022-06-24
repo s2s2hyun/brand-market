@@ -21,8 +21,8 @@ import BrandCommentAnswerWrite from "./listAnswerWrite/BrandCommentAnswerWrite.c
 
 export default function BrandCommentListUIItem(props: IBrandCommentListUIItemProps) {
     const router = useRouter();
-    const [isEdit, setIsEdit] = useState("");
-    const [isNewComment, setIsNewComment] = useState("");
+    const [isEdit, setIsEdit] = useState(false);
+    const [isNewComment, setIsNewComment] = useState(false);
     const [modalPassword, setModalPassword] = useState("");
     const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
     const [loginUserForDelete] = useMutation(LOGIN_USER_FOR_DELETE);
@@ -42,11 +42,11 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
     const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
 
     const onClickUpdate = () => {
-        setIsEdit(true);
+        setIsEdit((prev) => !prev);
     };
 
     const onClickComentWrite = () => {
-        setIsNewComment(true);
+        setIsNewComment((prev) => !prev);
     };
 
     // 얼럿모달
@@ -123,7 +123,6 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
     const onChangePassword = (event: any) => {
         setModalPassword(event?.target.value);
     };
-    console.log(props.el.user._id, "데이터");
     return (
         <>
             {alertModal && (
@@ -138,6 +137,7 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                     <input type="password" maxLength={20} onChange={onChangePassword} />
                 </Modal>
             )}
+            {/* <CommentAnswerList /> */}
 
             {!isEdit && !isNewComment && (
                 <S.ItemWrapper>
@@ -183,13 +183,17 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                     isEdit={true}
                     setIsEdit={setIsEdit}
                     el={props.el}
-                    isOpenDeleteModal={isOpenDeleteModal}
+                    isOpenDeleteModal={props.isOpenDeleteModal}
                 />
             )}
             {isNewComment && (
-                <BrandCommentAnswerWrite isNewComment={true} setIsNewComment={setIsNewComment} />
+                <BrandCommentAnswerWrite
+                    isNewComment={true}
+                    setIsNewComment={setIsNewComment}
+                    elAnswer={props.el}
+                />
             )}
-            <CommentAnswerList />
+            <CommentAnswerList el={props.el} commentId={""} />
         </>
     );
 }

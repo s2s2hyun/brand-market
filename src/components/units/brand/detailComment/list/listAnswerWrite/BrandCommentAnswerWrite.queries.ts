@@ -11,19 +11,6 @@ export const BRAND_COMMENTS_ANSWERS_CREATE = gql`
         ) {
             _id
             contents
-            useditemQuestion {
-                _id
-                contents
-
-                useditem {
-                    _id
-                    remarks
-                }
-                user
-                _id
-                name
-                createdAt
-            }
         }
     }
 `;
@@ -44,8 +31,6 @@ export const BRAND_COMMENTS_ANSWERS_UPDATE = gql`
             useditemQuestionAnswerId: $useditemQuestionAnswerId
         ) {
             _id
-            contents
-            useditemQuestion
         }
     }
 `;
