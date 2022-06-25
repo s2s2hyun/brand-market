@@ -11,8 +11,8 @@ export default function Uploads01UI(props: IUploads01UIProps) {
                 />
             ) : (
                 <UploadButton type="button" onClick={props.onClickUpload}>
-                    <>+</>
-                    <>Upload</>
+                    <span>+</span>
+                    <span>Upload</span>
                 </UploadButton>
             )}
             <UploadFileHidden type="file" ref={props.fileRef} onChange={props.onChangeFile} />

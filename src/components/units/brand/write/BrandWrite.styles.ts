@@ -253,8 +253,29 @@ export const BrandPhoto = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+    display: flex;
     margin-left: 134px;
     margin-bottom: 76px;
+    position: relative;
+`;
+
+export const UploadWrapper = styled.div`
+    margin-right: 24px;
+    position: relative;
+    width: 180px;
+    height: 180px;
+
+    button:last-of-type {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:last-of-type {
+        button:last-of-type {
+            display: none;
+        }
+    }
 `;
 
 export const ButtonWrapper = styled.div`

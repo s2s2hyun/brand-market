@@ -49,7 +49,6 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             type="text"
                             {...props.register("name")}
                             placeholder="상품명을 입력해주세요"
-                            defaultValue={props.data?.name || ""}
                         ></S.BrandInput>
                     </S.BrandNameWarpper>
                     <S.BrandDivderLine />
@@ -59,7 +58,6 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             type="text"
                             {...props.register("remarks")}
                             placeholder="상품을 요약 해주세요"
-                            defaultValue={props.data?.remarks || ""}
                         ></S.BrandInput>
                     </S.BrandRemarkWrapper>
                     <S.BrandDivderLine />
@@ -74,7 +72,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             }}
                             onChange={props.onChangeContents}
                             placeholder="상품을 설명해주세요"
-                            defaultValue={props.getValues("contents") || ""}
+                            value={props.getValues("contents") || ""}
                         />
                     </S.BrandContentsWrapper>
                     <S.BrandDivderLine />
@@ -84,7 +82,6 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             type="number"
                             {...props.register("price")}
                             placeholder="판매가격을 입력해주세요"
-                            defaultValue={props.data?.price || ""}
                         ></S.BrandInput>
                     </S.BrandPriceWrapper>
                     <S.BrandDivderLine />
@@ -96,11 +93,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                                     <>
                                         <span key={idx}>{el}</span>
 
-                                        <button
-                                            type="button"
-                                            id={idx}
-                                            onClick={props.onClickDeleteHash}
-                                        >
+                                        <button type="button" onClick={props.onClickDeleteHash(el)}>
                                             X
                                         </button>
                                     </>
@@ -109,20 +102,15 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             <S.BrandInput
                                 type="text"
                                 placeholder="#태그 #태그 #태그"
-                                // {...props.register("tags")}
                                 onKeyUp={props.onKeyUpHash}
-                                defaultValue={props.data?.tags[0] || ""}
                             ></S.BrandInput>
                         </S.BrandTagInnerWrapper>
                     </S.BrandTagWrapper>
                     <S.BrandDivderLine />s<S.BrandMap>브랜드 위치</S.BrandMap>
                     <S.MapWrapper>
+                        {console.log(props.data?.fetchUseditem?.useditemAddress.address)}
                         <KakaoMapPage
-                            address={
-                                props.address ||
-                                props.data?.fetchUseditem?.useditemAddress.address ||
-                                ""
-                            }
+                            address={props.address || props.data?.useditemAddress.address || ""}
                             width={384}
                             height={252}
                         />
@@ -134,9 +122,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                                     placeholder="07250"
                                     readOnly
                                     value={
-                                        props.zipcode ||
-                                        props.data?.fetchUseditem?.useditemAddress.zipcode ||
-                                        ""
+                                        props.zipcode || props.data?.useditemAddress.zipcode || ""
                                     }
                                 />
                                 <S.SearchButton type="button" onClick={props.showModal}>
@@ -157,11 +143,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             <S.MapInput
                                 id="address"
                                 readOnly
-                                value={
-                                    props.address ||
-                                    props.data?.fetchUseditem?.useditemAddress.address ||
-                                    ""
-                                }
+                                value={props.address || props.data?.useditemAddress.address || ""}
                             />
                             <S.Input
                                 id="addressDetail"
@@ -177,20 +159,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                         {props.fileUrls.map((el: string, index: number) => {
                             if (index === 0)
                                 return (
-                                    <>
-                                        <Uploads01
-                                            type="upload"
-                                            key={uuidv4()}
-                                            index={index}
-                                            fileUrl={el}
-                                            onChangeFileUrls={props.onChangeFileUrls}
-                                        />
-                                        <button onClick={props.onClickImageDelete(index)}>X</button>
-                                    </>
-                                );
-                            if (index !== 0 && props.fileUrls[index - 1] !== "")
-                                return (
-                                    <>
+                                    <S.UploadWrapper>
                                         <Uploads01
                                             type="upload"
                                             key={uuidv4()}
@@ -204,7 +173,25 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                                         >
                                             X
                                         </button>
-                                    </>
+                                    </S.UploadWrapper>
+                                );
+                            if (index !== 0 && props.fileUrls[index - 1] !== "")
+                                return (
+                                    <S.UploadWrapper>
+                                        <Uploads01
+                                            type="upload"
+                                            key={uuidv4()}
+                                            index={index}
+                                            fileUrl={el}
+                                            onChangeFileUrls={props.onChangeFileUrls}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={props.onClickImageDelete(index)}
+                                        >
+                                            X
+                                        </button>
+                                    </S.UploadWrapper>
                                 );
                         })}
                     </S.ImageWrapper>

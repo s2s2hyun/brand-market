@@ -30,7 +30,7 @@ const schema = yup.object({
 const editSchema = yup.object({
     name: yup.string(),
     remarks: yup.string(),
-    contents: yup.string(),
+    // contents: yup.string(),
     price: yup.string(),
     addressDetail: yup.string(),
 });
@@ -58,12 +58,11 @@ export default function BrandWriteContainer(props: any) {
     //     }
     // );
 
-    const { handleSubmit, register, setValue, trigger, getValues, formState } = useForm<FormValues>(
-        {
+    const { handleSubmit, register, setValue, trigger, getValues, formState, reset } =
+        useForm<FormValues>({
             resolver: yupResolver(props.isEdit ? editSchema : schema),
             mode: "onChange",
-        }
-    );
+        });
     // 주소 State
     const [address, setAddress] = useState("");
     const [zipcode, setZipcode] = useState("");
@@ -86,12 +85,6 @@ export default function BrandWriteContainer(props: any) {
         setFileUrls(newFileUrls);
     };
 
-    useEffect(() => {
-        if (props.data?.images?.length) {
-            setFileUrls([...props.data?.images]);
-        }
-    }, [props.data]);
-
     const onChangeTags = (event: ChangeEvent<HTMLInputElement>) => {
         const tagArr = event.target.value.split(" ");
         setHashArr(tagArr);
@@ -103,9 +96,8 @@ export default function BrandWriteContainer(props: any) {
     //     setHashArr(newTagarr);
     // };
 
-    const onClickDeleteHash = (event: any) => {
-        hashArr.splice(Number(event.target.id), 1);
-        setHashArr([...hashArr]);
+    const onClickDeleteHash = (value: string) => () => {
+        setHashArr([...hashArr.filter((el) => el !== value)]);
     };
 
     // 해쉬태그
@@ -236,6 +228,21 @@ export default function BrandWriteContainer(props: any) {
         }
     };
 
+    useEffect(() => {
+        if (!props.data) return;
+        if (props.data?.images?.length) {
+            setFileUrls([...props.data?.images]);
+        }
+        reset({
+            contents: props.data?.contents,
+            detailAddress: props.data?.useditemAddress.addressDetail,
+            price: props.data?.price,
+            name: props.data?.name,
+            remarks: props.data?.remarks,
+        });
+        setHashArr(props.data?.tags);
+    }, [props.data]);
+
     return (
         <BrandWriteUI
             setValue={setValue}
@@ -267,8 +274,8 @@ export default function BrandWriteContainer(props: any) {
             onClickUpdate={onClickUpdate}
             address={address}
             zipcode={zipcode}
-            data={undefined}
-            isEdit={false}
+            data={props.data}
+            isEdit={props.isEdit}
             onClickImageDelete={onClickImageDelete}
             onClickDeleteHash={onClickDeleteHash}
         />
