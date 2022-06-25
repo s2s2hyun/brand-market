@@ -1,13 +1,14 @@
 import { Useditem } from "../../../../../commons/types/generated/types";
 import * as S from "./BrandListBest.styles";
 import { IBrandListBestUIProps } from "./BrandListBest.types";
-
+const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 export default function BrandListBestUI(props: IBrandListBestUIProps) {
     return (
         <S.Wrapper>
             <S.BestWrapper>
                 <S.Best>BEST</S.Best>
                 <S.BestList>
+                    {console.log(props.data?.fetchUseditemsOfTheBest)}
                     {props.data?.fetchUseditemsOfTheBest.map((el: Useditem) => (
                         <S.ItemBestWrapper
                             key={el._id}
@@ -17,7 +18,7 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
                             <S.BestPicture
                                 src={
                                     el.images?.length > 0 && el.images?.[0] !== ""
-                                        ? `https://storage.googleapis.com/${el.images?.[0]}`
+                                        ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
                                         : `/images/dingCoLogo.png`
                                 }
                             />

@@ -1,4 +1,4 @@
-import { Query } from "../../../../commons/types/generated/types";
+import { Query, Useditem } from "../../../../commons/types/generated/types";
 
 export interface IBrandDetailUI {
     onClickPick: () => Promise<void>;

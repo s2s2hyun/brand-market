@@ -17,6 +17,7 @@ export const Best = styled.div`
     line-height: 100%;
     color: #000000;
     margin-top: 73px;
+    margin-bottom: 86px;
 `;
 
 export const BestList = styled.div`

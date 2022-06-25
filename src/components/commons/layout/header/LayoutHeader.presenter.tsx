@@ -41,7 +41,7 @@ export default function HeaderUI(props: ILayoutHeaderUIProps) {
                         </S.UserInfo>
                     )}
                     <S.BasketWrapper>
-                        <S.Basket>장바구니</S.Basket>
+                        <S.Basket onClick={props.onClickBasket}>장바구니</S.Basket>
                         <S.BasketCount>{props.baskets}</S.BasketCount>
                     </S.BasketWrapper>
                 </S.OptionWrapper>
