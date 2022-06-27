@@ -30,7 +30,6 @@ const schema = yup.object({
 const editSchema = yup.object({
     name: yup.string(),
     remarks: yup.string(),
-    // contents: yup.string(),
     price: yup.string(),
     addressDetail: yup.string(),
 });
@@ -49,14 +48,6 @@ export default function BrandWriteContainer(props: any) {
 
     const [createUseditem] = useMutation(CREAT_PRODUCT_ITEM);
     const [updateUseditem] = useMutation(UPDATE_PRODUCT_ITEM);
-    // const { data } = useQuery<Pick<Query, "fetchUseditem">, QueryFetchUseditemArgs>(
-    //     FETCH_USEDITEM,
-    //     {
-    //         variables: {
-    //             useditemId: String(router.query._id),
-    //         },
-    //     }
-    // );
 
     const { handleSubmit, register, setValue, trigger, getValues, formState, reset } =
         useForm<FormValues>({
@@ -90,23 +81,10 @@ export default function BrandWriteContainer(props: any) {
         setHashArr(tagArr);
     };
 
-    // const onClickHatagDelete = (event: MouseEventHandler<HTMLButtonElement>, index: number) => {
-    //     const newTagarr = event.target.value.split(" ");
-    //     newTagarr.splice(index, 1);
-    //     setHashArr(newTagarr);
-    // };
-
     const onClickDeleteHash = (value: string) => () => {
         setHashArr([...hashArr.filter((el) => el !== value)]);
     };
 
-    // 해쉬태그
-    // const onKeyUpHash = (event: { keyCode: number; target: { value: string } }) => {
-    //     if (event.keyCode === 32 && event.target.value !== " ") {
-    //         setHashArr([...hashArr, "#" + event.target.value.trim()]);
-    //         event.target.value = "";
-    //     }
-    // };
     const onKeyUpHash = (event: any) => {
         if (event.keyCode === 32 && event.target.value !== " ") {
             setHashArr([...hashArr, "#" + event.target.value]);
@@ -195,7 +173,7 @@ export default function BrandWriteContainer(props: any) {
         }
     };
 
-    const onClickUpdate = async (data: UpdateUseditemInput) => {
+    const onClickUpdate = async (data: any) => {
         const currentFiles = fileUrls;
         const defaultFiles = data?.images;
         const isChangedFiles = currentFiles !== defaultFiles;
@@ -208,14 +186,20 @@ export default function BrandWriteContainer(props: any) {
         try {
             await updateUseditem({
                 variables: {
-                    ...data,
-                    tags: hashArr,
-                    images: fileUrls,
-                    useditemAddress: {
-                        zipcode: zipcode,
-                        address: address,
-                        addressDetail: data.useditemAddress?.addressDetail,
+                    updateUseditemInput: {
+                        name: data.name,
+                        remarks: data.remarks,
+                        contents: data.contents,
+                        price: Number(data.price),
+                        tags: hashArr,
+                        images: fileUrls,
+                        useditemAddress: {
+                            zipcode: zipcode,
+                            address: address,
+                            addressDetail: data.detailAddress,
+                        },
                     },
+                    useditemId: String(router.query.brandId),
                 },
             });
             setModalContents("상품 수정에 성공하였습니다.");

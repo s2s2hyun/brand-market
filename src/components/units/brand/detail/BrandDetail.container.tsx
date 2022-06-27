@@ -2,6 +2,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { setgroups } from "process";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { basketsState } from "../../../../commons/store";
 import { Query, QueryFetchUseditemArgs } from "../../../../commons/types/generated/types";
 import BrandDetailUI from "./BrandDetail.presenter";
 import {
@@ -36,6 +38,10 @@ export default function BrandDetail() {
     const [modalContents, setModalContents] = useState("");
     const [errorAlertModal, setErrorAlertModal] = useState(false);
     const [go, setGo] = useState(false);
+
+    // basketsState
+    const [globalbaskets, setGlobalBaskets] = useRecoilState(basketsState);
+
     const onClickExitAlertModal = () => {
         setAlertModal(false);
     };
@@ -126,6 +132,7 @@ export default function BrandDetail() {
         const { __typename, ...newEl } = el;
         baskets.push(newEl);
         localStorage.setItem("baskets", JSON.stringify(baskets));
+        setGlobalBaskets(baskets.length);
     };
 
     // 구매하기
@@ -134,6 +141,11 @@ export default function BrandDetail() {
         try {
             await createPointTransactionOfBuyingAndSelling({
                 variables: { useritemId: router?.query.brandId },
+                refetchQueries: [
+                    {
+                        query: FETCH_USER_LOGGED_IN,
+                    },
+                ],
             });
             alert("상품구매");
         } catch (error: any) {

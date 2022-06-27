@@ -55,7 +55,7 @@ export default function CommentAnswerListUIItem(props: ICommentAnswerListUIItemP
                 refetchQueries: [
                     {
                         query: FETCH_BRAND_COMMENTS,
-                        variables: { useditemId: String(router.query.productId) },
+                        variables: { useditemId: String(router.query.brandId) },
                     },
                 ],
             });
@@ -82,7 +82,7 @@ export default function CommentAnswerListUIItem(props: ICommentAnswerListUIItemP
                 refetchQueries: [
                     {
                         query: FETCH_BRAND_COMMENTS,
-                        variables: { useditemId: String(router.query.productId) },
+                        variables: { useditemId: String(router.query.brandId) },
                     },
                 ],
             });

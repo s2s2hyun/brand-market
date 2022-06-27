@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { getAccessToken } from "../../../commons/libraries/getAccessToken.ts/getAccessToken";
-import { accessTokenState } from "../../../commons/store/index";
+import { getAccessToken } from "../../../../commons/libraries/getAccessToken.ts/getAccessToken";
+import { accessTokenState } from "../../../../commons/store";
 
 export function useAuth() {
     const router = useRouter();

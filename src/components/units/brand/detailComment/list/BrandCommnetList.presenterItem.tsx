@@ -77,7 +77,7 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                 refetchQueries: [
                     {
                         query: FETCH_BRAND_COMMENTS,
-                        variables: { useditemId: String(router.query.productId) },
+                        variables: { useditemId: String(router.query.brandId) },
                     },
                 ],
             });
@@ -108,7 +108,7 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                 refetchQueries: [
                     {
                         query: FETCH_BRAND_COMMENTS,
-                        variables: { useditemId: String(router.query.productId) },
+                        variables: { useditemId: String(router.query.brandId) },
                     },
                 ],
             });

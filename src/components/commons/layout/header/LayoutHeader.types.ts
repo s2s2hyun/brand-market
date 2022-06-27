@@ -7,6 +7,5 @@ export interface ILayoutHeaderUIProps {
     onClickBasket: () => void;
     myData: { fetchUserLoggedIn: User } | undefined;
     onClickLogOut: () => void;
-    // data: Pick<Query, "fetchUseditemsIPicked">;
-    baskets: never[];
+    globalbaskets: never[];
 }

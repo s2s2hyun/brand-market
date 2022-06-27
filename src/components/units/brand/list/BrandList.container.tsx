@@ -18,19 +18,22 @@ export default function BrandList() {
     };
 
     const [keyword, setKeyword] = useState("");
+    const [loadingMessage, setLoadingMessage] = useState("");
 
     const getDebounce = _.debounce((data) => {
         refetch({ search: data, page: 1 });
         setKeyword(data);
-    }, 200);
+        setLoadingMessage("검색 결과가 없습니다 ...");
+    }, 500);
 
     const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.value);
         getDebounce(event.target.value);
+        setLoadingMessage;
     };
 
     const onLoadMore = () => {
-        if (!data) return;
+        if (data === undefined) return;
 
         fetchMore({
             variables: { page: Math.ceil(data?.fetchUseditems.length / 10) + 1 },
@@ -58,6 +61,7 @@ export default function BrandList() {
             onChangeSearch={onChangeSearch}
             isMatched={false}
             onClickMoveToBrandDetail={onClickMoveToBrandDetail}
+            loadingMessage={loadingMessage}
         />
     );
 }

@@ -9,6 +9,7 @@ import BrandCommentList from "../detailComment/list/BrandCommnetList.container";
 import KakaoMapPage from "../../../commons/map/kakaoMap.container";
 import Alert from "../../../commons/modal/alert/alert";
 import ErrorAlert from "../../../commons/modal/errorModal/errorAlert";
+import { useAuth } from "../../../commons/hocs/useAuth";
 
 export default function BrandDetailUI(props: IBrandDetailUI) {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
     // const onClickPicked = () => {
     //     setIsPicked((prev) => !prev);
     // };
-
+    useAuth();
     return (
         <>
             {props.alertModal && (

@@ -8,12 +8,13 @@ export interface IBrandListUIProps {
     data: any;
 
     onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
-    onLoadMore: (page: number) => void;
+    onLoadMore: () => void;
     onClickMoveToNew: () => void;
     keyword: string;
     setKeyword: Function;
     isMatched: boolean;
     onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
+    loadingMessage: string;
 }
 
 export interface IProps {

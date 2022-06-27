@@ -88,7 +88,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
                     {
                         query: FETCH_BRAND_COMMENTS,
                         variables: {
-                            useditemId: String(router.query.productId),
+                            useditemId: String(router.query.brandId),
                         },
                     },
                 ],
