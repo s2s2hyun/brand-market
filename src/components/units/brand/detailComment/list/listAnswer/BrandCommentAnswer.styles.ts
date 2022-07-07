@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Answer = styled.div``;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.section``;
 
 export const DividerWrapper = styled.div`
     display: flex;
@@ -14,6 +14,10 @@ export const AnswerCommentDivider = styled.div`
     border: 1px dashed #c0c0c0;
     margin-bottom: 30px;
     margin-top: 30px;
+`;
+
+export const AnswerCommentWrapper = styled.article`
+    margin-left: 200px;
 `;
 
 export const AnswerComment = styled.div`
@@ -58,10 +62,6 @@ export const AnswerContents = styled.div`
     letter-spacing: -0.05em;
 
     color: #000000;
-`;
-
-export const AnswerCommentWrapper = styled.div`
-    margin-left: 200px;
 `;
 
 export const AnswerInfo = styled.div``;

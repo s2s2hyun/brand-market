@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div``;
 
-export const BestWrapper = styled.div`
+export const BestWrapper = styled.section`
     height: 90%;
     width: 90%;
     display: flex;
@@ -20,11 +20,11 @@ export const Best = styled.div`
     margin-bottom: 86px;
 `;
 
-export const BestList = styled.div`
+export const BestList = styled.article`
     display: flex;
 `;
 
-export const ItemBestWrapper = styled.div`
+export const ItemBestWrapper = styled.article`
     margin-right: 116px;
     cursor: pointer;
 `;
@@ -34,13 +34,13 @@ export const BestPicture = styled.img`
     height: 466px;
 `;
 
-export const SellerProduct = styled.div`
+export const SellerProduct = styled.article`
     display: flex;
     margin-top: 18px;
     padding-left: 20px;
 `;
 
-export const BestName = styled.div`
+export const BestName = styled.p`
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
@@ -50,7 +50,7 @@ export const BestName = styled.div`
     color: #555555;
 `;
 
-export const BestPrice = styled.div`
+export const BestPrice = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -59,7 +59,7 @@ export const BestPrice = styled.div`
     color: #000000;
 `;
 
-export const BestTag = styled.div`
+export const BestTag = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -68,7 +68,7 @@ export const BestTag = styled.div`
     color: #f65656;
 `;
 
-export const BestRemark = styled.div`
+export const BestRemark = styled.p`
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;

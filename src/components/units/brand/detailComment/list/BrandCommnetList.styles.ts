@@ -6,12 +6,12 @@ export const Scroll = styled.div`
 
 export const Wrapper = styled.div``;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.section`
     width: 100%;
     height: 100%;
 `;
 
-export const CommentWrapper = styled.div``;
+export const CommentWrapper = styled.article``;
 
 export const CommentDivider = styled.div`
     width: 100%;

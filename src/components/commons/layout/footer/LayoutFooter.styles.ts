@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
     width: 100%;
     height: 317px;
     background: #f1f1f1;
@@ -24,7 +24,7 @@ export const Company = styled.div`
     margin-bottom: 11px;
 `;
 
-export const CompanyD = styled.div`
+export const CompanyD = styled.p`
     margin-right: 90px;
     font-size: 10px;
     line-height: 100%;
@@ -32,7 +32,7 @@ export const CompanyD = styled.div`
     color: #000000;
 `;
 
-export const Name = styled.div`
+export const Name = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -40,17 +40,7 @@ export const Name = styled.div`
     color: #000000;
 `;
 
-export const Buisness = styled.div`
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-    margin-left: 127px;
-    margin-bottom: 11px;
-`;
-
-export const Address = styled.div`
+export const Buisness = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -60,7 +50,17 @@ export const Address = styled.div`
     margin-bottom: 11px;
 `;
 
-export const Academy = styled.div`
+export const Address = styled.p`
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #000000;
+    margin-left: 127px;
+    margin-bottom: 11px;
+`;
+
+export const Academy = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -76,7 +76,7 @@ export const Law = styled.div`
     margin-bottom: 11px;
 `;
 
-export const Solo = styled.div`
+export const Solo = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -85,7 +85,7 @@ export const Solo = styled.div`
     margin-right: 15px;
 `;
 
-export const Service = styled.div`
+export const Service = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;
@@ -93,7 +93,7 @@ export const Service = styled.div`
     color: #000000;
 `;
 
-export const Corp = styled.div`
+export const Corp = styled.p`
     font-weight: 400;
     font-size: 10px;
     line-height: 100%;

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { IProps } from "./BrandList.types";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     width: 100%;
     height: 100%;
 `;
@@ -66,7 +66,7 @@ export const Divider = styled.div`
     margin-left: 82.5px;
 `;
 
-export const ListWrapper = styled.div`
+export const ListWrapper = styled.article`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -74,7 +74,7 @@ export const ListWrapper = styled.div`
     margin-bottom: 116px;
 `;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.article`
     width: 348px;
     height: 560px;
     margin-right: 116px;
@@ -91,17 +91,16 @@ export const Picture = styled.img`
     background: #c4c4c4;
 `;
 
-export const Name = styled.div`
+export const Name = styled.p`
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: -0.05em;
-    padding-top: 13px;
     padding-left: 20px;
     color: #555555;
 `;
 
-export const Price = styled.div`
+export const Price = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -110,7 +109,7 @@ export const Price = styled.div`
     color: #000000;
 `;
 
-export const MainList = styled.div`
+export const MainList = styled.article`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -125,7 +124,7 @@ export const SellerProduct = styled.div`
     padding-left: 20px;
 `;
 
-export const BestTag = styled.div`
+export const BestTag = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -134,11 +133,10 @@ export const BestTag = styled.div`
     color: #f65656;
 `;
 
-export const Remark = styled.div`
+export const Remark = styled.p`
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
-    padding-top: 13px;
     padding-left: 20px;
     color: #555555;
     white-space: nowrap;

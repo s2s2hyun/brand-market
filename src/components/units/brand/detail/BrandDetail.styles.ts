@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     width: 90%;
     height: 100%;
 `;
 
-export const TopWrapper = styled.div`
+export const TopWrapper = styled.article`
     display: flex;
 `;
 
-export const LeftTopWrapper = styled.div`
+export const LeftTopWrapper = styled.article`
     margin-right: 58px;
 `;
 
@@ -35,7 +35,7 @@ export const AVANDRESS = styled.div`
     color: #000000;
 `;
 
-export const Name = styled.div`
+export const Name = styled.h3`
     font-weight: 700;
     font-size: 40px;
     line-height: 100%;
@@ -103,7 +103,7 @@ export const Heart = styled.div`
     padding-left: 11px;
 `;
 
-export const Remark = styled.div`
+export const Remark = styled.p`
     font-weight: 500;
     font-size: 20px;
     line-height: 100%;
@@ -114,11 +114,11 @@ export const Remark = styled.div`
 
 export const Tags = styled.div``;
 
-export const BrandTags = styled.div`
+export const BrandTags = styled.h3`
     display: flex;
 `;
 
-export const ProductHashTag = styled.div`
+export const ProductHashTag = styled.h3`
     font-weight: 500;
     font-size: 16px;
     line-height: 23px;
@@ -209,9 +209,9 @@ export const ThreeDivider = styled.div`
     border: 3px solid #555555;
     margin-top: 24px;
 `;
-export const BottomWrapper = styled.div``;
+export const BottomWrapper = styled.article``;
 
-export const ImageBottomWrapper = styled.div`
+export const ImageBottomWrapper = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,7 +226,7 @@ export const ContentsWrapper = styled.div`
     flex-direction: column;
 `;
 
-export const ContentsTitle = styled.div`
+export const ContentsTitle = styled.h3`
     font-weight: 700;
     font-size: 32px;
     line-height: 100%;
@@ -235,7 +235,7 @@ export const ContentsTitle = styled.div`
     color: #000000;
 `;
 
-export const Contents = styled.div`
+export const Contents = styled.p`
     font-weight: 400;
     font-size: 24px;
     line-height: 100%;
@@ -244,20 +244,20 @@ export const Contents = styled.div`
     color: #000000;
 `;
 
-export const DeliveryNoteWrapper = styled.div`
+export const DeliveryNoteWrapper = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-export const DeliveryNote = styled.div`
+export const DeliveryNote = styled.h3`
     padding-left: 100px;
     padding-bottom: 20px;
     font-weight: 700;
     font-size: 32px;
     line-height: 100%;
 `;
-export const DeliveryNoteContent = styled.div`
+export const DeliveryNoteContent = styled.p`
     padding-left: 100px;
     font-weight: 400;
     font-size: 24px;

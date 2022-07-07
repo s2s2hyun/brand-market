@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     height: 100%;
 `;
 
-export const ListWrapper = styled.div`
+export const ListWrapper = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -21,7 +21,7 @@ export const NewArrival = styled.div`
     padding-bottom: 98px;
 `;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.article`
     width: 348px;
     height: 560px;
     margin-right: 116px;
@@ -41,7 +41,7 @@ export const SellerProduct = styled.div`
     padding-left: 20px;
 `;
 
-export const Price = styled.div`
+export const Price = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -50,7 +50,7 @@ export const Price = styled.div`
     color: #000000;
 `;
 
-export const BestTag = styled.div`
+export const BestTag = styled.h3`
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -59,7 +59,7 @@ export const BestTag = styled.div`
     color: #f65656;
 `;
 
-export const Name = styled.div`
+export const Name = styled.p`
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
@@ -69,7 +69,7 @@ export const Name = styled.div`
     color: #555555;
 `;
 
-export const Remark = styled.div`
+export const Remark = styled.p`
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -81,7 +81,7 @@ export const Remark = styled.div`
     text-overflow: ellipsis;
 `;
 
-export const MainList = styled.div`
+export const MainList = styled.article`
     width: 100%;
     height: 80%;
 `;
