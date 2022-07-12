@@ -57,6 +57,10 @@ export default function LoginContainer() {
         router.push("/");
     };
 
+    const onClickSignup = () => {
+        router.push("/signup");
+    };
+
     const onClickLogin = async (data: MutationLoginUserArgs) => {
         try {
             const result = await login({
@@ -90,6 +94,7 @@ export default function LoginContainer() {
             go={go}
             onClickconfirmModal={onClickconfirmModal}
             onClickRoutingModal={onClickRoutingModal}
+            onClickSignup={onClickSignup}
         />
     );
 }

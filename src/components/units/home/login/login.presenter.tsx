@@ -19,34 +19,37 @@ export default function LoginUI(props: ILoginUIProps) {
                 />
             )}
             <S.Wrapper>
-                <S.Login>LOGIN</S.Login>
-                <S.Divider />
                 <S.LoginForm
                     onSubmit={props.handleSubmit(props.onClickLogin as unknown as () => void)}
                 >
-                    <S.LoginWrapperCenter>
+                    <S.LoginPageWrapper>
+                        <S.PictureWrapper>
+                            <S.LoginPicture src="/images/loginpage.png" />
+                        </S.PictureWrapper>
                         <S.LoginWrapper>
-                            <S.IdWrapper>
-                                <S.Id>아이디</S.Id>
-                                <S.LoginInput
+                            <div>Sign in</div>
+                            <S.InputsWrapper>
+                                <div>Email Address</div>
+                                <input
                                     type="text"
                                     placeholder="이메일 아이디를 @까지 정확하게 입력하세요"
                                     {...props.register("email")}
-                                ></S.LoginInput>
-                            </S.IdWrapper>
-                            <S.PwWrapper>
-                                <S.Pw>비밀번호</S.Pw>
-                                <S.LoginInput
+                                />
+                                <div>Password</div>
+                                <input
                                     type="password"
                                     placeholder="영문+숫자 조합 8~16자리를 입력해주세요."
                                     {...props.register("password")}
-                                ></S.LoginInput>
-                            </S.PwWrapper>
+                                />
+                                <button title="로그인" type="submit">
+                                    Login
+                                </button>
+                            </S.InputsWrapper>
+                            <span>
+                                Are you new here? <span onClick={props.onClickSignup}>Sign up</span>
+                            </span>
                         </S.LoginWrapper>
-                        <S.LoginButton title="로그인" type="submit">
-                            로그인
-                        </S.LoginButton>
-                    </S.LoginWrapperCenter>
+                    </S.LoginPageWrapper>
                 </S.LoginForm>
             </S.Wrapper>
         </>

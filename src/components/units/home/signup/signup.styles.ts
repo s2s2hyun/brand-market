@@ -1,131 +1,97 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-export const Join = styled.div`
-    margin-top: 94px;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 100%;
-    color: #000000;
-`;
-
-export const Divider = styled.div`
-    width: 1737.5px;
-    border: 1px solid #555555;
-    margin-top: 114px;
-`;
-
-export const SignupWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    & > div {
-        & > div:first-of-type {
-            min-width: 170px;
-        }
-    }
+    width: 100%;
+    height: 100%;
 `;
 
 export const SignupForm = styled.form``;
 
-export const SignIdWrapper = styled.div`
+export const SignUpPageWrapper = styled.div`
     display: flex;
-    align-items: center;
-    margin-top: 41px;
-    margin-left: 144px;
-`;
-export const Id = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-`;
-export const SignPwWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 31px;
-    margin-left: 144px;
-`;
-export const Password = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
 `;
 
-export const SignPwConfirmWrapper = styled.div`
+export const PictureWrapper = styled.div`
+    background: #ebfcf4;
+    width: 50%;
+`;
+
+export const SignUpPicture = styled.img`
+    width: 846px;
+    height: 775px;
+`;
+
+export const SignUpWrapper = styled.div`
+    width: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 31px;
-    margin-left: 144px;
-`;
-export const PasswordConfirm = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-`;
-export const SignNameWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 31px;
-    margin-left: 144px;
-`;
-export const Name = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-`;
-export const SignInput = styled.input`
-    width: 611px;
-    height: 56px;
-    background: #e9e9e9;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 100%;
-    padding-left: 15px;
-    ::placeholder {
-        color: #a9a9a9;
+    flex-direction: column;
+    & > div:nth-of-type(1) {
+        font-size: 36px;
+        font-weight: 500;
+    }
+
+    button {
+        width: 60%;
+        height: 38.86px;
+        background: #7ebcc3;
+        border-radius: 7px;
+        border: 2px solid #7ebcc3;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #ffffff;
+    }
+    & > button:nth-of-type(1) {
+        margin-bottom: 20.14px;
+    }
+    & > button:nth-of-type(2) {
+        background: #000000;
     }
 `;
 
-export const SignUpButtonWrapper = styled.div`
-    display: flex;
-    margin-top: 68px;
-    margin-bottom: 101px;
-    align-items: center;
-    justify-content: center;
-`;
+export const SignUpInputWrapper = styled.div`
+    width: 70%;
 
-export const CancleButton = styled.button`
-    margin-right: 21px;
-    width: 186px;
-    height: 56px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-`;
+    div {
+        font-size: 16px;
+        font-weight: 500;
+        padding-bottom: 17.63px;
+        padding-top: 17.63px;
+    }
 
-export const SignupButton = styled.button`
-    width: 186px;
-    height: 56px;
-    background: #000000;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #ffffff;
+    input {
+        width: 100%;
+        height: 38.86px;
+        border: 2px solid #7ebcc3;
+        border-radius: 7px;
+    }
+    & > input:nth-of-type(1) {
+        ::placeholder {
+            background-image: url(/images/email.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    }
+
+    & > input:nth-of-type(2) {
+        ::placeholder {
+            background-image: url(/images/password.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    }
+
+    & > input:nth-of-type(3) {
+        ::placeholder {
+            background-image: url(/images/password.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    }
+
+    & > input:nth-of-type(4) {
+        margin-bottom: 57.76px;
+    }
 `;

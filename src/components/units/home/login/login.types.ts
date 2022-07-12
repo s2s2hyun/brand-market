@@ -24,4 +24,5 @@ export interface ILoginUIProps {
     go: boolean;
     onClickconfirmModal: () => void;
     onClickRoutingModal: () => void;
+    onClickSignup: () => void;
 }

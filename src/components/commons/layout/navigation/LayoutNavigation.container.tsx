@@ -12,5 +12,15 @@ export default function NavigationContainer() {
         router.push(`/brand`);
     };
 
-    return <NavigationUI onClickMain={onClickMain} onClickBrand={onClickBrand} />;
+    const onClickBoard = () => {
+        router.push(`/board`);
+    };
+
+    return (
+        <NavigationUI
+            onClickMain={onClickMain}
+            onClickBrand={onClickBrand}
+            onClickBoard={onClickBoard}
+        />
+    );
 }

@@ -17,9 +17,9 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
                         >
                             <S.BestPicture
                                 src={
-                                    el.images?.length > 0 && el.images?.[0] !== ""
-                                        ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
-                                        : `/images/dingCoLogo.png`
+                                    el.images?.length === 0 || el.images?.[0] === ""
+                                        ? `/images/dingCoLogo.png`
+                                        : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
                                 }
                             />
                             {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}

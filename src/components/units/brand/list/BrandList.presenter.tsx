@@ -34,9 +34,9 @@ export default function BrandListUI(props: IBrandListUIProps) {
                                 >
                                     <S.Picture
                                         src={
-                                            el.images?.length > 0 && el.images?.[0] !== ""
-                                                ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
-                                                : `/images/dingCoLogo.png`
+                                            el.images?.length === 0 || el.images?.[0] === ""
+                                                ? `/images/dingCoLogo.png`
+                                                : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
                                         }
                                     />
                                     <S.SellerProduct>
