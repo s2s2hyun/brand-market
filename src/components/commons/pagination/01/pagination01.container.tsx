@@ -5,7 +5,6 @@ import { IPaginations01Props } from "./pagination01.types";
 export default function Paginations01(props: IPaginations01Props) {
     const [startPage, setStartPage] = useState(1);
     const [activedPage, setActivedPage] = useState(1);
-    const lastPage = props.count ? Math.ceil(props.count / 10) : 0;
 
     const onClickPage = (event: MouseEvent<HTMLSpanElement>) => {
         if (!(event.target instanceof Element)) return;
@@ -16,22 +15,22 @@ export default function Paginations01(props: IPaginations01Props) {
 
     const onClickPrevPage = () => {
         if (startPage <= 1) return;
-        setStartPage((prev) => prev - 10);
-        setActivedPage(startPage - 10);
-        props.refetch({ page: startPage - 10 });
+        setStartPage((prev) => prev - 5);
+        setActivedPage(startPage - 5);
+        props.refetch({ page: startPage - 5 });
     };
 
     const onClickNextPage = () => {
-        if (startPage + 10 > lastPage) return;
-        setStartPage((prev) => prev + 10);
-        setActivedPage(startPage + 10);
-        props.refetch({ page: startPage + 10 });
+        if (startPage + 5 > props.lastPage) return;
+        setStartPage((prev) => prev + 5);
+        setActivedPage(startPage + 5);
+        props.refetch({ page: startPage + 5 });
     };
 
     return (
         <Paginations01UI
             startPage={startPage}
-            lastPage={lastPage}
+            lastPage={props.lastPage}
             activedPage={activedPage}
             onClickPage={onClickPage}
             onClickPrevPage={onClickPrevPage}

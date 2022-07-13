@@ -45,7 +45,7 @@ export default function BoardList() {
         // document.getElementById("bbb").value
         if (event.target instanceof Element) router.push(`/boards/${event.currentTarget.id}`);
     };
-    console.log(data);
+
     return (
         <BoardListUI
             data={data}

@@ -177,4 +177,6 @@ export const Pagination = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 102.5px;
+    margin-top: 106px;
 `;
