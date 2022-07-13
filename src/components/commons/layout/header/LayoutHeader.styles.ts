@@ -75,7 +75,7 @@ export const BasketCount = styled.div`
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin-top: 35px;
+    margin-top: 33px;
     margin-right: 60px;
     width: 20px;
     height: 20px;

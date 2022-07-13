@@ -3,20 +3,20 @@ import { ChangeEvent, MouseEvent } from "react";
 import { Board, Query, QueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
 
 export interface IBoardListUIProps {
+    dataBoardsCount: any;
     onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
-    data: {
-        fetchBoards: Array<Board>;
-    };
+    data: any;
     onClickMoveToBoardNew: () => void;
     onClickMoveToBoardDetail: (event: MouseEvent<HTMLDivElement>) => void;
     refetch: (
         variables: Partial<QueryFetchBoardsArgs>
     ) => Promise<ApolloQueryResult<Pick<Query, "fetchBoards">>>;
-    count?: number;
+    count: any;
     keyword: string;
     setKeyword: Function;
-    isMatched: boolean;
+    isMatched: any;
+    // lastPage: number;
 }
-export interface ITextTokenprops {
+export interface IBoardListStyleProps {
     isMatched: boolean;
 }

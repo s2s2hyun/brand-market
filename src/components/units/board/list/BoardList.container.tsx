@@ -1,9 +1,9 @@
-import BoardListUI from "./boardList.presenter";
+import BoardListUI from "./BoardList.presenter";
 import { useQuery } from "@apollo/client";
-import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./boardList.queries";
+import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./BoardList.queries";
 import { useRouter } from "next/router";
 import { ChangeEvent, MouseEvent, useState } from "react";
-import _ from "lodash";
+import _, { isMatch } from "lodash";
 import {
     Query,
     QueryFetchBoardsArgs,
@@ -21,6 +21,7 @@ export default function BoardList() {
     >(FETCH_BOARDS_COUNT);
 
     const [keyword, setKeyword] = useState("");
+    // const lastPage = Math.ceil(dataBoardsCount?.fetchBoardsCount / 10);
 
     const getDebounce = _.debounce((data) => {
         refetch({ search: data, page: 1 });
@@ -55,6 +56,9 @@ export default function BoardList() {
             onChangeSearch={onChangeSearch}
             keyword={keyword}
             setKeyword={setKeyword}
+            // lastPage={lastPage}
+            dataBoardsCount={dataBoardsCount}
+            isMatched={isMatch}
         />
     );
 }
