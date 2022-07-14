@@ -5,19 +5,19 @@ import { useRouter } from "next/router";
 import { ChangeEvent, MouseEvent, useState } from "react";
 import _, { isMatch } from "lodash";
 import {
-    Query,
-    QueryFetchBoardsArgs,
-    QueryFetchBoardsCountArgs,
+    IQuery,
+    IQueryFetchBoardsArgs,
+    IQueryFetchBoardsCountArgs,
 } from "../../../../commons/types/generated/types";
 
 export default function BoardList() {
     const router = useRouter();
-    const { data, refetch } = useQuery<Pick<Query, "fetchBoards">, QueryFetchBoardsArgs>(
+    const { data, refetch } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(
         FETCH_BOARDS
     );
     const { data: dataBoardsCount } = useQuery<
-        Pick<Query, "fetchBoardsCount">,
-        QueryFetchBoardsCountArgs
+        Pick<IQuery, "fetchBoardsCount">,
+        IQueryFetchBoardsCountArgs
     >(FETCH_BOARDS_COUNT);
 
     const [keyword, setKeyword] = useState("");
@@ -43,7 +43,7 @@ export default function BoardList() {
         // event.target.id
 
         // document.getElementById("bbb").value
-        if (event.target instanceof Element) router.push(`/boards/${event.currentTarget.id}`);
+        if (event.target instanceof Element) router.push(`/board/${event.currentTarget.id}`);
     };
 
     return (

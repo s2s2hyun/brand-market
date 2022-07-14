@@ -1,14 +1,14 @@
 import { ApolloQueryResult } from "@apollo/client";
 import { MouseEvent } from "react";
-import { Query, QueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
+import { IQuery, IQueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
 // import { IQuery, IQueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
 
 export interface IPaginations01Props {
     count?: number;
     data?: any;
     refetch: (
-        variables: Partial<QueryFetchBoardsArgs>
-    ) => Promise<ApolloQueryResult<Pick<Query, "fetchBoards">>>;
+        variables: Partial<IQueryFetchBoardsArgs>
+    ) => Promise<ApolloQueryResult<Pick<IQuery, "fetchBoards">>>;
     lastPage: number;
 }
 

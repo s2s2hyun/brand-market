@@ -1,27 +1,31 @@
 import { Dispatch, SetStateAction } from "react";
 import {
     FieldValues,
-    SubmitHandler,
+    FormState,
     UseFormHandleSubmit,
     UseFormRegister,
     UseFormStateReturn,
 } from "react-hook-form";
-import { UseditemQuestion } from "../../../../../commons/types/generated/types";
+import {
+    ICreateUseditemQuestionInput,
+    IUpdateUseditemQuestionInput,
+    IUseditemQuestion,
+} from "../../../../../commons/types/generated/types";
 
 export interface IBrandCommentWriteProps {
     isEdit?: boolean;
     setIsEdit?: Dispatch<SetStateAction<boolean>>;
-    el?: UseditemQuestion;
+    el?: IUseditemQuestion;
 }
 
 export interface IBrandCommentWriteUIProps {
-    formState: UseFormStateReturn<FieldValues>;
-    onClickCommentUpdate: (data: UseditemQuestion) => Promise<void>;
-    onClickCommentSubmit: (data: UseditemQuestion) => Promise<void>;
+    onClickCommentUpdate: (data: IUpdateUseditemQuestionInput) => Promise<void>;
+    onClickCommentSubmit: (data: ICreateUseditemQuestionInput) => Promise<void>;
+    handleSubmit: UseFormHandleSubmit<FieldValues | any>;
     isEdit?: boolean;
-    handleSubmit: UseFormHandleSubmit<FieldValues> | ((data: any) => Promise<void>);
     register: UseFormRegister<FieldValues>;
     onClickExitAlertModal: () => void;
+    formState: FormState<FieldValues>;
     alertModal: boolean;
     modalContents?: string;
     onClickExitErrorModal: () => void;

@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
-    CreateUseditemQuestionInput,
-    UpdateUseditemQuestionInput,
+    ICreateUseditemQuestionInput,
+    IUpdateUseditemQuestionInput,
 } from "../../../../../commons/types/generated/types";
 import BrandCommentWriteUI from "./BrandCommnetWirte.presenter";
 import {
@@ -45,7 +45,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
     };
 
     // 문의하기
-    const onClickCommentSubmit = async (data: CreateUseditemQuestionInput) => {
+    const onClickCommentSubmit = async (data: ICreateUseditemQuestionInput) => {
         if (!data.contents) return alert("댓글을 입력해주세요.");
         try {
             await createUseditemQuestion({
@@ -74,7 +74,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         }
     };
 
-    const onClickCommentUpdate = async (data: UpdateUseditemQuestionInput) => {
+    const onClickCommentUpdate = async (data: IUpdateUseditemQuestionInput) => {
         try {
             if (!props.el?._id) return;
             await updateUseditemQuestion({
@@ -113,8 +113,8 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
             register={register}
             handleSubmit={handleSubmit}
             formState={formState}
-            onClickCommentUpdate={onClickCommentUpdate}
             onClickCommentSubmit={onClickCommentSubmit}
+            onClickCommentUpdate={onClickCommentUpdate}
             isEdit={props.isEdit}
             onClickExitAlertModal={onClickExitAlertModal}
             alertModal={alertModal}

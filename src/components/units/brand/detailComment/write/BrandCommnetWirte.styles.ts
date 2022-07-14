@@ -17,6 +17,8 @@ export const Qna = styled.div`
     color: #000000;
 `;
 
+export const Form = styled.form``;
+
 export const QnaDivider = styled.div`
     width: 100%;
     border: 3px solid #555555;

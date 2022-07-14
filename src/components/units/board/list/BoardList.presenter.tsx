@@ -61,7 +61,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
                 </S.BoardListWrapper>
             ))}
             <S.Pagination>
-                <Paginations01 lastPage={lastPage} refetch={props.refetch} lastPage={lastPage} />
+                <Paginations01 lastPage={lastPage} refetch={props.refetch} />
             </S.Pagination>
         </S.Wrapper>
     );

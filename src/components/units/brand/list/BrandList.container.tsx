@@ -3,14 +3,14 @@ import { useRouter } from "next/router";
 import { ChangeEvent, useState, MouseEvent } from "react";
 import BrandListUI from "./BrandList.presenter";
 import { FETCH_USEDITEMS } from "./BrandList.queries";
-import { Query, QueryFetchUseditemsArgs } from "../../../../commons/types/generated/types";
+import { IQuery, IQueryFetchUseditemsArgs } from "../../../../commons/types/generated/types";
 import _ from "lodash";
 
 export default function BrandList() {
     const router = useRouter();
     const { data, fetchMore, refetch } = useQuery<
-        Pick<Query, "fetchUseditems">,
-        QueryFetchUseditemsArgs
+        Pick<IQuery, "fetchUseditems">,
+        IQueryFetchUseditemsArgs
     >(FETCH_USEDITEMS);
 
     const onClickMoveToNew = () => {

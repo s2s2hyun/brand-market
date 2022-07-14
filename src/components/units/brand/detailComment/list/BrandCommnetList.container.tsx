@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import {
-    Query,
-    QueryFetchUseditemQuestionsArgs,
+    IQuery,
+    IQueryFetchUseditemQuestionsArgs,
 } from "../../../../../commons/types/generated/types";
 import { FETCH_USER_LOGGED_IN } from "../../detail/BrandDetail.queries";
 import BrandCommentListUI from "./BrandCommnetList.presenter";
@@ -12,8 +12,8 @@ export default function BrandCommentList() {
     const router = useRouter();
     const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
     const { data, fetchMore } = useQuery<
-        Pick<Query, "fetchUseditemQuestions">,
-        QueryFetchUseditemQuestionsArgs
+        Pick<IQuery, "fetchUseditemQuestions">,
+        IQueryFetchUseditemQuestionsArgs
     >(FETCH_BRAND_COMMENTS, {
         variables: {
             useditemId: String(router.query.brandId),

@@ -16,7 +16,7 @@ export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
                     contents={props.modalContents}
                 />
             )}
-            <form
+            <S.Form
                 onSubmit={props.handleSubmit(
                     props.isEdit ? props.onClickCommentUpdate : props.onClickCommentSubmit
                 )}
@@ -39,7 +39,7 @@ export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
                     </S.QnaCommentWrapper>
                     {/* <S.SubDidvier /> */}
                 </S.Wrapper>
-            </form>
+            </S.Form>
         </>
     );
 }

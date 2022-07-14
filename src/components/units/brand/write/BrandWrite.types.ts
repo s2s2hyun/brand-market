@@ -9,9 +9,9 @@ import {
     UseFormStateReturn,
 } from "react-hook-form";
 import {
-    CreateUseditemInput,
-    Query,
-    UpdateUseditemInput,
+    ICreateUseditemInput,
+    IQuery,
+    IUpdateUseditemInput,
 } from "../../../../commons/types/generated/types";
 
 export interface FormValues {
@@ -48,8 +48,8 @@ export interface IBrandWriteUIProps {
     handleOk: () => void;
     handleCancel: () => void;
     handleComplete: (data: any) => void;
-    onClickSubmit: (data: CreateUseditemInput) => Promise<void>;
-    onClickUpdate: (data: UpdateUseditemInput) => Promise<void>;
+    onClickSubmit: (data: ICreateUseditemInput) => Promise<void>;
+    onClickUpdate: (data: IUpdateUseditemInput) => Promise<void>;
     isEdit: boolean;
     address: string;
     zipcode: string;

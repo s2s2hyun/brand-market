@@ -4,7 +4,7 @@ import { setgroups } from "process";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { basketsState } from "../../../../commons/store";
-import { Query, QueryFetchUseditemArgs } from "../../../../commons/types/generated/types";
+import { IQuery, IQueryFetchUseditemArgs } from "../../../../commons/types/generated/types";
 import BrandDetailUI from "./BrandDetail.presenter";
 import {
     DELETE_PRODUCT,
@@ -18,7 +18,7 @@ import {
 export default function BrandDetail() {
     const router = useRouter();
     const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
-    const { data, refetch } = useQuery<Pick<Query, "fetchUseditem">, QueryFetchUseditemArgs>(
+    const { data, refetch } = useQuery<Pick<IQuery, "fetchUseditem">, IQueryFetchUseditemArgs>(
         FETCH_USEDITEM,
         {
             variables: { useditemId: String(router.query.brandId) },

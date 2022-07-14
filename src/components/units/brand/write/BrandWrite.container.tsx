@@ -9,8 +9,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREAT_PRODUCT_ITEM, FETCH_USEDITEM, UPDATE_PRODUCT_ITEM } from "./BrandWrite.queries";
 import { FormValues } from "./BrandWrite.types";
 import {
-    CreateUseditemInput,
-    UpdateUseditemInput,
+    ICreateUseditemInput,
+    IUpdateUseditemInput,
 } from "../../../../commons/types/generated/types";
 
 const schema = yup.object({
@@ -142,7 +142,7 @@ export default function BrandWriteContainer(props: any) {
         setZipcode(data.zonecode);
     };
 
-    const onClickSubmit = async (data: CreateUseditemInput) => {
+    const onClickSubmit = async (data: ICreateUseditemInput) => {
         console.log("등록클릭");
 
         try {

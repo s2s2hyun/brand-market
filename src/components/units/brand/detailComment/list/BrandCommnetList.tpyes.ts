@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction } from "react";
-import { Query, UseditemQuestion } from "../../../../../commons/types/generated/types";
+import { IQuery, IUseditemQuestion } from "../../../../../commons/types/generated/types";
 
 export interface IBrandCommentListUIProps {
-    data?: Pick<Query, "fetchUseditemQuestions">;
+    data?: Pick<IQuery, "fetchUseditemQuestions">;
     onLoadMore: () => void;
 }
 
 export interface IBrandCommentListUIItemProps {
-    el: UseditemQuestion;
+    el: IUseditemQuestion;
     modalContents?: string;
     isOpenDeleteModal: boolean;
     // isMy: boolean | undefined;

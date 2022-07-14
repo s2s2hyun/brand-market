@@ -1,6 +1,6 @@
 import { ApolloQueryResult } from "@apollo/client";
 import { ChangeEvent, MouseEvent } from "react";
-import { Board, Query, QueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
+import { IQuery, IQueryFetchBoardsArgs } from "../../../../commons/types/generated/types";
 
 export interface IBoardListUIProps {
     dataBoardsCount: any;
@@ -9,8 +9,8 @@ export interface IBoardListUIProps {
     onClickMoveToBoardNew: () => void;
     onClickMoveToBoardDetail: (event: MouseEvent<HTMLDivElement>) => void;
     refetch: (
-        variables: Partial<QueryFetchBoardsArgs>
-    ) => Promise<ApolloQueryResult<Pick<Query, "fetchBoards">>>;
+        variables: Partial<IQueryFetchBoardsArgs>
+    ) => Promise<ApolloQueryResult<Pick<IQuery, "fetchBoards">>>;
     count: any;
     keyword: string;
     setKeyword: Function;

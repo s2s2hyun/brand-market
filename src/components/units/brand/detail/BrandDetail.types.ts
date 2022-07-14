@@ -1,9 +1,9 @@
-import { Query, Useditem } from "../../../../commons/types/generated/types";
+import { IQuery } from "../../../../commons/types/generated/types";
 
 export interface IBrandDetailUI {
     onClickPick: () => Promise<void>;
     onClickDelete: () => Promise<void>;
-    data?: Pick<Query, "fetchUseditem">;
+    data?: Pick<IQuery, "fetchUseditem">;
     // userData: any;
     onChangePassword: (event: any) => void;
     onClickUsedItemDelete: () => Promise<void>;

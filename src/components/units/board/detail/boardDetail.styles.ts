@@ -1,0 +1,153 @@
+import styled from "@emotion/styled";
+import ReactPlayer from "react-player";
+
+export const Wrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const DetailWrapper = styled.div`
+    width: 1200px;
+    height: 100%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const Divider = styled.div`
+    width: 996px;
+    height: 1px;
+    background: #bdbdbd;
+    margin-top: 21px;
+`;
+
+export const TopWrapper = styled.div`
+    width: 100%;
+    margin-top: 86px;
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const LeftWrapper = styled.div`
+    display: flex;
+    margin-left: 102px;
+`;
+
+export const Photo = styled.img`
+    width: 46.67px;
+    height: 46.67px;
+    margin-right: 12px;
+`;
+
+export const Profile = styled.div``;
+
+export const Writer = styled.div`
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+`;
+
+export const CreateAt = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: #828282;
+`;
+
+export const RightWrapper = styled.div`
+    margin-right: 102px;
+`;
+
+export const Link = styled.img``;
+
+export const Location = styled.img`
+    margin-left: 20px;
+`;
+
+export const Title = styled.div`
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 52px;
+    color: #000000;
+    padding: 30px 102px 20px 102px;
+    word-break: break-all;
+`;
+
+export const Images = styled.div``;
+
+export const Image = styled.img`
+    width: 996px;
+    height: 480px;
+`;
+
+export const Contents = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23.17px;
+    padding: 50px 102px 63.7px 102px;
+`;
+
+export const Youtube = styled(ReactPlayer)`
+    margin: auto;
+`;
+
+export const LikeWrapper = styled.div`
+    display: flex;
+`;
+
+export const Like = styled.img`
+    width: 32px;
+    height: 32px;
+`;
+
+export const DisLike = styled.img`
+    width: 32px;
+    height: 32px;
+`;
+
+export const CountWrapper = styled.div`
+    display: flex;
+`;
+
+export const LikeCount = styled.div`
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffd600;
+`;
+
+export const DisLikeCount = styled.div`
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #828282;
+`;
+
+export const ThumbUp = styled.div`
+    margin-right: 40px;
+`;
+export const ThumbDown = styled.div``;
+
+export const ButtonWrapper = styled.div`
+    display: flex;
+    button {
+        width: 179px;
+        height: 52px;
+        background: #ffffff;
+        border: 1px solid #bdbdbd;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 23px;
+        color: #000000;
+
+        margin: 44px 0 50px 0;
+    }
+    & > button:nth-of-type(1) {
+        margin-right: 92px;
+    }
+`;

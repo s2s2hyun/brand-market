@@ -1,9 +1,9 @@
 import { ChangeEvent, MouseEventHandler } from "react";
-import { Useditem } from "../../../../commons/types/generated/types";
+import { IUseditem } from "../../../../commons/types/generated/types";
 
 export interface IBrandListUIProps {
     // data: {
-    //     fetchUseditems: Array<Useditem>;
+    //     fetchUseditems: Array<IUseditem>;
     // };
     data: any;
 

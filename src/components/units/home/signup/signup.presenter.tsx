@@ -56,7 +56,7 @@ export default function SignUpUI(props: ISignupUIProps) {
                                 Sign Up
                             </button>
                             <button type="button" onClick={props.MoveToPage("/")}>
-                                Cancle
+                                Cancel
                             </button>
                         </S.SignUpWrapper>
                     </S.SignUpPageWrapper>

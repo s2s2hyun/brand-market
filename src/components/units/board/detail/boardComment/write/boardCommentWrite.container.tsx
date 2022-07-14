@@ -1,16 +1,20 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
+
+import BoardCommentWriteUI from "./boardCommentWrite.presenter";
+import {
+    CREATE_BOARD_COMMENT,
+    UPDATE_BOARD_COMMENT,
+    FETCH_BOARD_COMMENTS,
+} from "./boardCommentWrite.queries";
+import { IBoardCommentWriteProps } from "./boardCommentWrite.types";
 import {
     IMutation,
     IMutationCreateBoardCommentArgs,
     IMutationUpdateBoardCommentArgs,
     IUpdateBoardCommentInput,
-} from "../../../../commons/types/generated/types";
-import BoardCommentWriteUI from "./BoardCommentWrite.presenter";
-import { FETCH_BOARD_COMMENTS } from "../list/BoardCommentList.queries";
-import { CREATE_BOARD_COMMENT, UPDATE_BOARD_COMMENT } from "./BoardCommnetWrite.queries";
-import { IBoardCommentWriteProps } from "./BoardCommentWrite.types";
+} from "../../../../../../commons/types/generated/types";
 
 export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
     const router = useRouter();
@@ -63,7 +67,7 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
                     },
                 ],
             });
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };
@@ -99,7 +103,7 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
                 ],
             });
             props.setIsEdit?.(false);
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };
