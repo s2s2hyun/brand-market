@@ -1,5 +1,21 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { IBoardComment } from "../../../../../../commons/types/generated/types";
+import { ChangeEvent, Dispatch, RefObject, SetStateAction } from "react";
+import { FieldValues, FormState, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import {
+    IBoardComment,
+    ICreateBoardCommentInput,
+} from "../../../../../../commons/types/generated/types";
+
+export type IonClickUpdateData = {
+    contents?: string;
+    rating?: number;
+};
+
+export type IonClickWriteData = {
+    contents?: string;
+    password?: string;
+    rating?: number;
+    writer?: string;
+};
 
 export interface IBoardCommentWriteProps {
     isEdit?: boolean;
@@ -8,18 +24,25 @@ export interface IBoardCommentWriteProps {
 }
 
 export interface IBoardCommentWriteUIProps {
-    onChangeWriter: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-    onChangeStar: (value: number) => void;
-    onClickWrite: () => void;
-    onClickUpdate: () => void;
+    onChangeStar?: (value: number) => void;
+    onClickWrite: (data: IonClickWriteData) => Promise<void>;
+    onClickUpdate: (data: IonClickUpdateData) => Promise<void>;
     isEdit?: boolean;
     el?: IBoardComment;
     contents: string;
-}
-
-export interface IUpdateBoardCommentInput {
-    contents?: string;
-    rating?: number;
+    alertModal: boolean;
+    modalContents?: string;
+    onClickExitErrorModal: () => void;
+    errorAlertModal: boolean;
+    onClickExitAlertModal: () => void;
+    register: UseFormRegister<FieldValues>;
+    handleSubmit: UseFormHandleSubmit<FieldValues>;
+    formState: FormState<FieldValues>;
+    ratingRef: RefObject<HTMLUListElement>;
+    onChangeContents: (event: {
+        target: {
+            value: string | any[];
+        };
+    }) => void;
+    count: number;
 }

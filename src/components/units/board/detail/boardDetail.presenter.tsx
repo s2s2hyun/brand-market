@@ -1,5 +1,6 @@
 import DOMPurify from "dompurify";
 import { getDate } from "../../../../commons/utils";
+import BoardCommentWrite from "./boardComment/write/boardCommentWrite.container";
 import * as S from "./boardDetail.styles";
 import { IBoardDetailUIProps } from "./boardDetail.types";
 
@@ -68,6 +69,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                 <button>목록으로</button>
                 <button>수정하기</button>
             </S.ButtonWrapper>
+            <BoardCommentWrite />
         </S.Wrapper>
     );
 }

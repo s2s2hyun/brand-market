@@ -10,10 +10,6 @@ import {
 } from "./BrandCommentAnswerWrite.queries";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FETCH_BRAND_COMMENTS_ANSWERS } from "../listAnswer/BrandCommentAnswer.queries";
-import {
-    CreateUseditemQuestionAnswerInput,
-    UpdateUseditemQuestionAnswerInput,
-} from "../../../../../../commons/types/generated/types";
 
 const schema = yup.object({
     contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
@@ -45,7 +41,7 @@ export default function BrandCommentAnswerWrite(props: any) {
         setErrorAlertModal(false);
     };
 
-    const onClickCommentAnswerSubmit = async (data: CreateUseditemQuestionAnswerInput) => {
+    const onClickCommentAnswerSubmit = async (data: { contents?: string }) => {
         if (!data.contents) return alert("답글을 입력해주세요");
         try {
             await createUseditemQuestionAnswer({
@@ -84,7 +80,7 @@ export default function BrandCommentAnswerWrite(props: any) {
         }
     };
 
-    const onClickCommentAnswerUpdate = async (data: UpdateUseditemQuestionAnswerInput) => {
+    const onClickCommentAnswerUpdate = async (data: { contents?: string }) => {
         if (!data.contents) return alert("답글을 수정 해주세요");
         try {
             await updateUseditemQuestionAnswer({

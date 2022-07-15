@@ -19,9 +19,9 @@ export interface IBrandCommentWriteProps {
 }
 
 export interface IBrandCommentWriteUIProps {
-    onClickCommentUpdate: (data: IUpdateUseditemQuestionInput) => Promise<void>;
-    onClickCommentSubmit: (data: ICreateUseditemQuestionInput) => Promise<void>;
-    handleSubmit: UseFormHandleSubmit<FieldValues | any>;
+    onClickCommentUpdate: (data: { contents?: string }) => Promise<void>;
+    onClickCommentSubmit: (data: { contents?: string }) => Promise<void>;
+    handleSubmit: UseFormHandleSubmit<FieldValues>;
     isEdit?: boolean;
     register: UseFormRegister<FieldValues>;
     onClickExitAlertModal: () => void;

@@ -9,6 +9,7 @@ export interface IBrandCommentListUIProps {
 export interface IBrandCommentListUIItemProps {
     el: IUseditemQuestion;
     modalContents?: string;
-    isOpenDeleteModal: boolean;
+    isOpenDeleteModal: any;
+    // isOpenDeleteModal: boolean;
     // isMy: boolean | undefined;
 }

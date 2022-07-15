@@ -45,7 +45,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
     };
 
     // 문의하기
-    const onClickCommentSubmit = async (data: ICreateUseditemQuestionInput) => {
+    const onClickCommentSubmit = async (data: { contents?: string }) => {
         if (!data.contents) return alert("댓글을 입력해주세요.");
         try {
             await createUseditemQuestion({
@@ -74,7 +74,7 @@ export default function BrandCommentWrite(props: IBrandCommentWriteProps) {
         }
     };
 
-    const onClickCommentUpdate = async (data: IUpdateUseditemQuestionInput) => {
+    const onClickCommentUpdate = async (data: { contents?: string }) => {
         try {
             if (!props.el?._id) return;
             await updateUseditemQuestion({

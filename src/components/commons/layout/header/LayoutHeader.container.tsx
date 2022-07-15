@@ -1,16 +1,17 @@
 import HeaderUI from "./LayoutHeader.presenter";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@apollo/client";
-import { Useditem, User } from "../../../../commons/types/generated/types";
+
 import { FETCH_LOGIN_USER, LOGOUT } from "./LayoutHeader.queries";
 import { accessTokenState, basketsState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
 import { useEffect, useState } from "react";
+import { IUser } from "../../../../commons/types/generated/types";
 
 export default function HeaderContainer() {
     const router = useRouter();
     // const [, setAccessToken] = useRecoilState(accessTokenState);
-    const { data: myData } = useQuery<{ fetchUserLoggedIn: User }>(FETCH_LOGIN_USER);
+    const { data: myData } = useQuery<{ fetchUserLoggedIn: IUser }>(FETCH_LOGIN_USER);
 
     // basketsState
     const [globalbaskets, setGlobalBaskets] = useRecoilState(basketsState);

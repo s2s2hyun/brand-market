@@ -2,12 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import * as S from "./BrandCommnetList.styles";
-import {
-    Mutation,
-    MutationDeleteUseditemQuestionArgs,
-    Query,
-    QueryFetchUseditemQuestionsArgs,
-} from "../../../../../commons/types/generated/types";
+
 import { FETCH_USER_LOGGED_IN, LOGIN_USER_FOR_DELETE } from "../../detail/BrandDetail.queries";
 import { DELETE_BRAND_COMMENT, FETCH_BRAND_COMMENTS } from "./BrandCommnetList.queries";
 import { IBrandCommentListUIItemProps } from "./BrandCommnetList.tpyes";
@@ -18,6 +13,12 @@ import Alert from "../../../../commons/modal/alert/alert";
 import ErrorAlert from "../../../../commons/modal/errorModal/errorAlert";
 import CommentAnswerList from "./listAnswer/BrandCommentAnswer.container";
 import BrandCommentAnswerWrite from "./listAnswerWrite/BrandCommentAnswerWrite.container";
+import {
+    IMutation,
+    IMutationDeleteUseditemQuestionArgs,
+    IQuery,
+    IQueryFetchUseditemQuestionsArgs,
+} from "../../../../../commons/types/generated/types";
 
 export default function BrandCommentListUIItem(props: IBrandCommentListUIItemProps) {
     const router = useRouter();
@@ -27,16 +28,16 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
     const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
     const [loginUserForDelete] = useMutation(LOGIN_USER_FOR_DELETE);
     const { data, refetch } = useQuery<
-        Pick<Query, "fetchUseditemQuestions">,
-        QueryFetchUseditemQuestionsArgs
+        Pick<IQuery, "fetchUseditemQuestions">,
+        IQueryFetchUseditemQuestionsArgs
     >(FETCH_BRAND_COMMENTS, {
         variables: {
             useditemId: String(router.query.brandId),
         },
     });
     const [deleteUseditemQuestion] = useMutation<
-        Pick<Mutation, "deleteUseditemQuestion">,
-        MutationDeleteUseditemQuestionArgs
+        Pick<IMutation, "deleteUseditemQuestion">,
+        IMutationDeleteUseditemQuestionArgs
     >(DELETE_BRAND_COMMENT);
 
     const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
@@ -120,7 +121,7 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
         }
     };
 
-    const onChangePassword = (event: any) => {
+    const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
         setModalPassword(event?.target.value);
     };
     return (
@@ -183,7 +184,7 @@ export default function BrandCommentListUIItem(props: IBrandCommentListUIItemPro
                     isEdit={true}
                     setIsEdit={setIsEdit}
                     el={props.el}
-                    isOpenDeleteModal={props.isOpenDeleteModal}
+                    // isOpenDeleteModal={props.isOpenDeleteModal}
                 />
             )}
             {isNewComment && (

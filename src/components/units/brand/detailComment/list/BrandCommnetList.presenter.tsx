@@ -3,7 +3,7 @@ import BrandCommentListUIItem from "./BrandCommnetList.presenterItem";
 import { IBrandCommentListUIProps } from "./BrandCommnetList.tpyes";
 import { v4 as uuidv4 } from "uuid";
 import * as S from "./BrandCommnetList.styles";
-import CommentAnswerList from "./listAnswer/BrandCommentAnswer.container";
+
 export default function BrandCommentListUI(props: IBrandCommentListUIProps) {
     if (!props.data) return <div />;
 

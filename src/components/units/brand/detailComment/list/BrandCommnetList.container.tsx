@@ -22,7 +22,6 @@ export default function BrandCommentList() {
 
     const onLoadMore = () => {
         if (!data) return;
-        console.log(data, "데이터");
         fetchMore({
             variables: {
                 page: Math.ceil(data?.fetchUseditemQuestions.length / 10) + 1,
