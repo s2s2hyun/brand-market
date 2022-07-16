@@ -97,7 +97,7 @@ export default function BoardDetail() {
     //     });
     // };
 
-    const onClickDisLike = () => {
+    const onClickDislike = () => {
         dislikeBoard({
             variables: { boardId: String(router.query.boardId) },
             // optimisticResponse: graphQL에서 mutation을 할 때 제공하는 옵션.
@@ -142,7 +142,7 @@ export default function BoardDetail() {
             onClickMoveToBoardEdit={onClickMoveToBoardEdit}
             onClickDelete={onClickDelete}
             onClickLike={onClickLike}
-            onClickDislike={onClickDisLike}
+            onClickDislike={onClickDislike}
             go={go}
             onClickExitAlertModal={onClickExitAlertModal}
             alertModal={alertModal}

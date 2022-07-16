@@ -23,6 +23,7 @@ import {
     IMutationUpdateBoardCommentArgs,
     IUpdateBoardCommentInput,
 } from "../../../../../../commons/types/generated/types";
+import { Modal } from "antd";
 
 const schema = yup.object({
     contents: yup.string().max(100, "최대 100글자까지 가능합니다.").required("내용을 입력해주세요"),
@@ -122,6 +123,7 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
                         rating: star,
                     },
                     boardCommentId: props.el?._id,
+                    password: data.password,
                 },
                 refetchQueries: [
                     {
@@ -130,8 +132,9 @@ export default function BoardCommentWrite(props: IBoardCommentWriteProps) {
                     },
                 ],
             });
-            setModalContents("문의가 성공적으로 수정 되었습니다.");
-            setAlertModal(true);
+            Modal.success({
+                content: "댓글 수정이 완료되었습니다!",
+            });
             props.setIsEdit?.(false);
         } catch (error: any) {
             setModalContents(error.message);

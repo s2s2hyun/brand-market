@@ -1,5 +1,6 @@
 import DOMPurify from "dompurify";
 import { getDate } from "../../../../commons/utils";
+import BoardCommentList from "./boardComment/list/boardCommentList.container";
 import BoardCommentWrite from "./boardComment/write/boardCommentWrite.container";
 import * as S from "./boardDetail.styles";
 import { IBoardDetailUIProps } from "./boardDetail.types";
@@ -19,8 +20,15 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                         </S.Profile>
                     </S.LeftWrapper>
                     <S.RightWrapper>
-                        <S.Link src="/images/link.png"></S.Link>
-                        <S.Location src="/images/location.png"></S.Location>
+                        <S.LocationWrapper>
+                            <div className="tooltip">
+                                <span className="tooltiptext">
+                                    {`${props.data?.fetchBoard.boardAddress?.address}
+                    ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
+                                </span>
+                                <S.Location src="/images/location.png" />
+                            </div>
+                        </S.LocationWrapper>
                     </S.RightWrapper>
                 </S.TopWrapper>
                 <S.Divider />
@@ -56,11 +64,14 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                 )}
                 <S.LikeWrapper>
                     <S.ThumbUp>
-                        <S.Like src="/images/likeman.svg"></S.Like>
+                        <S.Like src="/images/likeman.svg" onClick={props.onClickLike}></S.Like>
                         <S.LikeCount>{props.data?.fetchBoard.likeCount}</S.LikeCount>
                     </S.ThumbUp>
                     <S.ThumbDown>
-                        <S.DisLike src="/images/dislikeman.svg"></S.DisLike>
+                        <S.DisLike
+                            src="/images/dislikeman.svg"
+                            onClick={props.onClickDislike}
+                        ></S.DisLike>
                         <S.DisLikeCount>{props.data?.fetchBoard.dislikeCount}</S.DisLikeCount>
                     </S.ThumbDown>
                 </S.LikeWrapper>
@@ -70,6 +81,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                 <button>수정하기</button>
             </S.ButtonWrapper>
             <BoardCommentWrite />
+            <BoardCommentList />
         </S.Wrapper>
     );
 }

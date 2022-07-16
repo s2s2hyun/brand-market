@@ -39,4 +39,5 @@ export interface IBoardWriteUIProps {
     addressDetail: string;
     isEdit: boolean;
     data?: any;
+    onClickImageDelete: (index: number) => () => void;
 }

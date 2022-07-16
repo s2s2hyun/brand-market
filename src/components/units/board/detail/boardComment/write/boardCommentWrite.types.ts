@@ -8,6 +8,7 @@ import {
 export type IonClickUpdateData = {
     contents?: string;
     rating?: number;
+    password?: string;
 };
 
 export type IonClickWriteData = {

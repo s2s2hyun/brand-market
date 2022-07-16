@@ -6,6 +6,7 @@ import {
     IMutation,
     IMutationDeleteBoardCommentArgs,
 } from "../../../../../../commons/types/generated/types";
+import { getDate } from "../../../../../../commons/utils";
 import Alert from "../../../../../commons/modal/alert/alert";
 import ErrorAlert from "../../../../../commons/modal/errorModal/errorAlert";
 import BoardCommentWrite from "../write/boardCommentWrite.container";
@@ -16,13 +17,11 @@ import { IBoardCommentListUIItemProps } from "./boardCommentList.types";
 export default function BoardCommentListUIItem(props: IBoardCommentListUIItemProps) {
     const router = useRouter();
     const [isEdit, setIsEdit] = useState(false);
-    const [myPassword, setMyPassword] = useState("");
     const [modalPassword, setModalPassword] = useState("");
-    const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    const onToggleModal = () => {
-        setIsOpen((prev) => !prev);
+    const handleCancel = () => {
+        setIsOpen(false);
     };
 
     const onClickUpdate = () => {
@@ -35,29 +34,15 @@ export default function BoardCommentListUIItem(props: IBoardCommentListUIItemPro
     >(DELETE_BOARD_COMMENT);
 
     // 얼럿모달
-    const [alertModal, setAlertModal] = useState(false);
-    const [modalContents, setModalContents] = useState("");
-    const [errorAlertModal, setErrorAlertModal] = useState(false);
-    // const [go, setGo] = useState(false);
-    const onClickExitAlertModal = () => {
-        setAlertModal(false);
-    };
 
-    // 확인 모달
-    const onClickconfirmModal = () => {
-        setAlertModal(false);
-    };
-
-    // 에러 모달
-    const onClickExitErrorModal = () => {
-        setErrorAlertModal(false);
-    };
+    const [, setModalContents] = useState("");
+    const [, setErrorAlertModal] = useState(false);
 
     const onClickDelete = async () => {
         try {
             await deleteBoardComment({
                 variables: {
-                    password: myPassword,
+                    password: modalPassword,
                     boardCommentId: props.el?._id,
                 },
                 refetchQueries: [
@@ -78,19 +63,37 @@ export default function BoardCommentListUIItem(props: IBoardCommentListUIItemPro
         setModalPassword(event?.target.value);
     };
 
+    const onClickOpenDeleteModal = () => {
+        setIsOpen(true);
+    };
+
     return (
         <>
-            {alertModal && <Alert onClickExit={onClickconfirmModal} contents={modalContents} />}
-            {errorAlertModal && (
-                <ErrorAlert onClickExit={onClickExitErrorModal} contents={modalContents} />
-            )}
             {isOpen && (
-                <Modal visible={true} onOk={onClickDelete} onCancel={onToggleModal}>
-                    <div>비밀번호 입력: </div>
-                    <input type="password" onChange={onChangePassword} />
+                <Modal visible={true} onOk={onClickDelete} onCancel={handleCancel}>
+                    <S.ModalContents>비밀번호 입력: </S.ModalContents>
+                    <S.PasswordInput type="password" onChange={onChangePassword} />
                 </Modal>
             )}
-            {!isEdit && <S.ItemWrapper></S.ItemWrapper>}
+            {!isEdit && (
+                <S.ItemWrapper>
+                    <S.CommentWrapper>
+                        <S.Photo src="/images/peoplephoto.svg" />
+                        <S.CommentMain>
+                            <S.UserRate>
+                                <S.UserWriter>{props.el?.writer}</S.UserWriter>
+                                <S.Star value={props.el?.rating} disabled />
+                            </S.UserRate>
+                            <S.Contents>{props.el?.contents}</S.Contents>
+                        </S.CommentMain>
+                        <S.OptionWrapper>
+                            <S.Retouch src="/images/pencle.svg" onClick={onClickUpdate} />
+                            <S.Delete src="/images/trash.svg" onClick={onClickOpenDeleteModal} />
+                        </S.OptionWrapper>
+                    </S.CommentWrapper>
+                    <S.CreateAt>{getDate(props.el?.createdAt)}</S.CreateAt>
+                </S.ItemWrapper>
+            )}
             {isEdit && <BoardCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />}
         </>
     );

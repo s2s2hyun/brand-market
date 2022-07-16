@@ -106,7 +106,8 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             ></S.BrandInput>
                         </S.BrandTagInnerWrapper>
                     </S.BrandTagWrapper>
-                    <S.BrandDivderLine />s<S.BrandMap>브랜드 위치</S.BrandMap>
+                    <S.BrandDivderLine />
+                    <S.BrandMap>브랜드 위치</S.BrandMap>
                     <S.MapWrapper>
                         {console.log(props.data?.fetchUseditem?.useditemAddress.address)}
                         <KakaoMapPage

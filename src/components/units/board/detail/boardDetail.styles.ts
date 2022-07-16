@@ -61,9 +61,39 @@ export const CreateAt = styled.div`
 
 export const RightWrapper = styled.div`
     margin-right: 102px;
+    display: flex;
 `;
 
-export const Link = styled.img``;
+export const LocationWrapper = styled.div`
+    /* display: none; */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 376px;
+        height: 72px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-weight: 500;
+        font-size: 16px;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+`;
 
 export const Location = styled.img`
     margin-left: 20px;
@@ -103,11 +133,13 @@ export const LikeWrapper = styled.div`
 export const Like = styled.img`
     width: 32px;
     height: 32px;
+    cursor: pointer;
 `;
 
 export const DisLike = styled.img`
     width: 32px;
     height: 32px;
+    cursor: pointer;
 `;
 
 export const CountWrapper = styled.div`
@@ -136,6 +168,7 @@ export const ThumbDown = styled.div``;
 export const ButtonWrapper = styled.div`
     display: flex;
     button {
+        cursor: pointer;
         width: 179px;
         height: 52px;
         background: #ffffff;
