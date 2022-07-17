@@ -59,13 +59,6 @@ export default function BoardDetail() {
         router.push(`/boards/${router.query.boardId}/edit`);
     };
 
-    // const onClickLike = () => {
-    //     likeBoard({
-    //         variables: { boardId: String(router.query.boardId) },
-    //         refetchQueries: [{ query: FETCH_BOARD, variables: { boardId: router.query.boardId } }],
-    //     });
-    // };
-
     const onClickLike = () => {
         likeBoard({
             variables: { boardId: String(router.query.boardId) },
@@ -89,13 +82,6 @@ export default function BoardDetail() {
             },
         });
     };
-
-    // const onClickDisLike = () => {
-    //     dislikeBoard({
-    //         variables: { boardId: String(router.query.boardId) },
-    //         refetchQueries: [{ query: FETCH_BOARD, variables: { boardId: router.query.boardId } }],
-    //     });
-    // };
 
     const onClickDislike = () => {
         dislikeBoard({

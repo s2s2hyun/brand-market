@@ -1,4 +1,6 @@
 import { ChangeEvent } from "react";
+import { FormState, UseFormHandleSubmit } from "react-hook-form";
+// import { ICreateBoardInput } from "../../../../commons/types/generated/types";
 
 export interface IBoardWriteProps {
     isEdit: boolean;
@@ -6,9 +8,30 @@ export interface IBoardWriteProps {
 }
 
 export interface IUpdateBoardInput {
+    password: string;
+    fetchBoard: any;
+    addressDetail: any;
     youtubeUrl?: string;
     title?: string;
     contents?: string;
+}
+
+export interface ICreateBoardInput {
+    writer: string;
+    password: string;
+    title: string;
+    contents: string;
+    youtubeUrl: string;
+    addressDetail: any;
+}
+
+export interface FormValues {
+    writer: string;
+    password: string;
+    title: string;
+    contents: string;
+    youtubeUrl: string;
+    addressDetail: any;
 }
 
 export interface ISubmitButtonProps {
@@ -17,27 +40,25 @@ export interface ISubmitButtonProps {
 
 export interface IBoardWriteUIProps {
     fileUrls: any;
-    onChangeFileUrls: any;
     isActive: boolean;
-    writerError: string;
-    passwordError: string;
-    titleError: string;
-    contentsError: string;
-    onChangeWriter: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangeTitle: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-    onChangeYoutubeUrl: (event: ChangeEvent<HTMLInputElement>) => void;
-    onChangeAddressDetail: (event: ChangeEvent<HTMLInputElement>) => void;
-    onClickAddressSearch: () => void;
-    onCompleteAddressSearch: (data: any) => void;
-    onClickSubmit: () => void;
-    onClickUpdate: () => void;
     isOpen: boolean;
-    zipcode: string;
-    address: string;
-    addressDetail: string;
     isEdit: boolean;
     data?: any;
     onClickImageDelete: (index: number) => () => void;
+    onClickExitSubmitModal: () => void;
+    onClickExitUpdateModal: () => void;
+    alertModal: boolean;
+    modalContents: string | undefined;
+    go: boolean;
+    onClickExitErrorModal: () => void;
+    errorAlertModal: boolean;
+    showModal: () => void;
+    handleOk: () => void;
+    handleCancel: () => void;
+    handleComplete: (data: any) => void;
+    onClickSubmit: (data: ICreateBoardInput) => Promise<void>;
+    onClickUpdate: (data: IUpdateBoardInput) => Promise<void>;
+    onChangeFileUrls: (fileUrl: string, index: number) => void;
+    handleSubmit: UseFormHandleSubmit<FormValues>;
+    formState: FormState<FormValues>;
 }

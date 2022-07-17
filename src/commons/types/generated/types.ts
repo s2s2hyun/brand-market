@@ -70,6 +70,7 @@ export type ICreateBoardCommentInput = {
 };
 
 export type ICreateBoardInput = {
+    addressDetail: any;
     boardAddress?: InputMaybe<IBoardAddressInput>;
     contents: Scalars["String"];
     images?: InputMaybe<Array<Scalars["String"]>>;
@@ -402,6 +403,7 @@ export type IUpdateBoardCommentInput = {
 };
 
 export type IUpdateBoardInput = {
+    fetchBoard: any;
     boardAddress?: InputMaybe<IBoardAddressInput>;
     contents?: InputMaybe<Scalars["String"]>;
     images?: InputMaybe<Array<Scalars["String"]>>;

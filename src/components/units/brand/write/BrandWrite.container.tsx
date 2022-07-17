@@ -1,12 +1,12 @@
 import BrandWriteUI from "./BrandWrite.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ChangeEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
 import { useMutation, useQuery } from "@apollo/client";
-import { CREAT_PRODUCT_ITEM, FETCH_USEDITEM, UPDATE_PRODUCT_ITEM } from "./BrandWrite.queries";
+import { CREAT_PRODUCT_ITEM, UPDATE_PRODUCT_ITEM } from "./BrandWrite.queries";
 import { FormValues } from "./BrandWrite.types";
 import {
     ICreateUseditemInput,
@@ -143,8 +143,6 @@ export default function BrandWriteContainer(props: any) {
     };
 
     const onClickSubmit = async (data: ICreateUseditemInput) => {
-        console.log("등록클릭");
-
         try {
             const result = await createUseditem({
                 variables: {
