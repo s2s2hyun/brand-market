@@ -4,6 +4,13 @@ import Uploads01 from "../../../commons/uploads/upload1/Upload01.container";
 import { v4 as uuidv4 } from "uuid";
 import Alert from "../../../commons/modal/alert/alert";
 import ErrorAlert from "../../../commons/modal/errorModal/errorAlert";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css";
+import { Modal } from "antd";
+import DaumPostcode from "react-daum-postcode";
+import KakaoMapPageBoard from "../../../commons/map/kakaoMapBoard.container";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function BoardWriteUI(props: IBoardWriteUIProps) {
     return (
@@ -31,90 +38,154 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                     )}
                 >
                     <S.BoradWrapper>
-                        <div>게시물 등록</div>
-                        <S.InputWrapper>
-                            <S.TopWrapper>
-                                <S.WriterWrapper>
-                                    <div>작성자</div>
+                        <S.BoardLine>
+                            <div>{props.isEdit ? "게시글 수정" : "게시글 등록"}</div>
+                            <S.InputWrapper>
+                                <S.TopWrapper>
+                                    <S.WriterWrapper>
+                                        <div>작성자</div>
+                                        <input></input>
+                                    </S.WriterWrapper>
+                                    <S.PasswordWrapper>
+                                        <div>비밀번호</div>
+                                        <input></input>
+                                    </S.PasswordWrapper>
+                                </S.TopWrapper>
+                                <S.Title>
+                                    <div>제목</div>
                                     <input></input>
-                                </S.WriterWrapper>
-                                <S.PasswordWrapper>
-                                    <div>비밀번호</div>
+                                </S.Title>
+                                <S.Contents>
+                                    <div>내용</div>
+                                    <ReactQuill
+                                        style={{
+                                            width: "996px",
+                                            height: "480px",
+                                            marginTop: "28px",
+                                            marginBottom: "70px",
+                                        }}
+                                        onChange={props.onChangeContents}
+                                        placeholder="게시글 내용을 입력해주세요"
+                                        value={props.getValues("contents") || ""}
+                                    />
+                                </S.Contents>
+                                <S.MapTitle>주소</S.MapTitle>
+                                <S.MapWrapper>
+                                    {console.log(props.data?.fetchBoard?.boardAddress.address)}
+                                    <KakaoMapPageBoard
+                                        address={
+                                            props.address || props.data?.boardAddress.address || ""
+                                        }
+                                        width={228}
+                                        height={234}
+                                    />
+                                    <S.MapInputWarpper>
+                                        <S.SearchWrapper>
+                                            <S.ZipCode
+                                                id="zipcode"
+                                                name="address"
+                                                placeholder="07250"
+                                                readOnly
+                                                value={
+                                                    props.zipcode ||
+                                                    props.data?.boardAddress.zipcode ||
+                                                    ""
+                                                }
+                                            />
+                                            <S.SearchButton type="button" onClick={props.showModal}>
+                                                우편번호 검색
+                                            </S.SearchButton>
+                                            {/* 주소모달 */}
+                                            {props.isOpen && (
+                                                <Modal
+                                                    title="주소를 검색해주세요"
+                                                    visible={true}
+                                                    onOk={props.handleOk}
+                                                    onCancel={props.handleCancel}
+                                                >
+                                                    <DaumPostcode
+                                                        onComplete={props.handleComplete}
+                                                    />
+                                                </Modal>
+                                            )}
+                                        </S.SearchWrapper>
+                                        <S.MapAddress>
+                                            <input
+                                                id="address"
+                                                readOnly
+                                                value={
+                                                    props.address ||
+                                                    props.data?.boardAddress.address ||
+                                                    ""
+                                                }
+                                            />
+                                            <input
+                                                id="addressDetail"
+                                                type="text"
+                                                placeholder="상세주소를 입력해주세요."
+                                                {...props.register("addressDetail")}
+                                            />
+                                        </S.MapAddress>
+                                    </S.MapInputWarpper>
+                                </S.MapWrapper>
+                                <S.Youtube>
+                                    <div>유투브</div>
                                     <input></input>
-                                </S.PasswordWrapper>
-                            </S.TopWrapper>
-                            <S.Title>
-                                <div>제목</div>
-                                <input></input>
-                            </S.Title>
-                            <S.Contents>
-                                <div>내용</div>
-                                <input></input>
-                            </S.Contents>
-                            <S.MapWrapper>
-                                {/* 지도  width: 228px; height: 234px;*/}
-                                <S.MapIntputWrapper>
-                                    <S.SearchWrapper>
-                                        <S.ZipCode />
-                                        <S.SearchButton>우편번호 검색</S.SearchButton>
-                                    </S.SearchWrapper>
-                                    <S.MapInput />
-                                    <S.MapDetailInput />
-                                </S.MapIntputWrapper>
-                            </S.MapWrapper>
-                            <S.Youtube>
-                                <div>유투브</div>
-                                <input></input>
-                            </S.Youtube>
+                                </S.Youtube>
 
-                            <div>사진첨부</div>
-                            <S.ImageWrapper title="upload">
-                                {props.fileUrls.map((el: string, index: number) => {
-                                    if (index === 0)
-                                        return (
-                                            <S.UploadWrapper>
-                                                <Uploads01
-                                                    type="upload"
-                                                    key={uuidv4()}
-                                                    index={index}
-                                                    fileUrl={el}
-                                                    onChangeFileUrls={props.onChangeFileUrls}
-                                                />
-                                                <button
-                                                    type="button"
-                                                    onClick={props.onClickImageDelete(index)}
-                                                >
-                                                    X
-                                                </button>
-                                            </S.UploadWrapper>
-                                        );
-                                    if (index !== 0 && props.fileUrls[index - 1] !== "")
-                                        return (
-                                            <S.UploadWrapper>
-                                                <Uploads01
-                                                    type="upload"
-                                                    key={uuidv4()}
-                                                    index={index}
-                                                    fileUrl={el}
-                                                    onChangeFileUrls={props.onChangeFileUrls}
-                                                />
-                                                <button
-                                                    type="button"
-                                                    onClick={props.onClickImageDelete(index)}
-                                                >
-                                                    X
-                                                </button>
-                                            </S.UploadWrapper>
-                                        );
-                                })}
-                            </S.ImageWrapper>
-                            <S.ButtonWrapper>
-                                <S.CancleButton type="button">취소</S.CancleButton>
-                                <S.SubmitButton title="submit" type="submit">
-                                    {props.isEdit ? "수정" : "등록"}
-                                </S.SubmitButton>
-                            </S.ButtonWrapper>
-                        </S.InputWrapper>
+                                <div>사진첨부</div>
+                                <S.ImageWrapper title="upload">
+                                    {props.fileUrls.map((el: string, index: number) => {
+                                        if (index === 0)
+                                            return (
+                                                <S.UploadWrapper>
+                                                    <Uploads01
+                                                        type="upload"
+                                                        key={uuidv4()}
+                                                        index={index}
+                                                        fileUrl={el}
+                                                        onChangeFileUrls={props.onChangeFileUrls}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={props.onClickImageDelete(index)}
+                                                    >
+                                                        X
+                                                    </button>
+                                                </S.UploadWrapper>
+                                            );
+                                        if (index !== 0 && props.fileUrls[index - 1] !== "")
+                                            return (
+                                                <S.UploadWrapper>
+                                                    <Uploads01
+                                                        type="upload"
+                                                        key={uuidv4()}
+                                                        index={index}
+                                                        fileUrl={el}
+                                                        onChangeFileUrls={props.onChangeFileUrls}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={props.onClickImageDelete(index)}
+                                                    >
+                                                        X
+                                                    </button>
+                                                </S.UploadWrapper>
+                                            );
+                                    })}
+                                </S.ImageWrapper>
+                                <S.ButtonWrapper>
+                                    <S.SubmitButton
+                                        title="submit"
+                                        type="submit"
+                                        isActive={props.isEdit ? true : props.isActive}
+                                    >
+                                        {props.isEdit ? "수정" : "등록"}
+                                    </S.SubmitButton>
+                                    <S.CancleButton type="button">취소</S.CancleButton>
+                                </S.ButtonWrapper>
+                            </S.InputWrapper>
+                        </S.BoardLine>
                     </S.BoradWrapper>
                 </form>
             </S.Wrapper>

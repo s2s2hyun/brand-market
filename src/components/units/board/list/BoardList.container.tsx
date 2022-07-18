@@ -34,7 +34,7 @@ export default function BoardList() {
     };
 
     const onClickMoveToBoardNew = () => {
-        router.push("/boards/new");
+        router.push("/board/new");
     };
 
     const onClickMoveToBoardDetail = (event: MouseEvent<HTMLDivElement>) => {
