@@ -5,6 +5,8 @@ import BrandListUI from "./BrandList.presenter";
 import { FETCH_USEDITEMS } from "./BrandList.queries";
 import { IQuery, IQueryFetchUseditemsArgs } from "../../../../commons/types/generated/types";
 import _ from "lodash";
+import { useRecoilState } from "recoil";
+import { todayProductState } from "../../../../commons/store";
 
 export default function BrandList() {
     const router = useRouter();
@@ -19,6 +21,7 @@ export default function BrandList() {
 
     const [keyword, setKeyword] = useState("");
     const [loadingMessage, setLoadingMessage] = useState("");
+    const [, setTodayProductItem] = useRecoilState(todayProductState);
 
     const getDebounce = _.debounce((data) => {
         refetch({ search: data, page: 1 });
@@ -47,8 +50,20 @@ export default function BrandList() {
         });
     };
 
-    const onClickMoveToBrandDetail = (event: MouseEvent<HTMLDivElement>) => {
+    const onClickMoveToBrandDetail = (el: any) => (event: MouseEvent<HTMLDivElement>) => {
         router.push(`/brands/${event.currentTarget.id}`);
+
+        const todayProduct = JSON.parse(localStorage.getItem("todayProduct") || "[]");
+
+        const { __typename, ...newEl } = el;
+        todayProduct.push(newEl);
+
+        localStorage.setItem("todayProduct", JSON.stringify(todayProduct));
+
+        const seeLocal = _.uniqBy(todayProduct, "_id");
+        const todaylocal = seeLocal.slice(0, 3);
+
+        setTodayProductItem(todaylocal);
     };
 
     return (
