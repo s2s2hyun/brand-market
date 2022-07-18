@@ -14,24 +14,24 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
 const schema = yup.object({
-    name: yup.string().required("필수 입력 사항입니다."),
-    remarks: yup.string().required("필수 입력 사항입니다."),
+    writer: yup.string().required("필수 입력 사항입니다."),
+    password: yup.string().required("필수 입력 사항입니다."),
     contents: yup
         .string()
-        .min(5, "상품설명을 5자 이상 작성")
+        .min(5, "게시글내용을 5자 이상 작성")
         .required("상품설명은 필수 입력 사항입니다."),
-    price: yup
-        .number()
-        .max(10000000000, "금액입력이 너무 큽니다 ")
-        .required("판매가격은 필수 입력 사항입니다."),
+    title: yup
+        .string()
+        .min(5, "게시글내용을 5자 이상 작성")
+        .required("상품설명은 필수 입력 사항입니다."),
     addressDetail: yup.string(),
 });
 
 const editSchema = yup.object({
-    name: yup.string(),
-    remarks: yup.string(),
-    price: yup.string(),
-    addressDetail: yup.string(),
+    writer: yup.string(),
+    password: yup.string(),
+    contents: yup.string(),
+    title: yup.string(),
 });
 
 export default function BoardWrite(props: IBoardWriteProps) {
@@ -45,6 +45,11 @@ export default function BoardWrite(props: IBoardWriteProps) {
             resolver: yupResolver(props.isEdit ? editSchema : schema),
             mode: "onChange",
         });
+    // 리액트 퀼
+    const onChangeContents = (value: string) => {
+        setValue("contents", value === "<p><br><p>" ? "" : value);
+        trigger("contents");
+    };
 
     // 주소 State
     const [address, setAddress] = useState("");
@@ -206,6 +211,11 @@ export default function BoardWrite(props: IBoardWriteProps) {
             onChangeFileUrls={onChangeFileUrls}
             handleSubmit={handleSubmit}
             formState={formState}
+            getValues={getValues}
+            onChangeContents={onChangeContents}
+            address={address}
+            zipcode={zipcode}
+            register={register}
         />
     );
 }

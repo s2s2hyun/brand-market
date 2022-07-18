@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { FormState, UseFormHandleSubmit } from "react-hook-form";
+import { FormState, UseFormGetValues, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 // import { ICreateBoardInput } from "../../../../commons/types/generated/types";
 
 export interface IBoardWriteProps {
@@ -61,4 +61,9 @@ export interface IBoardWriteUIProps {
     onChangeFileUrls: (fileUrl: string, index: number) => void;
     handleSubmit: UseFormHandleSubmit<FormValues>;
     formState: FormState<FormValues>;
+    getValues: UseFormGetValues<FormValues>;
+    register: UseFormRegister<FormValues>;
+    onChangeContents: (value: string) => void;
+    address: string;
+    zipcode: string;
 }
