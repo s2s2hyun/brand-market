@@ -12,15 +12,10 @@ export const Wrapper = styled.div`
 export const BoradWrapper = styled.div`
     width: 1200px;
     height: 1847px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    /* margin: 198px, 300px, 215px, 420px; */
-    /* & > div {
-        & > div:first-of-type {
-            font-weight: 500;
-            font-size: 36px;
-            color: #000000;
-        }
-    } */
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const BoardLine = styled.div`
@@ -31,10 +26,11 @@ export const BoardLine = styled.div`
         font-weight: 500;
         font-size: 36px;
         color: #000000;
+        padding-bottom: 81px;
     }
 
     & > div:nth-of-type(2) > div:nth-of-type(6) {
-        font-weight: 500;
+        font-weight: 550;
         font-size: 16px;
         color: #000000;
     }
@@ -46,17 +42,55 @@ export const BoardLine = styled.div`
     } */
 `;
 
-export const InputWrapper = styled.div``;
+export const InputWrapper = styled.div`
+    & > div:nth-of-type(2) {
+        font-weight: 550;
+        font-size: 16px;
+        color: #000000;
+        padding-left: 100px;
+        padding-bottom: 16px;
+    }
+    & > div:nth-of-type(4) {
+        font-weight: 550;
+        font-size: 16px;
+        color: #000000;
+        padding-left: 100px;
+    }
+
+    & > div:nth-of-type(6) {
+        font-weight: 550;
+        font-size: 16px;
+        color: #000000;
+        padding-left: 100px;
+        padding-bottom: 16px;
+    }
+    & > div:nth-of-type(8) {
+        font-weight: 550;
+        font-size: 16px;
+        color: #000000;
+        padding: 50px 0 16px 100px;
+    }
+    & > div:nth-of-type(10) {
+        font-weight: 550;
+        font-size: 16px;
+        color: #000000;
+        padding: 40px 0 16px 100px;
+    }
+`;
 
 export const TopWrapper = styled.div`
     display: flex;
+    justify-content: center;
 `;
 
 export const WriterWrapper = styled.div`
+    margin-right: 24px;
+    margin-bottom: 40px;
     & > div:first-of-type {
         font-weight: 500;
         font-size: 16px;
         color: #000000;
+        padding-bottom: 16px;
     }
 
     & > input:first-of-type {
@@ -65,6 +99,7 @@ export const WriterWrapper = styled.div`
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 8px;
+        padding-left: 10px;
     }
 `;
 
@@ -73,6 +108,7 @@ export const PasswordWrapper = styled.div`
         font-weight: 500;
         font-size: 16px;
         color: #000000;
+        padding-bottom: 16px;
     }
     & > input:first-of-type {
         width: 486px;
@@ -80,38 +116,39 @@ export const PasswordWrapper = styled.div`
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 8px;
+        padding-left: 10px;
     }
 `;
 
 export const Title = styled.div`
-    & > div:first-of-type {
-        font-weight: 500;
-        font-size: 16px;
-        color: #000000;
-    }
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
     & > input:first-of-type {
         width: 996px;
         height: 52px;
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 8px;
+        padding-left: 10px;
     }
 `;
 
 export const Contents = styled.div`
-    /* display: flex;
-    align-items: center; */
-    & > div:first-of-type {
+    display: flex;
+    align-items: center;
+    /* & > div:first-of-type {
         font-weight: 500;
         font-size: 16px;
         color: #000000;
-    }
+    } */
 `;
 
 export const MapTitle = styled.div``;
 
 export const MapWrapper = styled.div`
     display: flex;
+    justify-content: center;
     & > div:first-of-type {
         font-weight: 500;
         font-size: 16px;
@@ -119,50 +156,69 @@ export const MapWrapper = styled.div`
     }
 `;
 
-export const MapInputWarpper = styled.div``;
+export const MapInputWarpper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
 
-export const SearchWrapper = styled.div``;
+export const SearchWrapper = styled.div`
+    margin-bottom: 24px;
+`;
 
-export const ZipCode = styled.input``;
+export const ZipCode = styled.input`
+    width: 77px;
+    height: 52px;
+    border: 1px solid #bdbdbd;
+    padding-left: 10px;
+`;
 
-export const SearchButton = styled.button``;
+export const SearchButton = styled.button`
+    width: 124px;
+    height: 52px;
+    background: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+`;
 
 export const MapAddress = styled.div`
     & > input:first-of-type {
         width: 753px;
         height: 52px;
         border: 1px solid #000000;
+        margin-bottom: 24px;
         border-radius: 8px;
+        padding-left: 10px;
     }
     & > input:nth-of-type(2) {
         width: 753px;
         height: 52px;
         border: 1px solid #000000;
         border-radius: 8px;
+        padding-left: 10px;
     }
 `;
 
 export const MapDetailInput = styled.input``;
 
 export const Youtube = styled.div`
-    & > div:first-of-type {
-        font-weight: 500;
-        font-size: 16px;
-        color: #000000;
-    }
+    display: flex;
+    justify-content: center;
     & > input:first-of-type {
         width: 996px;
         height: 52px;
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 8px;
+        padding-left: 10px;
     }
 `;
 
 export const ImageWrapper = styled.div`
     display: flex;
-    margin-bottom: 76px;
     position: relative;
+    margin-left: 100px;
 `;
 
 export const UploadWrapper = styled.div`
@@ -184,6 +240,7 @@ export const UploadWrapper = styled.div`
     }
 `;
 export const ButtonWrapper = styled.div`
+    margin-top: 83px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,6 +255,7 @@ export const CancleButton = styled.button`
     font-weight: 400;
     font-size: 16px;
     color: #ffffff;
+    margin-right: 55px;
     cursor: pointer;
 `;
 
@@ -209,5 +267,19 @@ export const SubmitButton = styled.button`
     font-size: 16px;
     font-weight: 500;
     border-radius: 8px;
+    border: 1px solid #000000;
+
     background-color: ${(props: ISubmitButtonProps) => (props.isActive ? "yellow" : "none")};
+`;
+
+export const DeleteButton = styled.button`
+    width: 179px;
+    height: 51px;
+    background: #000000;
+    border-radius: 8px;
+    margin-right: 55px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
 `;
