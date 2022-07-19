@@ -57,8 +57,8 @@ export default function BrandList() {
         });
     };
 
-    const onClickMoveToBrandDetail = (el: IUseditem) => (event: MouseEvent<HTMLDivElement>) => {
-        router.push(`/brands/${event.currentTarget.id}`);
+    const onClickMoveToBrandDetail = (el: any) => (event: any) => {
+        router.push(`/brands/${el}`);
 
         const todayProductItem = JSON.parse(localStorage.getItem("todayProduct") || "[]");
 

@@ -14,7 +14,7 @@ export interface IBrandListUIProps {
     setKeyword: Function;
     isMatched: boolean;
     // onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
-    onClickMoveToBrandDetail: (el: IUseditem) => (event: any) => void;
+    onClickMoveToBrandDetail: (el: any) => (event: any) => void;
     loadingMessage: string;
 }
 

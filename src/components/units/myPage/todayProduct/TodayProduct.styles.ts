@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div``;
 
-export const ListWrapper = styled.div``;
+export const Title = styled.div``;
 
-export const BuyList = styled.div``;
+export const TodayList = styled.div``;
 
 export const Picture = styled.img``;
 
