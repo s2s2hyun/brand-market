@@ -34,7 +34,7 @@ export default function HeaderContainer() {
     };
 
     const onClickBasket = () => {
-        router.push(`/basket`);
+        router.push(`/mypage/basket`);
     };
 
     const [logout] = useMutation(LOGOUT);
