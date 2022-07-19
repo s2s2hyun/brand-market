@@ -44,32 +44,45 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                 <S.TopWrapper>
                                     <S.WriterWrapper>
                                         <div>작성자</div>
-                                        <input></input>
+                                        <input
+                                            type="text"
+                                            {...props.register("writer")}
+                                            placeholder="이름을 입력해주세요"
+                                        ></input>
                                     </S.WriterWrapper>
                                     <S.PasswordWrapper>
                                         <div>비밀번호</div>
-                                        <input></input>
+                                        <input
+                                            type="password"
+                                            {...props.register("password")}
+                                            placeholder="비밀번호를 입력해주세요"
+                                        ></input>
                                     </S.PasswordWrapper>
                                 </S.TopWrapper>
+                                <div>제목</div>
                                 <S.Title>
-                                    <div>제목</div>
-                                    <input></input>
+                                    <input
+                                        type="text"
+                                        {...props.register("title")}
+                                        placeholder="제목을 입력해주세요"
+                                    ></input>
                                 </S.Title>
+                                <div>내용</div>
                                 <S.Contents>
-                                    <div>내용</div>
                                     <ReactQuill
                                         style={{
                                             width: "996px",
                                             height: "480px",
                                             marginTop: "28px",
                                             marginBottom: "70px",
+                                            marginLeft: "100px",
                                         }}
                                         onChange={props.onChangeContents}
                                         placeholder="게시글 내용을 입력해주세요"
                                         value={props.getValues("contents") || ""}
                                     />
                                 </S.Contents>
-                                <S.MapTitle>주소</S.MapTitle>
+                                <div>주소</div>
                                 <S.MapWrapper>
                                     {console.log(props.data?.fetchBoard?.boardAddress.address)}
                                     <KakaoMapPageBoard
@@ -128,9 +141,13 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                         </S.MapAddress>
                                     </S.MapInputWarpper>
                                 </S.MapWrapper>
+                                <div>유투브</div>
                                 <S.Youtube>
-                                    <div>유투브</div>
-                                    <input></input>
+                                    <input
+                                        type="text"
+                                        {...props.register("youtubeUrl")}
+                                        placeholder="youtubeUrl 입력해주세요"
+                                    ></input>
                                 </S.Youtube>
 
                                 <div>사진첨부</div>
@@ -175,6 +192,8 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                     })}
                                 </S.ImageWrapper>
                                 <S.ButtonWrapper>
+                                    <S.DeleteButton>삭제</S.DeleteButton>
+                                    <S.CancleButton type="button">취소</S.CancleButton>
                                     <S.SubmitButton
                                         title="submit"
                                         type="submit"
@@ -182,7 +201,6 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                     >
                                         {props.isEdit ? "수정" : "등록"}
                                     </S.SubmitButton>
-                                    <S.CancleButton type="button">취소</S.CancleButton>
                                 </S.ButtonWrapper>
                             </S.InputWrapper>
                         </S.BoardLine>

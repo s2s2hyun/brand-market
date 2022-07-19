@@ -13,7 +13,8 @@ export interface IBrandListUIProps {
     keyword: string;
     setKeyword: Function;
     isMatched: boolean;
-    onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
+    // onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
+    onClickMoveToBrandDetail: (el: IUseditem) => (event: any) => void;
     loadingMessage: string;
 }
 

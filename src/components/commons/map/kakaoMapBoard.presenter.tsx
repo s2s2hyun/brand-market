@@ -4,7 +4,8 @@ const BlockLo = styled.div`
     display: flex;
 `;
 const MapBox = styled.div`
-    /* margin-right: 15px; */
+    margin-right: 15px;
+    margin-left: 100px;
 `;
 
 export default function KakaoMapPageBoardUI(props: { width: number; height: number }) {

@@ -68,13 +68,13 @@ export default function BoardWrite(props: IBoardWriteProps) {
     // 등록하기 모달 라우터
     const onClickExitSubmitModal = () => {
         setAlertModal(false);
-        router.push(`/brands/${submit}`);
+        router.push(`/board/${submit}`);
     };
 
     // 수정하기 모달 라우터
     const onClickExitUpdateModal = () => {
         setAlertModal(false);
-        router.push(`/brands/${update}`);
+        router.push(`/board/${update}`);
     };
 
     // 에러 모달
