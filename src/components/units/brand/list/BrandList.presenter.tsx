@@ -3,7 +3,7 @@ import * as S from "./BrandList.styles";
 import { IBrandListUIProps } from "./BrandList.types";
 import BrandListBest from "./listBest/BrandListBest.container";
 import { v4 as uuidv4 } from "uuid";
-import { Useditem } from "../../../../commons/types/generated/types";
+import { IUseditem } from "../../../../commons/types/generated/types";
 import { useAuth } from "../../../commons/hocs/useAuth";
 
 const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
@@ -26,7 +26,7 @@ export default function BrandListUI(props: IBrandListUIProps) {
                 <S.ListWrapper>
                     <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
                         <S.MainList style={{ display: "flex", flexWrap: "wrap" }}>
-                            {props.data?.fetchUseditems.map((el: Useditem) => (
+                            {props.data?.fetchUseditems.map((el: IUseditem) => (
                                 <S.ItemWrapper
                                     key={uuidv4()}
                                     id={el._id}

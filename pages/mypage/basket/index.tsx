@@ -132,9 +132,9 @@ const BasketRouter = styled.button``;
 export default function BasketPage() {
     const [basketItems, setBasketItems] = useState([]);
     const router = useRouter();
-    // const onClickMoveToBrandDetail = (event) => {
-    //     router.push(`/brands/${event.currentTarget.id}`);
-    // };
+    const onClickMoveToBrandDetail = (el: any) => (event: any) => {
+        router.push(`/brands/${el}`);
+    };
 
     //
     // useEffect 가 있어야 localStorage 를 찾을수있다 . 그래야만 페이지 렌딩이 가능하다. , [] did mount 상태라서 1번만 실행된다 .
@@ -176,7 +176,9 @@ export default function BasketPage() {
                             <BasketAddress>
                                 {el.fetchUseditem.useditemAddress.address}
                             </BasketAddress>
-                            {/* <BasketRouter onClick={onClickMoveToBrandDetail}>이동</BasketRouter> */}
+                            <BasketRouter onClick={onClickMoveToBrandDetail(el.fetchUseditem._id)}>
+                                이동
+                            </BasketRouter>
                         </BasketLine>
                     </MyRow>
                 ))}
