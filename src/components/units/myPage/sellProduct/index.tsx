@@ -20,8 +20,10 @@ export default function SellProductPage() {
     >(FETCH_POINT_TRANSACTIONS_OF_SELLING);
     return (
         <S.Wrapper>
+            <S.TopWrapper>
+                <S.Title>판매한 상품</S.Title>
+            </S.TopWrapper>
             <S.ListWrapper>
-                {console.log(data?.fetchPointTransactionsOfSelling, "뭐냐씹데이터")}
                 {data?.fetchPointTransactionsOfSelling.map((el: any) => (
                     <S.BuyList key={el._id} onClick={onClickMoveToBrandDetail}>
                         <S.Picture

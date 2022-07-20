@@ -12,7 +12,21 @@ export default function HomeNavigationContainer() {
         router.push(`/brand`);
     };
 
+    const onClickBoard = () => {
+        router.push(`/board`);
+    };
+
+    const onClickMyPage = () => {
+        router.push(`/mypage`);
+    };
+
     return (
-        <HomeNavigationUI onClickMain={onClickMain} onClickBrand={onClickBrand} router={router} />
+        <HomeNavigationUI
+            onClickMain={onClickMain}
+            onClickBrand={onClickBrand}
+            onClickBoard={onClickBoard}
+            onClickMyPage={onClickMyPage}
+            router={router}
+        />
     );
 }

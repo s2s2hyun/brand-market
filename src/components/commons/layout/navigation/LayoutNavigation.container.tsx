@@ -16,11 +16,16 @@ export default function NavigationContainer() {
         router.push(`/board`);
     };
 
+    const onClickMyPage = () => {
+        router.push(`/mypage`);
+    };
+
     return (
         <NavigationUI
             onClickMain={onClickMain}
             onClickBrand={onClickBrand}
             onClickBoard={onClickBoard}
+            onClickMyPage={onClickMyPage}
         />
     );
 }
