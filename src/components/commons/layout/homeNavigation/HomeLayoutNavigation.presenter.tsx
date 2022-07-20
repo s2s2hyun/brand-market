@@ -11,11 +11,11 @@ export default function HomeNavigationUI(props: ILayoutHomeNavagationUIProps) {
             </S.LogoWrapper>
             <S.Categories>
                 <S.Brand onClick={props.onClickBrand}>BRAND</S.Brand>
-                <S.Category>CATEGORY</S.Category>
+                <S.Category onClick={props.onClickBoard}>BOARD</S.Category>
                 <S.Life>LIFE</S.Life>
                 <S.Beauty>BEAUTY</S.Beauty>
                 <S.BorderLine></S.BorderLine>
-                <S.Style>#STYLE</S.Style>
+                <S.Style onClick={props.onClickMyPage}>#MYPAGE</S.Style>
                 <S.Event>EVENT</S.Event>
             </S.Categories>
             <S.MemberOption>

@@ -5,6 +5,7 @@ import {
     IQueryFetchPointTransactionsOfBuyingArgs,
 } from "../../../../commons/types/generated/types";
 import { FETCH_POINT_TRANSACTIONS_OF_BUYING } from "../MyPage.queries";
+
 import * as S from "./buyProduct.styles";
 const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 export default function BuyProductPage() {
@@ -20,8 +21,10 @@ export default function BuyProductPage() {
 
     return (
         <S.Wrapper>
+            <S.TopWrapper>
+                <S.Title>구매한 상품</S.Title>
+            </S.TopWrapper>
             <S.ListWrapper>
-                {console.log(data?.fetchPointTransactionsOfBuying, "뭐냐씹데이터")}
                 {data?.fetchPointTransactionsOfBuying.map((el: any) => (
                     <S.BuyList key={el._id} onClick={onClickMoveToBrandDetail}>
                         <S.Picture

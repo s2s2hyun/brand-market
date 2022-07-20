@@ -10,7 +10,7 @@ export default function NavigationUI(props: ILayoutNavagationUIProps) {
                 <S.Life>LIFE</S.Life>
                 <S.Beauty>BEAUTY</S.Beauty>
                 <S.BorderLine></S.BorderLine>
-                <S.Style>#MYPAGE</S.Style>
+                <S.Style onClick={props.onClickMyPage}>#MYPAGE</S.Style>
                 <S.Event>EVENT</S.Event>
             </S.Categories>
         </S.Wrapper>

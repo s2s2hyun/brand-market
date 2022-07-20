@@ -5,7 +5,7 @@ import LayoutFooter from "./footer/LayoutFooter.container";
 import HomeLayoutNavigation from "./homeNavigation/HomeLayoutNavigation.container";
 import { ReactNode } from "react";
 import { useRouter } from "next/router";
-import MyPageNavi from "./myPageNavigation/myPageLayout.container";
+import MyPageNavi from "./myPageNavigation/MyPageLayout.container";
 
 const Body = styled.div`
     display: flex;
@@ -14,18 +14,16 @@ const Body = styled.div`
     background-color: #ffffff;
 `;
 
-const MyPage = styled.main`
+const MyPageBody = styled.div`
     display: flex;
-    width: 100%;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-left: 128px;
+    margin-right: 279.8px;
+`;
 
-    & > div {
-        :first-of-type {
-            width: 20%;
-        }
-        :last-of-type {
-            background-color: orange;
-        }
-    }
+const MyPageProvider = styled.div`
+    display: flex;
 `;
 
 const BodyWrapper = styled.div`
@@ -41,6 +39,7 @@ const HIDDEN_HEADER = ["/login", "/signup"];
 const SHOW_NAVI = ["/login", "/signup"];
 const SHOW_MYPAGE_NAVI = [
     "/mypage",
+    "/mypage/basket",
     "/mypage/buyProduct",
     "/mypage/sellProduct",
     "/mypage/todayProduct",
@@ -69,10 +68,10 @@ export default function Layout(props: ILayoutProps) {
                     </MyPage>
                 )) || <Body>{props.children}</Body>} */}
                 {isMyPage ? (
-                    <div>
+                    <MyPageProvider>
                         <MyPageNavi />
-                        <Body>{props.children}</Body>
-                    </div>
+                        <MyPageBody>{props.children}</MyPageBody>
+                    </MyPageProvider>
                 ) : (
                     <Body>{props.children}</Body>
                 )}
