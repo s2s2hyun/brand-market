@@ -6,7 +6,10 @@ export const ListWrapper = styled.div``;
 
 export const BuyList = styled.div``;
 
-export const Picture = styled.img``;
+export const Picture = styled.img`
+    width: 250.2px;
+    height: 370.81px;
+`;
 
 export const SellerProduct = styled.div``;
 

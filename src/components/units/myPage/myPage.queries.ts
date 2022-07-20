@@ -30,7 +30,10 @@ export const FETCH_POINT_TRANSACTIONS_OF_BUYING = gql`
             useditem {
                 name
                 price
+                images
+                tags
                 soldAt
+                remarks
             }
         }
     }
@@ -51,7 +54,10 @@ export const FETCH_POINT_TRANSACTIONS_OF_SELLING = gql`
             useditem {
                 name
                 price
+                images
+                tags
                 soldAt
+                remarks
             }
         }
     }
