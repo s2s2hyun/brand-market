@@ -30,7 +30,7 @@ export default function BrandListUI(props: IBrandListUIProps) {
                                 <S.ItemWrapper
                                     key={uuidv4()}
                                     id={el._id}
-                                    onClick={props.onClickMoveToBrandDetail}
+                                    onClick={props.onClickMoveToBrandDetail(el._id)}
                                 >
                                     <S.Picture
                                         src={
