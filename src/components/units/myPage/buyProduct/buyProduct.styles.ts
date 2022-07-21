@@ -20,7 +20,10 @@ export const ListWrapper = styled.div`
     flex-wrap: wrap;
 `;
 
-export const BuyList = styled.div``;
+export const BuyList = styled.div`
+    margin-right: 116px;
+    margin-bottom: 50px;
+`;
 
 export const Picture = styled.img`
     width: 250.2px;

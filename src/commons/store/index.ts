@@ -26,7 +26,7 @@ export const basketsState = atom({
 });
 
 export const todayProductState = atom({
-    key: "todayProduct",
+    key: "todayProductState",
     default: [],
     effects_UNSTABLE: [persistAtom],
 });

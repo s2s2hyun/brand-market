@@ -114,8 +114,6 @@ export default function BrandDetail() {
 
     //  장바구니
     const onClickBasket = (el: any) => () => {
-        console.log(el);
-
         // 1. 기존 장바구니 가져오기
         const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
 

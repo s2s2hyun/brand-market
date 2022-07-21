@@ -25,7 +25,7 @@ export default function SellProductPage() {
             </S.TopWrapper>
             <S.ListWrapper>
                 {data?.fetchPointTransactionsOfSelling.map((el: any) => (
-                    <S.BuyList key={el._id} onClick={onClickMoveToBrandDetail}>
+                    <S.SellList key={el._id} onClick={onClickMoveToBrandDetail}>
                         <S.Picture
                             src={
                                 el.useditem.images?.length === 0 || el.useditem.images?.[0] === ""
@@ -47,7 +47,7 @@ export default function SellProductPage() {
                             {el.useditem.remarks ||
                                 "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}
                         </S.Remark>
-                    </S.BuyList>
+                    </S.SellList>
                 ))}
             </S.ListWrapper>
         </S.Wrapper>

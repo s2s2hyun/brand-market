@@ -9,10 +9,11 @@ export default function TodayProductPage() {
     const onClickMoveToBrandDetail = (el: any) => (event: any) => {
         router.push(`/brands/${el}`);
     };
+    console.log(todayProduct);
     return (
         <S.Wrapper>
             <S.TopWrapper>
-                <S.Title>구매한 상품</S.Title>
+                <S.Title>최근 본 상품</S.Title>
             </S.TopWrapper>
             <S.ListWrapper>
                 {todayProduct.map((el: any) => (
