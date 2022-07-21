@@ -1,4 +1,5 @@
 import { ChangeEvent, MouseEventHandler } from "react";
+import { SetterOrUpdater } from "recoil";
 import { IUseditem } from "../../../../commons/types/generated/types";
 
 export interface IBrandListUIProps {
@@ -13,6 +14,7 @@ export interface IBrandListUIProps {
     keyword: string;
     setKeyword: Function;
     isMatched: boolean;
+    // setTodayProductItem: SetterOrUpdater<any>;
     // onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
     onClickMoveToBrandDetail: (el: any) => (event: any) => void;
     loadingMessage: string;

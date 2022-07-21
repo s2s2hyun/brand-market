@@ -57,7 +57,7 @@ export default function BrandList() {
         });
     };
 
-    const onClickMoveToBrandDetail = (el: any) => (event: any) => {
+    const onClickMoveToBrandDetail = (el: any) => (event: MouseEvent<HTMLDivElement>) => {
         router.push(`/brands/${el}`);
 
         const todayProductItem = JSON.parse(localStorage.getItem("todayProduct") || "[]");
@@ -68,7 +68,7 @@ export default function BrandList() {
         localStorage.setItem("todayProduct", JSON.stringify(todayProductItem));
 
         const seeLocal = _.uniqBy(todayProductItem, "_id");
-        const todaylocal = seeLocal.slice(0, 10);
+        const todaylocal = seeLocal.slice(0, 3);
 
         setTodayProductItem(todaylocal);
     };

@@ -1,16 +1,51 @@
+import Link from "next/link";
 import * as S from "./MyPageLayout.styles";
+import { IMyPageNaviUIUIProps } from "./MyPageLayout.types";
 
-export default function MyPageNaviUI() {
+const MENU = [
+    {
+        name: "장바구니",
+        url: "/mypage/basket",
+    },
+    {
+        name: "최근 본 상품",
+        url: "/mypage/todayProduct",
+    },
+    {
+        name: "구매한 상품",
+        url: "/mypage/buyProduct",
+    },
+
+    {
+        name: "판매한 상품",
+        url: "/mypage/sellProduct",
+    },
+];
+
+export default function MyPageNaviUI(props: IMyPageNaviUIUIProps) {
     return (
         <S.Wrapper>
-            <div>
+            <S.Menu>
                 <div>마이페이지</div>
-                <div>장바구니</div>
-                <div>찜한 목록</div>
-                <div>장바구니</div>
-                <div>구매한 상품</div>
-                <div>판매한 상품</div>
-            </div>
+                {MENU.map((el) => (
+                    <li>
+                        <Link href={{ pathname: el.url }} passHref>
+                            <S.MenuName
+                                className={props.router.asPath.includes(el.url) ? "isActive" : ""}
+                            >
+                                {el.name}
+                            </S.MenuName>
+                        </Link>
+                    </li>
+                ))}
+            </S.Menu>
         </S.Wrapper>
+        // <S.Wrapper>
+        //     <div>마이페이지</div>
+        //     <div onClick={props.onClickBasket}>장바구니</div>
+        //     <div onClick={props.onClickTodayProduct}>오늘본 상품</div>
+        //     <div onClick={props.onClickBuyProduct}>구매한 상품</div>
+        //     <div onClick={props.onClickSellProduct}>판매한 상품</div>
+        // </S.Wrapper>
     );
 }
