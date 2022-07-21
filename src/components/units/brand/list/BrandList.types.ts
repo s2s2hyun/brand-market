@@ -16,8 +16,8 @@ export interface IBrandListUIProps {
     isMatched: boolean;
     // setTodayProductItem: SetterOrUpdater<any>;
     // onClickMoveToBrandDetail: MouseEventHandler<HTMLDivElement>;
-    onClickMoveToBrandDetail: (el: any) => (event: any) => void;
     loadingMessage: string;
+    onClickMoveToBrandDetail: (el: any) => (event: any) => void;
 }
 
 export interface IProps {

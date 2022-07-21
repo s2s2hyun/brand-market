@@ -10,7 +10,6 @@ const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 
 export default function BrandListUI(props: IBrandListUIProps) {
     useAuth();
-    // console.log(props.todayProductItem, "하이");
     return (
         <S.Wrapper>
             <BrandListBest />
@@ -31,7 +30,7 @@ export default function BrandListUI(props: IBrandListUIProps) {
                                 <S.ItemWrapper
                                     key={uuidv4()}
                                     id={el._id}
-                                    onClick={props.onClickMoveToBrandDetail(el._id)}
+                                    onClick={props.onClickMoveToBrandDetail(el)}
                                 >
                                     <S.Picture
                                         src={

@@ -137,7 +137,8 @@ export default function BasketPage() {
     };
 
     //
-    // useEffect 가 있어야 localStorage 를 찾을수있다 . 그래야만 페이지 렌딩이 가능하다. , [] did mount 상태라서 1번만 실행된다 .
+    // useEffect 가 있어야 localStorage 를 찾을수있다 .
+    // 그래야만 페이지 렌딩이 가능하다. , [] did mount 상태라서 1번만 실행된다 .
 
     useEffect(() => {
         const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
