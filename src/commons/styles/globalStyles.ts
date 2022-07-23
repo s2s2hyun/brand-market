@@ -7,10 +7,11 @@ export const globalStyles = css`
     }
 
     @font-face {
-        font-family: "NotoSansKR";
+        font-family: "Happiness-Sans-Title";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2")
+            format("woff2");
+        font-weight: normal;
         font-style: normal;
-        src: url("/fonts/NotoSansKR-Regular.otf") format("opentype");
-        unicode-range: U+AC00-D7A3;
     }
 
     @font-face {
