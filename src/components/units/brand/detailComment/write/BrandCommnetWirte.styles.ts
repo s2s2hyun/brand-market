@@ -69,3 +69,10 @@ export const SubDidvier = styled.div`
     width: 95%;
     border: 1px solid #c0c0c0;
 `;
+
+export const Error = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ef3030;
+`;

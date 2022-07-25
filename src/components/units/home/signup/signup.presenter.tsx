@@ -33,24 +33,28 @@ export default function SignUpUI(props: ISignupUIProps) {
                                     placeholder="이메일 아이디를 @까지 정확하게 입력하세요"
                                     {...props.register("email")}
                                 />
+                                <S.Error>{props.formState.errors.email?.message}</S.Error>
                                 <div>Password</div>
                                 <input
                                     type="password"
                                     placeholder="영문+숫자 조합 8~16자리를 입력해주세요."
                                     {...props.register("password")}
                                 />
+                                <S.Error>{props.formState.errors.password?.message}</S.Error>
                                 <div>Password confirm</div>
                                 <input
                                     type="password"
                                     placeholder="영문+숫자 조합 8~16자리를 입력해주세요."
                                     {...props.register("confirmPassword")}
                                 />
+                                <S.Error>{props.formState.errors.confirmPassword?.message}</S.Error>
                                 <div>Name</div>
                                 <input
                                     type="text"
                                     placeholder="이름을 입력해주세요"
                                     {...props.register("name")}
                                 />
+                                <S.Error>{props.formState.errors.name?.message}</S.Error>
                             </S.SignUpInputWrapper>
                             <button title="회원가입하기" type="submit">
                                 Sign Up

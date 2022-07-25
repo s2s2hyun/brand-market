@@ -309,3 +309,10 @@ export const SubmitButton = styled.button`
 
     color: #ffffff;
 `;
+
+export const Error = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ef3030;
+`;

@@ -283,3 +283,10 @@ export const DeleteButton = styled.button`
     color: #ffffff;
     cursor: pointer;
 `;
+
+export const Error = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ef3030;
+`;

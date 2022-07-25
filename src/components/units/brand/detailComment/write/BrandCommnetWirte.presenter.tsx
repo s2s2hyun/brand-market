@@ -32,6 +32,7 @@ export default function BrandCommentWriteUI(props: IBrandCommentWriteUIProps) {
                                 {...props.register("contents")}
                                 placeholder="내용을 입력해주세요."
                             ></S.QnaContentsInput>
+                            <S.Error>{props.formState.errors.contents?.message}</S.Error>
                             <S.QnaButton title="submit" type="submit">
                                 {props.isEdit ? "수정하기" : "작성하기"}
                             </S.QnaButton>

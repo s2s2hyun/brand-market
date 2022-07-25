@@ -31,6 +31,7 @@ export default function BrandCommentAnswerWriteUI(props: IBrandCommentAnswerWrit
                         {...props.register("contents")}
                         maxLength={100}
                     ></S.AnswerCommentWrite>
+                    <S.Error>{props.formState.errors.contents?.message}</S.Error>
                     <S.ButtonWrapper>
                         <S.CancleButton>취소하기</S.CancleButton>
                         <S.Submit title="submit" type="submit">

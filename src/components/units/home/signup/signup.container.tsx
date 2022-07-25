@@ -6,9 +6,9 @@ import { FormValues } from "./signup.types";
 import { CREATE_USER } from "./signup.queries";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CreateUserInput } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
 import { useMoveToPage } from "../../../commons/hooks/useMoveToPage";
+import { ICreateUserInput } from "../../../../commons/types/generated/types";
 
 const schema = yup.object({
     email: yup
@@ -65,7 +65,7 @@ export default function SignUpContainer(_props: any) {
         router.push("/");
     };
 
-    const onClickcreateUser = async (data: CreateUserInput) => {
+    const onClickcreateUser = async (data: ICreateUserInput) => {
         try {
             await createUser({
                 variables: {
