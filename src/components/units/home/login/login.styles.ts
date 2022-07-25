@@ -67,7 +67,7 @@ export const InputsWrapper = styled.div`
     }
     & > input:nth-of-type(1) {
         ::placeholder {
-            background-image: url(/images/email.png);
+            background-image: url(/images/emailemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
         }
@@ -75,7 +75,7 @@ export const InputsWrapper = styled.div`
 
     & > input:nth-of-type(2) {
         ::placeholder {
-            background-image: url(/images/password.png);
+            background-image: url(/images/passwordemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
         }

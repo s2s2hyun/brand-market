@@ -6,6 +6,7 @@ export const Wrapper = styled.footer`
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 `;
 
 export const LogoWrapper = styled.div``;
@@ -18,87 +19,121 @@ export const Logo = styled.img`
     margin-bottom: 29px;
 `;
 
+// 회사소개
 export const Company = styled.div`
     display: flex;
-    margin-left: 127px;
-    margin-bottom: 11px;
-`;
-
-export const CompanyD = styled.p`
-    margin-right: 90px;
-    font-size: 10px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-`;
-
-export const Name = styled.p`
+    justify-content: center;
+    width: 13.6rem;
+    height: 2rem;
+    border-right: 1px solid #dbdbdb;
+    /* border: 1px solid red; */
+    text-align: left;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
+    font-size: 1.4rem;
+    line-height: 2rem;
     letter-spacing: -0.05em;
     color: #000000;
 `;
 
-export const Buisness = styled.p`
+// 이용약관
+export const Terms = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 13.6rem;
+    height: 2rem;
+    /* border: 1px solid red; */
+    border-right: 1px solid #dbdbdb;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
+    font-size: 1.4rem;
+    line-height: 2rem;
     letter-spacing: -0.05em;
     color: #000000;
-    margin-left: 127px;
-    margin-bottom: 11px;
 `;
 
-export const Address = styled.p`
+// 개인정보처리방침
+export const Info = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 13.6rem;
+    height: 2rem;
+    /* border: 1px solid red; */
+    border-right: 1px solid #dbdbdb;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
+    font-size: 1.4rem;
+    line-height: 20px;
     letter-spacing: -0.05em;
     color: #000000;
-    margin-left: 127px;
-    margin-bottom: 11px;
 `;
 
-export const Academy = styled.p`
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-    margin-left: 127px;
-    margin-bottom: 11px;
-`;
-
+// 고객센터
 export const Law = styled.div`
     display: flex;
-    margin-left: 127px;
-    margin-bottom: 11px;
-`;
-
-export const Solo = styled.p`
+    justify-content: center;
+    width: 13.6rem;
+    height: 2rem;
+    /* border: 1px solid red; */
+    border-right: 1px solid #dbdbdb;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #000000;
-    margin-right: 15px;
-`;
-
-export const Service = styled.p`
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
+    font-size: 1.4rem;
+    line-height: 20px;
     letter-spacing: -0.05em;
     color: #000000;
 `;
 
-export const Corp = styled.p`
+// App 설치
+export const App = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 13.6rem;
+    height: 2rem;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 100%;
+    font-size: 1.4rem;
+    line-height: 20px;
     letter-spacing: -0.05em;
     color: #000000;
-    margin-left: 127px;
-    margin-bottom: 11px;
+    /* border: 1px solid red; */
+`;
+
+export const CompanyWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InfoWrapper = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 90%;
+    margin-top: 100px;
+`;
+
+export const Github = styled.img``;
+
+export const Email = styled.img``;
+
+export const EmailWrapper = styled.div`
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 10px);
+        transform: translateY(-50%);
+        background-color: black;
+        color: #fff;
+        text-align: center;
+
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        font-weight: 550;
+        font-size: 24px;
+    }
+    .tooltip:hover .tooltiptext {
+        display: block;
+    }
 `;
