@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { LOGIN_USER } from "./login.queries";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
-import { MutationLoginUserArgs } from "../../../../commons/types/generated/types";
+import { IMutationLoginUserArgs } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
 
 const schema = yup
@@ -61,7 +61,7 @@ export default function LoginContainer() {
         router.push("/signup");
     };
 
-    const onClickLogin = async (data: MutationLoginUserArgs) => {
+    const onClickLogin = async (data: IMutationLoginUserArgs) => {
         try {
             const result = await login({
                 variables: {

@@ -50,6 +50,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             {...props.register("name")}
                             placeholder="상품명을 입력해주세요"
                         ></S.BrandInput>
+                        <S.Error>{props.formState.errors.name?.massage}</S.Error>
                     </S.BrandNameWarpper>
                     <S.BrandDivderLine />
                     <S.BrandRemarkWrapper>
@@ -59,6 +60,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             {...props.register("remarks")}
                             placeholder="상품을 요약 해주세요"
                         ></S.BrandInput>
+                        <S.Error>{props.formState.errors.remarks?.massage}</S.Error>
                     </S.BrandRemarkWrapper>
                     <S.BrandDivderLine />
                     <S.BrandContentsWrapper>
@@ -74,6 +76,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             placeholder="상품을 설명해주세요"
                             value={props.getValues("contents") || ""}
                         />
+                        <S.Error>{props.formState.errors.contents?.massage}</S.Error>
                     </S.BrandContentsWrapper>
                     <S.BrandDivderLine />
                     <S.BrandPriceWrapper>
@@ -83,6 +86,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                             {...props.register("price")}
                             placeholder="판매가격을 입력해주세요"
                         ></S.BrandInput>
+                        <S.Error>{props.formState.errors.price?.massage}</S.Error>
                     </S.BrandPriceWrapper>
                     <S.BrandDivderLine />
                     <S.BrandTagWrapper>
@@ -152,6 +156,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                                 placeholder="상세주소를 입력해주세요."
                                 {...props.register("detailAddress")}
                             />
+                            <S.Error>{props.formState.errors.addressDetail?.massage}</S.Error>
                         </S.MapInputWarpper>
                     </S.MapWrapper>
                     <S.BrandDivderLine />

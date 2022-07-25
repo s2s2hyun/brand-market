@@ -49,6 +49,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                             {...props.register("writer")}
                                             placeholder="이름을 입력해주세요"
                                         ></input>
+                                        <S.Error>{props.formState.errors.writer?.message}</S.Error>
                                     </S.WriterWrapper>
                                     <S.PasswordWrapper>
                                         <div>비밀번호</div>
@@ -57,6 +58,9 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                             {...props.register("password")}
                                             placeholder="비밀번호를 입력해주세요"
                                         ></input>
+                                        <S.Error>
+                                            {props.formState.errors.password?.message}
+                                        </S.Error>
                                     </S.PasswordWrapper>
                                 </S.TopWrapper>
                                 <div>제목</div>
@@ -66,6 +70,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                         {...props.register("title")}
                                         placeholder="제목을 입력해주세요"
                                     ></input>
+                                    <S.Error>{props.formState.errors.title?.message}</S.Error>
                                 </S.Title>
                                 <div>내용</div>
                                 <S.Contents>
@@ -82,6 +87,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                         value={props.getValues("contents") || ""}
                                     />
                                 </S.Contents>
+                                <S.Error>{props.formState.errors.contents?.message}</S.Error>
                                 <div>주소</div>
                                 <S.MapWrapper>
                                     {console.log(props.data?.fetchBoard?.boardAddress.address)}
@@ -138,6 +144,9 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                                 placeholder="상세주소를 입력해주세요."
                                                 {...props.register("addressDetail")}
                                             />
+                                            <S.Error>
+                                                {props.formState.errors.addressDetail?.message}
+                                            </S.Error>
                                         </S.MapAddress>
                                     </S.MapInputWarpper>
                                 </S.MapWrapper>

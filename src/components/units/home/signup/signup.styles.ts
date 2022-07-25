@@ -95,3 +95,10 @@ export const SignUpInputWrapper = styled.div`
         margin-bottom: 57.76px;
     }
 `;
+
+export const Error = styled.div`
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ef3030;
+`;
