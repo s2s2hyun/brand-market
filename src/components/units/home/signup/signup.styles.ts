@@ -33,7 +33,7 @@ export const SignUpWrapper = styled.div`
     }
 
     button {
-        width: 60%;
+        width: 70%;
         height: 38.86px;
         background: #7ebcc3;
         border-radius: 7px;
@@ -69,7 +69,7 @@ export const SignUpInputWrapper = styled.div`
     }
     & > input:nth-of-type(1) {
         ::placeholder {
-            background-image: url(/images/email.png);
+            background-image: url(/images/emailemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
         }
@@ -77,7 +77,7 @@ export const SignUpInputWrapper = styled.div`
 
     & > input:nth-of-type(2) {
         ::placeholder {
-            background-image: url(/images/password.png);
+            background-image: url(/images/passwordemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
         }
@@ -85,14 +85,13 @@ export const SignUpInputWrapper = styled.div`
 
     & > input:nth-of-type(3) {
         ::placeholder {
-            background-image: url(/images/password.png);
+            background-image: url(/images/passwordemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
         }
     }
 
     & > input:nth-of-type(4) {
-        margin-bottom: 57.76px;
     }
 `;
 
