@@ -202,7 +202,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                 </S.ImageWrapper>
                                 <S.ButtonWrapper>
                                     <S.DeleteButton>삭제</S.DeleteButton>
-                                    <S.CancleButton type="button">취소</S.CancleButton>
+                                    <S.CancelButton type="button">취소</S.CancelButton>
                                     <S.SubmitButton
                                         title="submit"
                                         type="submit"

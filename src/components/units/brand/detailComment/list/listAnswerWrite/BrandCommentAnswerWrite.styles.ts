@@ -17,7 +17,7 @@ export const ButtonWrapper = styled.div`
     margin-top: 15px;
 `;
 
-export const CancleButton = styled.button`
+export const CancelButton = styled.button`
     width: 195px;
     height: 77px;
 

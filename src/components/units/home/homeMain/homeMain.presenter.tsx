@@ -25,9 +25,9 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
                             >
                                 <S.Picture
                                     src={
-                                        el.images?.length > 0 && el.images?.[0] !== ""
-                                            ? `https://storage.googleapis.com/${el.images?.[0]}`
-                                            : `/images/dingCoLogo.png`
+                                        el.images?.length === 0 || el.images?.[0] === ""
+                                            ? `/images/dingCoLogo.png`
+                                            : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
                                     }
                                 />
                                 {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}

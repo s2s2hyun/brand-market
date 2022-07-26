@@ -203,7 +203,7 @@ export default function BrandWriteUI(props: IBrandWriteUIProps) {
                     </S.ImageWrapper>
                     <S.DivderLine />
                     <S.ButtonWrapper>
-                        <S.CancleButton type="button">취소</S.CancleButton>
+                        <S.CancelButton type="button">취소</S.CancelButton>
                         <S.SubmitButton title="submit" type="submit">
                             {props.isEdit ? "수정" : "등록"}
                         </S.SubmitButton>

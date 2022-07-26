@@ -24,7 +24,7 @@ export interface ISignupUIProps {
     onClickRoutingModal: () => void;
     onClickconfirmModal: () => void;
     onClickErrorModal: () => void;
-    onClickCancle: () => void;
+    onClickCancel: () => void;
     // useMoveToPage: (path: string) => () => void;
     MoveToPage: (path: string) => () => void;
     // router: (path: string) => () => void;

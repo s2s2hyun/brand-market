@@ -40,12 +40,5 @@ export default function MyPageNaviUI(props: IMyPageNaviUIUIProps) {
                 ))}
             </S.Menu>
         </S.Wrapper>
-        // <S.Wrapper>
-        //     <div>마이페이지</div>
-        //     <div onClick={props.onClickBasket}>장바구니</div>
-        //     <div onClick={props.onClickTodayProduct}>오늘본 상품</div>
-        //     <div onClick={props.onClickBuyProduct}>구매한 상품</div>
-        //     <div onClick={props.onClickSellProduct}>판매한 상품</div>
-        // </S.Wrapper>
     );
 }
