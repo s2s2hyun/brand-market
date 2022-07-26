@@ -1,4 +1,4 @@
-import MyPageUI from "./MyPage.presenter";
+import MyPageUI from "./myPage.presenter";
 
 export default function Mypage() {
     return <MyPageUI />;
