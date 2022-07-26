@@ -61,7 +61,7 @@ export default function SignUpContainer(_props: any) {
     };
 
     // 취소 => 메인
-    const onClickCancle = () => {
+    const onClickCancel = () => {
         router.push("/");
     };
 
@@ -98,7 +98,7 @@ export default function SignUpContainer(_props: any) {
             onClickRoutingModal={onClickRoutingModal}
             onClickconfirmModal={onClickconfirmModal}
             onClickErrorModal={onClickErrorModal}
-            onClickCancle={onClickCancle}
+            onClickCancel={onClickCancel}
             MoveToPage={MoveToPage}
             // router={router}
             go={go}

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 21%;
-    background-color: orange;
+    /* background-color: orange; */
 `;
 
 export const Menu = styled.ul`

@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.footer`
     width: 100%;
     height: 317px;
-    background: #f1f1f1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,7 +107,9 @@ export const InfoWrapper = styled.div`
     margin-top: 100px;
 `;
 
-export const Github = styled.img``;
+export const Github = styled.img`
+    cursor: pointer;
+`;
 
 export const Email = styled.img``;
 

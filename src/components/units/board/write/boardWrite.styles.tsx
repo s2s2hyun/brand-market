@@ -246,7 +246,7 @@ export const ButtonWrapper = styled.div`
     align-items: center;
 `;
 
-export const CancleButton = styled.button`
+export const CancelButton = styled.button`
     width: 179px;
     height: 51px;
     background: #000000;

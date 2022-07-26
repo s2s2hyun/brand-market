@@ -82,7 +82,7 @@ export default function RechargeModal(props: any) {
         );
     };
 
-    const onChangeRecharge = (event) => {
+    const onChangeRecharge = (event: any) => {
         setAmount(event.target.value);
     };
     return (

@@ -33,7 +33,7 @@ export default function BrandCommentAnswerWriteUI(props: IBrandCommentAnswerWrit
                     ></S.AnswerCommentWrite>
                     <S.Error>{props.formState.errors.contents?.message}</S.Error>
                     <S.ButtonWrapper>
-                        <S.CancleButton>취소하기</S.CancleButton>
+                        <S.CancelButton>취소하기</S.CancelButton>
                         <S.Submit title="submit" type="submit">
                             {props.isEdit ? "수정하기" : "작성하기"}
                         </S.Submit>

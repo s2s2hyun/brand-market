@@ -4,7 +4,7 @@ import {
     UseFormRegister,
     UseFormStateReturn,
 } from "react-hook-form";
-import { MutationLoginUserArgs } from "../../../../commons/types/generated/types";
+import { IMutationLoginUserArgs } from "../../../../commons/types/generated/types";
 
 export interface FormValues {
     email?: string;
@@ -15,7 +15,7 @@ export interface ILoginUIProps {
     formState: UseFormStateReturn<FieldValues>;
     register: UseFormRegister<FieldValues>;
     handleSubmit: UseFormHandleSubmit<FieldValues>;
-    onClickLogin: (data: MutationLoginUserArgs) => Promise<void>;
+    onClickLogin: (data: IMutationLoginUserArgs) => Promise<void>;
     onClickExitAlertModal: () => void;
     alertModal: boolean;
     modalContents?: string;
