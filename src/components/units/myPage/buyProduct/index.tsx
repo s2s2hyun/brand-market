@@ -4,7 +4,8 @@ import {
     IQuery,
     IQueryFetchPointTransactionsOfBuyingArgs,
 } from "../../../../commons/types/generated/types";
-import { FETCH_POINT_TRANSACTIONS_OF_BUYING } from "../MyPage.queries";
+import { FETCH_POINT_TRANSACTIONS_OF_BUYING } from "../myPage.queries";
+
 import * as S from "./buyProduct.styles";
 const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 export default function BuyProductPage() {
