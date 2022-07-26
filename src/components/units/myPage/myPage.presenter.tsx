@@ -1,5 +1,5 @@
 import { useAuth } from "../../commons/hocs/useAuth";
-import * as S from "./MyPage.styles";
+import * as S from "./myPage.styles";
 
 export default function MyPageUI() {
     useAuth();
