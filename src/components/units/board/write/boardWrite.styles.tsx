@@ -252,7 +252,7 @@ export const CancelButton = styled.button`
     background: #000000;
     border-radius: 8px;
 
-    font-weight: 400;
+    font-weight: 550;
     font-size: 16px;
     color: #ffffff;
     margin-right: 55px;
@@ -265,24 +265,24 @@ export const SubmitButton = styled.button`
     height: 52px;
     border: none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 550;
     border-radius: 8px;
     border: 1px solid #000000;
 
     background-color: ${(props: ISubmitButtonProps) => (props.isActive ? "yellow" : "none")};
 `;
 
-export const DeleteButton = styled.button`
-    width: 179px;
-    height: 51px;
-    background: #000000;
-    border-radius: 8px;
-    margin-right: 55px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #ffffff;
-    cursor: pointer;
-`;
+// export const DeleteButton = styled.button`
+//     width: 179px;
+//     height: 51px;
+//     background: #000000;
+//     border-radius: 8px;
+//     margin-right: 55px;
+//     font-weight: 400;
+//     font-size: 16px;
+//     color: #ffffff;
+//     cursor: pointer;
+// `;
 
 export const Error = styled.div`
     font-weight: 500;

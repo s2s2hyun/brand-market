@@ -82,6 +82,7 @@ export const ListWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
+    cursor: pointer;
 `;
 
 export const LeftWrapper = styled.div`
