@@ -49,7 +49,7 @@ export default function Layout(props: ILayoutProps) {
     const router = useRouter();
     const isHidden = HIDDEN_HEADER.includes(router.asPath);
     const isShow = SHOW_NAVI.includes(router.asPath);
-    const isMyPage = SHOW_MYPAGE_NAVI.includes(router.asPath);
+    const isMyPage = SHOW_MYPAGE_NAVI.includes(router.pathname);
     return (
         <>
             {!isHidden && <Layoutheader />}
