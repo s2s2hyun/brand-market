@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import BoardWriteUI from "./boardWrite.presenter";
@@ -25,6 +25,7 @@ const schema = yup.object({
         .min(5, "게시글내용을 5자 이상 작성")
         .required("상품설명은 필수 입력 사항입니다."),
     addressDetail: yup.string(),
+    youtubeUrl: yup.string(),
 });
 
 const editSchema = yup.object({
@@ -32,6 +33,7 @@ const editSchema = yup.object({
     password: yup.string(),
     contents: yup.string(),
     title: yup.string(),
+    youtubeUrl: yup.string(),
 });
 
 export default function BoardWrite(props: IBoardWriteProps) {
@@ -167,8 +169,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
             });
             setModalContents("게시글 등록 성공했습니다.");
             setAlertModal(true);
-            setGo(true);
-            setUpdate(result.data.createBoard._id);
+            router.push(`/board/${result.data.updateBoard._id}`);
         } catch (error: any) {
             setModalContents(error.message);
             setErrorAlertModal(true);
@@ -186,6 +187,20 @@ export default function BoardWrite(props: IBoardWriteProps) {
         newFileUrls[index] = fileUrl;
         setFileUrls(newFileUrls);
     };
+    console.log(props.data?.fetchBoard);
+    useEffect(() => {
+        if (!props.data) return;
+        if (props.data?.fetchBoard.images?.length) {
+            setFileUrls(props.data?.fetchBoard.images);
+        }
+        reset({
+            contents: props.data?.fetchBoard.contents,
+            writer: props.data?.fetchBoard.writer,
+            addressDetail: props.data?.fetchBoard.boardAddress.addressDetail,
+            title: props.data?.fetchBoard.title,
+            youtubeUrl: props.data?.fetchBoard.youtubeUrl,
+        });
+    }, [props.data]);
 
     return (
         <BoardWriteUI

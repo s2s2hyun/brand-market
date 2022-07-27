@@ -17,13 +17,13 @@ export const BrandWrite = styled.button`
     align-items: center;
     justify-content: center;
 
-    width: 195px;
-    height: 77px;
+    width: 13rem;
+    height: 5rem;
     background: #ffffff;
     border: 1px solid #000000;
     margin-bottom: 17.5px;
     margin-left: 97px;
-    margin-top: 37px;
+    margin-top: 2.4rem;
 
     font-weight: 700;
     font-size: 20px;
@@ -34,18 +34,17 @@ export const BrandWrite = styled.button`
 `;
 
 export const SearchWrapper = styled.div`
-    margin-right: 200px;
+    margin-right: 155px;
     margin-top: 130px;
     margin-bottom: 80px;
 `;
 
 export const Search = styled.input`
-    width: 520px;
+    width: 33rem;
     border: none;
     border-bottom: 3px solid black;
     font-weight: 700;
     font-size: 18px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     padding: 20px;
     input:focus {
@@ -63,32 +62,56 @@ export const Lense = styled.img`
 export const Divider = styled.div`
     border: 1px solid #555555;
     width: 90%;
-    margin-left: 82.5px;
+    /* margin-left: 82.5px; */
+`;
+
+export const BrandWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const ListWrapper = styled.article`
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
-    margin-left: 90px;
-    margin-bottom: 116px;
+    flex-direction: column; */
+    max-width: 1740px;
+    width: 90%;
+    padding-top: 2rem;
+`;
+
+export const MainList = styled.article`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 1180px) {
+        justify-content: space-evenly;
+    }
 `;
 
 export const ItemWrapper = styled.article`
-    width: 348px;
-    height: 560px;
-    margin-right: 116px;
-    margin-bottom: 50px;
+    padding-bottom: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
 `;
 
-export const Picture = styled.img`
+export const PictureWrapper = styled.div`
     width: 348px;
     height: 466px;
     background: #c4c4c4;
+`;
+
+export const Picture = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &.noImage {
+        object-fit: contain;
+    }
 `;
 
 export const Name = styled.p`
@@ -107,15 +130,6 @@ export const Price = styled.h3`
     letter-spacing: -0.05em;
 
     color: #000000;
-`;
-
-export const MainList = styled.article`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    height: 80%;
-    margin-top: 46px;
 `;
 
 export const SellerProduct = styled.div`

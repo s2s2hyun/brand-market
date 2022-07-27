@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 750px;
     background: #c4c4c4;
+    overflow: hidden;
 `;
 
 export const Sliderimage = styled.div`

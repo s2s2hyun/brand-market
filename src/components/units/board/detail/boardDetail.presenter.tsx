@@ -77,8 +77,9 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                 </S.LikeWrapper>
             </S.DetailWrapper>
             <S.ButtonWrapper>
-                <button>목록으로</button>
-                <button>수정하기</button>
+                <button onClick={props.onClickMoveToBoardList}>목록으로</button>
+                <button onClick={props.onClickMoveToBoardEdit}>수정하기</button>
+                <button onClick={props.onClickDelete}>삭제하기</button>
             </S.ButtonWrapper>
             <BoardCommentWrite />
             <BoardCommentList />

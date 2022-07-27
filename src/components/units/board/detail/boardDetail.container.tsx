@@ -27,7 +27,7 @@ export default function BoardDetail() {
     );
 
     const onClickMoveToBoardList = () => {
-        router.push("/boards");
+        router.push("/board");
     };
 
     // 얼럿모달
@@ -56,7 +56,7 @@ export default function BoardDetail() {
     };
 
     const onClickMoveToBoardEdit = () => {
-        router.push(`/boards/${router.query.boardId}/edit`);
+        router.push(`/board/${router.query.boardId}/edit`);
     };
 
     const onClickLike = () => {

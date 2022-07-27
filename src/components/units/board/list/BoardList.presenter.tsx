@@ -51,7 +51,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
                             <S.ImageCount>{el.images.length}</S.ImageCount>
                             <S.Like src="/images/path.png" />
                             <S.LikeCount>{el.likeCount}</S.LikeCount>
-                            <S.Profile src="images/face.png" />
+                            <S.Profile src="/images/face.png" />
                             <S.ProfileWrapper>
                                 <S.Writer>{el.writer}</S.Writer>
                                 <S.CreateAt>{getDate(el.createdAt)}</S.CreateAt>

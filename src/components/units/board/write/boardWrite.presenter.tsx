@@ -90,10 +90,11 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                 <S.Error>{props.formState.errors.contents?.message}</S.Error>
                                 <div>주소</div>
                                 <S.MapWrapper>
-                                    {console.log(props.data?.fetchBoard?.boardAddress.address)}
                                     <KakaoMapPageBoard
                                         address={
-                                            props.address || props.data?.boardAddress.address || ""
+                                            props.address ||
+                                            props.data?.fetchBoard.boardAddress?.address ||
+                                            ""
                                         }
                                         width={228}
                                         height={234}
@@ -107,7 +108,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                                 readOnly
                                                 value={
                                                     props.zipcode ||
-                                                    props.data?.boardAddress.zipcode ||
+                                                    props.data?.fetchBoard.boardAddress?.zipcode ||
                                                     ""
                                                 }
                                             />
@@ -134,7 +135,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                                 readOnly
                                                 value={
                                                     props.address ||
-                                                    props.data?.boardAddress.address ||
+                                                    props.data?.fetchBoard.boardAddress?.address ||
                                                     ""
                                                 }
                                             />
@@ -156,6 +157,11 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                                         type="text"
                                         {...props.register("youtubeUrl")}
                                         placeholder="youtubeUrl 입력해주세요"
+                                        // value={
+                                        //     props.address ||
+                                        //     props.data?.fetchBoard.boardAddress?.address ||
+                                        //     ""
+                                        // }
                                     ></input>
                                 </S.Youtube>
 

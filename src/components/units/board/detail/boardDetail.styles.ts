@@ -111,7 +111,6 @@ export const Title = styled.div`
 export const Images = styled.div``;
 
 export const Image = styled.img`
-    width: 996px;
     height: 480px;
 `;
 
@@ -167,6 +166,10 @@ export const ThumbDown = styled.div``;
 
 export const ButtonWrapper = styled.div`
     display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 90%;
+
     button {
         cursor: pointer;
         width: 179px;
@@ -177,10 +180,6 @@ export const ButtonWrapper = styled.div`
         font-size: 16px;
         line-height: 23px;
         color: #000000;
-
         margin: 44px 0 50px 0;
-    }
-    & > button:nth-of-type(1) {
-        margin-right: 92px;
     }
 `;

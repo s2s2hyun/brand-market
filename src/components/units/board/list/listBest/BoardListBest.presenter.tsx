@@ -15,13 +15,20 @@ export default function BoardListBestUI(props: IBoardListBestUIProps) {
                         id={el._id}
                         onClick={props.onClickMoveToBoardDetail}
                     >
-                        <S.BestPicture
-                            src={
-                                el.images[0]
-                                    ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
-                                    : `/images/dingcologoman.png`
-                            }
-                        />
+                        <S.PictureWrapper>
+                            <S.BestPicture
+                                src={
+                                    el.images[0]
+                                        ? `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
+                                        : `/images/dingcologoman.png`
+                                }
+                                className={
+                                    el.images?.length === 0 || el.images?.[0] === ""
+                                        ? "noImage"
+                                        : ""
+                                }
+                            />
+                        </S.PictureWrapper>
                         <S.BestBox>
                             <S.BestTitle>{el.title}</S.BestTitle>
                             <S.BoxWrapper>

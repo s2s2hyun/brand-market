@@ -10,26 +10,27 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
             <S.ListWrapper>
                 <S.NewArrival>New Arrival</S.NewArrival>
                 <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
-                    <S.MainList
-                        style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            justifyContent: "space-between",
-                        }}
-                    >
+                    <S.MainList>
                         {props.data?.fetchUseditems.map((el) => (
                             <S.ItemWrapper
                                 key={el._id}
                                 id={el._id}
                                 onClick={props.onClickMoveToBrandDetail}
                             >
-                                <S.Picture
-                                    src={
-                                        el.images?.length === 0 || el.images?.[0] === ""
-                                            ? `/images/dingCoLogo.png`
-                                            : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
-                                    }
-                                />
+                                <S.PictureWrapper>
+                                    <S.Picture
+                                        src={
+                                            el.images?.length === 0 || el.images?.[0] === ""
+                                                ? `/images/dingCoLogo.png`
+                                                : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
+                                        }
+                                        className={
+                                            el.images?.length === 0 || el.images?.[0] === ""
+                                                ? "noImage"
+                                                : ""
+                                        }
+                                    />
+                                </S.PictureWrapper>
                                 {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
 
                                 <S.SellerProduct>
