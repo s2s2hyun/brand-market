@@ -1,15 +1,19 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
 `;
 
 export const ListWrapper = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: 90px;
+    /* margin-left: 90px; */
+    max-width: 1740px;
+    width: 90%;
     margin-bottom: 131px;
 `;
 
@@ -24,15 +28,25 @@ export const NewArrival = styled.div`
 export const ItemWrapper = styled.article`
     width: 348px;
     height: 560px;
-    margin-right: 116px;
-    margin-bottom: 50px;
+    /* margin-right: 116px;
+    margin-bottom: 50px; */
     cursor: pointer;
 `;
 
-export const Picture = styled.img`
+export const PictureWrapper = styled.div`
     width: 348px;
     height: 466px;
     background: #c4c4c4;
+`;
+
+export const Picture = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &.noImage {
+        object-fit: contain;
+    }
 `;
 
 export const SellerProduct = styled.div`
@@ -82,6 +96,13 @@ export const Remark = styled.p`
 `;
 
 export const MainList = styled.article`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     height: 80%;
+
+    @media (max-width: 1180px) {
+        justify-content: space-evenly;
+    }
 `;

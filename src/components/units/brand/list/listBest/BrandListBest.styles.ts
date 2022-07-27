@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div``;
 
 export const BestWrapper = styled.section`
-    height: 90%;
+    /* height: 90%; */
     width: 90%;
     display: flex;
     align-items: center;
@@ -14,7 +14,6 @@ export const BestWrapper = styled.section`
 export const Best = styled.div`
     font-weight: 700;
     font-size: 22px;
-    line-height: 100%;
     color: #000000;
     margin-top: 73px;
     margin-bottom: 86px;
@@ -22,16 +21,34 @@ export const Best = styled.div`
 
 export const BestList = styled.article`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    /* @media (max-width: 1180px) {
+        justify-content: space-evenly;
+    } */
 `;
 
 export const ItemBestWrapper = styled.article`
-    margin-right: 116px;
+    padding: 1rem;
+    width: 25%;
     cursor: pointer;
 `;
 
+export const PictureWrapper = styled.div`
+    width: 100%;
+    aspect-ratio: 0.9;
+    background: #c4c4c4;
+`;
+
 export const BestPicture = styled.img`
-    width: 348px;
-    height: 466px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &.noImage {
+        object-fit: contain;
+    }
 `;
 
 export const SellerProduct = styled.article`
@@ -41,9 +58,8 @@ export const SellerProduct = styled.article`
 `;
 
 export const BestName = styled.p`
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
+    font-weight: 550;
+    font-size: 17px;
     letter-spacing: -0.05em;
     padding-top: 13px;
     padding-left: 20px;
@@ -53,7 +69,6 @@ export const BestName = styled.p`
 export const BestPrice = styled.h3`
     font-weight: 700;
     font-size: 20px;
-    line-height: 100%;
     letter-spacing: -0.05em;
 
     color: #000000;
@@ -62,16 +77,14 @@ export const BestPrice = styled.h3`
 export const BestTag = styled.h3`
     font-weight: 700;
     font-size: 20px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     margin-right: 15px;
     color: #f65656;
 `;
 
 export const BestRemark = styled.p`
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
+    font-weight: 550;
+    font-size: 17px;
     padding-top: 13px;
     padding-left: 20px;
     color: #555555;

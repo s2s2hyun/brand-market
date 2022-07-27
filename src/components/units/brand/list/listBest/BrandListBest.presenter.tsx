@@ -8,20 +8,26 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
             <S.BestWrapper>
                 <S.Best>BEST</S.Best>
                 <S.BestList>
-                    {console.log(props.data?.fetchUseditemsOfTheBest)}
                     {props.data?.fetchUseditemsOfTheBest.map((el: IUseditem) => (
                         <S.ItemBestWrapper
                             key={el._id}
                             id={el._id}
                             onClick={props.onClickMoveToBrandDetail}
                         >
-                            <S.BestPicture
-                                src={
-                                    el.images?.length === 0 || el.images?.[0] === ""
-                                        ? `/images/dingCoLogo.png`
-                                        : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
-                                }
-                            />
+                            <S.PictureWrapper>
+                                <S.BestPicture
+                                    src={
+                                        el.images?.length === 0 || el.images?.[0] === ""
+                                            ? `/images/dingCoLogo.png`
+                                            : `${PREFIX_IMAGE_URL}/${el.images?.[0]}`
+                                    }
+                                    className={
+                                        el.images?.length === 0 || el.images?.[0] === ""
+                                            ? "noImage"
+                                            : ""
+                                    }
+                                />
+                            </S.PictureWrapper>
                             {/* <img src={`https://storage.googleapis.com/${el.images[0]}`} /> */}
 
                             <S.SellerProduct>

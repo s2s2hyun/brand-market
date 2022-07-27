@@ -15,11 +15,11 @@ export default function FooterUI(props: IFooterUI) {
                 <S.App>App 설치</S.App>
             </S.CompanyWrapper>
             <S.InfoWrapper>
-                <S.Github src="images/footergithub.svg" onClick={props.onClickToGithub} />
+                <S.Github src="/images/footergithub.svg" onClick={props.onClickToGithub} />
                 <S.EmailWrapper>
                     <div className="tooltip">
                         <span className="tooltiptext">s2s2hyun0601@gmail.com</span>
-                        <S.Email src="images/footeremail.svg" />
+                        <S.Email src="/images/footeremail.svg" />
                     </div>
                 </S.EmailWrapper>
             </S.InfoWrapper>
