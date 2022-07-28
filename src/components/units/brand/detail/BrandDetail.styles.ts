@@ -7,23 +7,26 @@ export const Wrapper = styled.section`
 
 export const TopWrapper = styled.article`
     display: flex;
+    padding-top: 87px;
 `;
 
 export const LeftTopWrapper = styled.article`
+    width: 50%;
     margin-right: 58px;
 `;
 
 export const ImageWrapper = styled.div``;
 
-export const Image = styled.img`
-    width: 863px;
-    height: 611px;
-    margin-top: 68px;
+export const ImageTop = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* margin-top: 68px; */
 `;
 
 export const RightTopWrapper = styled.div`
-    margin-top: 87px;
-    padding-bottom: 9px;
+    /* padding-top: 87px; */
+    width: 50%;
 `;
 
 export const AVANDRESS = styled.div`
@@ -128,23 +131,30 @@ export const ProductHashTag = styled.h3`
 
 export const ButtonWrapper = styled.div``;
 
+export const BuyShopWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const IsMyButton = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
 export const BuyButton = styled.button`
-    width: 309px;
-    height: 100px;
+    width: calc(50% - 10px);
+    height: 10rem;
     background: #000000;
     font-weight: 400;
     font-size: 30px;
-    line-height: 100%;
     letter-spacing: -0.05em;
-
     color: #ffffff;
-
     cursor: pointer;
 `;
 
 export const DelteButton = styled.button`
-    width: 309px;
-    height: 100px;
+    width: calc(50% - 10px);
+    height: 10rem;
     background: #000000;
     font-weight: 400;
     font-size: 30px;
@@ -155,14 +165,12 @@ export const DelteButton = styled.button`
 `;
 
 export const ShoppingBag = styled.button`
-    width: 436px;
-    height: 100px;
+    width: calc(50% - 10px);
+    height: 10rem;
     background: #c4c4c4;
     font-weight: 400;
     font-size: 30px;
-    line-height: 100%;
     letter-spacing: -0.05em;
-    margin-left: 20px;
     margin-bottom: 20px;
     color: #ffffff;
 
@@ -170,14 +178,13 @@ export const ShoppingBag = styled.button`
 `;
 
 export const Retouch = styled.button`
-    width: 436px;
-    height: 100px;
+    width: calc(50% - 10px);
+    height: 10rem;
     background: #c4c4c4;
     font-weight: 400;
     font-size: 30px;
     line-height: 100%;
     letter-spacing: -0.05em;
-    margin-left: 20px;
     color: #ffffff;
 `;
 
@@ -212,9 +219,21 @@ export const ThreeDivider = styled.div`
 export const BottomWrapper = styled.article``;
 
 export const ImageBottomWrapper = styled.article`
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+export const BottomImage = styled.div`
+    max-width: 830px;
+    width: 100%;
+`;
+
+export const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* margin-top: 68px; */
 `;
 
 export const DeliveryWrapper = styled.div``;
@@ -227,6 +246,7 @@ export const ContentsWrapper = styled.div`
 `;
 
 export const ContentsTitle = styled.h3`
+    padding-top: 5rem;
     font-weight: 700;
     font-size: 32px;
     line-height: 100%;

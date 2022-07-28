@@ -19,7 +19,8 @@ export const DetailWrapper = styled.div`
 `;
 
 export const Divider = styled.div`
-    width: 996px;
+    /* width: 996px; */
+    width: 85%;
     height: 1px;
     background: #bdbdbd;
     margin-top: 21px;
@@ -40,10 +41,12 @@ export const LeftWrapper = styled.div`
 export const Photo = styled.img`
     width: 46.67px;
     height: 46.67px;
-    margin-right: 12px;
+    /* margin-right: 12px; */
 `;
 
-export const Profile = styled.div``;
+export const Profile = styled.div`
+    padding-left: 12px;
+`;
 
 export const Writer = styled.div`
     font-weight: 500;
@@ -60,7 +63,7 @@ export const CreateAt = styled.div`
 `;
 
 export const RightWrapper = styled.div`
-    margin-right: 102px;
+    padding-right: 102px;
     display: flex;
 `;
 
@@ -110,8 +113,16 @@ export const Title = styled.div`
 
 export const Images = styled.div``;
 
+export const BoardImage = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Image = styled.img`
-    height: 480px;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 `;
 
 export const Contents = styled.div`
@@ -149,6 +160,7 @@ export const LikeCount = styled.div`
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
+    padding-left: 10px;
     color: #ffd600;
 `;
 
@@ -156,11 +168,12 @@ export const DisLikeCount = styled.div`
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
+    padding-left: 10px;
     color: #828282;
 `;
 
 export const ThumbUp = styled.div`
-    margin-right: 40px;
+    padding-right: 40px;
 `;
 export const ThumbDown = styled.div``;
 

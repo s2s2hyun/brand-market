@@ -52,9 +52,9 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                 <S.TopWrapper>
                     <S.LeftTopWrapper>
                         <S.ImageWrapper>
-                            <S.Image
+                            <S.ImageTop
                                 src={`https://storage.googleapis.com/${props.data?.fetchUseditem?.images?.[0]}`}
-                            ></S.Image>
+                            ></S.ImageTop>
                         </S.ImageWrapper>
                     </S.LeftTopWrapper>
                     <S.RightTopWrapper>
@@ -93,21 +93,26 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                         </S.Tags>
                         <S.SubDivider />
                         <S.ButtonWrapper>
-                            <S.BuyButton type="button" onClick={props.onClickBuyBrand}>
-                                BUY NOW
-                            </S.BuyButton>
-                            <S.ShoppingBag type="button" onClick={props.onClickBasket(props.data)}>
-                                SHOPPING BAG
-                            </S.ShoppingBag>
+                            <S.BuyShopWrapper>
+                                <S.BuyButton type="button" onClick={props.onClickBuyBrand}>
+                                    BUY NOW
+                                </S.BuyButton>
+                                <S.ShoppingBag
+                                    type="button"
+                                    onClick={props.onClickBasket(props.data)}
+                                >
+                                    SHOPPING BAG
+                                </S.ShoppingBag>
+                            </S.BuyShopWrapper>
                             {props.isMy && (
-                                <>
+                                <S.IsMyButton>
                                     <S.DelteButton type="button" onClick={onToggleModal}>
                                         DELETE
                                     </S.DelteButton>
                                     <S.Retouch type="button" onClick={props.onClickBrandEdit}>
                                         RETOUCH
                                     </S.Retouch>
-                                </>
+                                </S.IsMyButton>
                             )}
                         </S.ButtonWrapper>
                     </S.RightTopWrapper>
@@ -119,9 +124,9 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                         {props.data?.fetchUseditem?.images
                             ?.filter((el: string) => el)
                             .map((el: string) => (
-                                <div key={el}>
+                                <S.BottomImage key={el}>
                                     <S.Image src={`https://storage.googleapis.com/${el}`} />
-                                </div>
+                                </S.BottomImage>
                             ))}
                     </S.ImageBottomWrapper>
                     <S.DeliveryWrapper>

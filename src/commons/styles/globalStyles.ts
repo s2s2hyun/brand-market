@@ -7,6 +7,17 @@ export const globalStyles = css`
         box-sizing: border-box;
     }
 
+    html {
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        height: 100%;
+        font-size: 62.5%;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Happiness-Sans-Title", "Roboto";
+    }
+
     @font-face {
         font-family: "Happiness-Sans-Title";
         src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2")

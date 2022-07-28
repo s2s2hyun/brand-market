@@ -67,6 +67,7 @@ export default function ApolloSetting(props: IAppProps) {
         credentials: "include",
     });
     const client = new ApolloClient({
+        ssrMode: true,
         link: ApolloLink.from([errorLink, uploadLink]),
         cache: new InMemoryCache(),
     });
