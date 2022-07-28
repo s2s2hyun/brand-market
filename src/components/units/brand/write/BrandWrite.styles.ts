@@ -25,7 +25,6 @@ export const TopWrapper = styled.div`
 export const BrandTitle = styled.div`
     font-weight: 700;
     font-size: 40px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     color: #000000;
     padding-top: 104px;
@@ -51,7 +50,6 @@ export const Name = styled.div`
     width: 5%;
     font-weight: 600;
     font-size: 24px;
-    line-height: 100%;
     /* letter-spacing: -0.05em; */
     margin-top: 60px;
     margin-bottom: 53px;
@@ -99,11 +97,11 @@ export const BrandInput = styled.input`
     width: 100%;
     height: 56px;
     background: #e9e9e9;
+    padding-left: 10px;
 `;
 
 export const BrandDivderLine = styled.div`
-    width: 1737.5px;
-    height: 0px;
+    width: 95%;
     border: 1px solid #555555;
     margin-left: 91px;
 `;
@@ -172,7 +170,6 @@ export const Tag = styled.div`
     width: 6%;
     font-weight: 600;
     font-size: 24px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     margin-top: 55px;
     margin-bottom: 53px;
@@ -184,7 +181,6 @@ export const Tag = styled.div`
 export const BrandMap = styled.div`
     font-weight: 600;
     font-size: 24px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     margin-left: 134px;
     margin-top: 55px;
@@ -211,7 +207,6 @@ export const Zipcode = styled.input`
     border: 1px solid #bdbdbd;
     font-weight: 400;
     font-size: 16px;
-    line-height: 23px;
     color: #bdbdbd;
     padding-left: 16px;
     margin-right: 16px;
@@ -241,15 +236,13 @@ export const Input = styled.input`
     height: 56px;
     margin-bottom: 25px;
     background: #e9e9e9;
+    padding-left: 10px;
 `;
 
 export const BrandPhoto = styled.div`
     font-weight: 600;
     font-size: 24px;
-    line-height: 100%;
-    margin-top: 55px;
-    margin-bottom: 53px;
-    margin-left: 134px;
+    padding: 55px 0 53px 134px;
 `;
 
 export const ImageWrapper = styled.div`
