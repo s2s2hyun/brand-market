@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
 
 export const BoradWrapper = styled.div`
     width: 1200px;
-    height: 1847px;
     border: 1px solid #000000;
     display: flex;
     justify-content: center;
@@ -57,20 +56,20 @@ export const InputWrapper = styled.div`
         padding-left: 100px;
     }
 
-    & > div:nth-of-type(6) {
+    & > div:nth-of-type(7) {
         font-weight: 550;
         font-size: 16px;
         color: #000000;
         padding-left: 100px;
         padding-bottom: 16px;
     }
-    & > div:nth-of-type(8) {
+    & > div:nth-of-type(9) {
         font-weight: 550;
         font-size: 16px;
         color: #000000;
-        padding: 50px 0 16px 100px;
+        padding: 40px 0 16px 100px;
     }
-    & > div:nth-of-type(10) {
+    & > div:nth-of-type(11) {
         font-weight: 550;
         font-size: 16px;
         color: #000000;
@@ -84,7 +83,7 @@ export const TopWrapper = styled.div`
 `;
 
 export const WriterWrapper = styled.div`
-    margin-right: 24px;
+    padding-right: 24px;
     margin-bottom: 40px;
     & > div:first-of-type {
         font-weight: 500;
@@ -123,6 +122,8 @@ export const PasswordWrapper = styled.div`
 export const Title = styled.div`
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 40px;
     & > input:first-of-type {
         width: 996px;
@@ -240,7 +241,7 @@ export const UploadWrapper = styled.div`
     }
 `;
 export const ButtonWrapper = styled.div`
-    margin-top: 83px;
+    padding: 83px 0 83px 0;
     display: flex;
     justify-content: center;
     align-items: center;

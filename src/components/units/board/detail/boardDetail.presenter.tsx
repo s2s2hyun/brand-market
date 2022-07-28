@@ -37,9 +37,9 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                     {props.data?.fetchBoard.images
                         ?.filter((el: string) => el)
                         .map((el: string) => (
-                            <div key={el}>
+                            <S.BoardImage key={el}>
                                 <S.Image src={`https://storage.googleapis.com/${el}`} />
-                            </div>
+                            </S.BoardImage>
                         ))}
                 </S.Images>
                 <S.Contents>
