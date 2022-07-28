@@ -15,6 +15,10 @@ export const ListWrapper = styled.section`
     max-width: 1740px;
     width: 90%;
     margin-bottom: 131px;
+
+    & > div:nth-of-type(2) {
+        width: 100%;
+    }
 `;
 
 export const NewArrival = styled.div`
