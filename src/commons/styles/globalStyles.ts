@@ -8,7 +8,7 @@ export const globalStyles = css`
     }
 
     html {
-        width: 100%;
+        width: 100vw;
         min-width: 100%;
         min-height: 100%;
         height: 100%;
@@ -16,6 +16,11 @@ export const globalStyles = css`
         margin: 0;
         box-sizing: border-box;
         font-family: "Happiness-Sans-Title", "Roboto";
+    }
+
+    body {
+        max-width: 1920px;
+        width: 100%;
     }
 
     @font-face {
