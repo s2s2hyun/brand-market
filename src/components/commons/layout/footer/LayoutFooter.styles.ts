@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.footer`
     width: 100%;
-    height: 317px;
+    height: 31.7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,8 +11,8 @@ export const Wrapper = styled.footer`
 export const LogoWrapper = styled.div``;
 
 export const Logo = styled.img`
-    width: 169px;
-    height: 52px;
+    width: 16.9rem;
+    height: 5.2rem;
     margin-left: 107px;
     margin-top: 53px;
     margin-bottom: 29px;

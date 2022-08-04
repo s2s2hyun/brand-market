@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 750px;
+    height: 75rem;
     background: #c4c4c4;
     overflow: hidden;
 `;
@@ -16,6 +16,6 @@ export const Sliderimage = styled.div`
 `;
 
 export const Img = styled.img`
-    width: 800px;
-    height: 750px;
+    width: 80rem;
+    height: 75rem;
 `;
