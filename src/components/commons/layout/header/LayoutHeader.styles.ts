@@ -6,14 +6,14 @@ export const Wrapper = styled.header`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 100px;
+    height: 10rem;
 `;
 
 export const LogoWrapper = styled.div``;
 
 export const Logo = styled.img`
-    width: 181px;
-    height: 49px;
+    width: 18.1rem;
+    height: 4.9rem;
     margin-left: 76px;
     margin-top: 20px;
     margin-bottom: 25px;
@@ -58,9 +58,7 @@ export const BasketWrapper = styled.div`
 `;
 
 export const Basket = styled.a`
-    margin-top: 37px;
-    margin-bottom: 36px;
-    margin-right: 5px;
+    padding: 3.7rem 0.5rem 3.6rem 0;
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;
@@ -77,8 +75,8 @@ export const BasketCount = styled.div`
     justify-content: center;
     margin-top: 33px;
     margin-right: 60px;
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
     background: #f65656;
     font-weight: 400;

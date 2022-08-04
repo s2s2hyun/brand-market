@@ -5,7 +5,7 @@ export const Wrapper = styled.nav`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 10rem;
     background: #000000;
 `;
 
@@ -14,9 +14,9 @@ export const Categories = styled.ul`
 `;
 
 export const Brand = styled.li`
-    margin-right: 123px;
+    padding-right: 123px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -25,7 +25,7 @@ export const Brand = styled.li`
 `;
 
 export const Category = styled.li`
-    margin-right: 136px;
+    padding-right: 136px;
     font-weight: 700;
     font-size: 22px;
     line-height: 100%;
@@ -36,7 +36,7 @@ export const Category = styled.li`
 `;
 
 export const Life = styled.li`
-    margin-right: 136px;
+    padding-right: 136px;
     font-weight: 700;
     font-size: 22px;
     line-height: 100%;
@@ -47,7 +47,7 @@ export const Life = styled.li`
 `;
 
 export const Beauty = styled.li`
-    margin-right: 136px;
+    padding-right: 136px;
     font-weight: 700;
     font-size: 22px;
     line-height: 100%;
@@ -65,7 +65,7 @@ export const BorderLine = styled.div`
 `;
 
 export const Style = styled.li`
-    margin-right: 122px;
+    padding-right: 122px;
     font-weight: 700;
     font-size: 22px;
     line-height: 100%;

@@ -5,7 +5,7 @@ export const Wrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 10rem;
     background: #000000;
 `;
 
@@ -21,15 +21,15 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-    width: 140px;
-    height: 44px;
+    width: 14rem;
+    height: 4.4rem;
     cursor: pointer;
 `;
 
 export const Brand = styled.div`
-    margin-right: 80px;
+    padding-right: 80px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -37,9 +37,9 @@ export const Brand = styled.div`
 `;
 
 export const Category = styled.div`
-    margin-right: 93px;
+    padding-right: 93px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -47,9 +47,9 @@ export const Category = styled.div`
 `;
 
 export const Life = styled.div`
-    margin-right: 93px;
+    padding-right: 93px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -57,9 +57,9 @@ export const Life = styled.div`
 `;
 
 export const Beauty = styled.div`
-    margin-right: 93px;
+    padding-right: 93px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -85,7 +85,7 @@ export const Style = styled.div`
 
 export const Event = styled.div`
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -137,7 +137,7 @@ export const BasketCount = styled.div`
     align-items: center;
     text-align: center;
     justify-content: center;
-    width: 20px;
+    width: 2rem;
     height: 20px;
     border-radius: 100%;
     background: #ffffff;
