@@ -8,10 +8,6 @@ export const globalStyles = css`
     }
 
     html {
-        width: 100vw;
-        min-width: 100%;
-        min-height: 100%;
-        height: 100%;
         font-size: 62.5%;
         margin: 0;
         box-sizing: border-box;
@@ -20,7 +16,8 @@ export const globalStyles = css`
 
     body {
         max-width: 1920px;
-        width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
     }
 
     @font-face {
