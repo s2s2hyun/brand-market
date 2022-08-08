@@ -78,18 +78,18 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 8. Freeboard 수정 & 삭제
 
-// 대기 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/100761993/183452469-cbc6d474-54ba-41b3-a9a8-4df80f18bce2.gif)
+
 
 ### 9. Brand마켓 리스트
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100761993/183452820-0e133511-7b7a-441b-850a-050f7e8a6938.gif)
 
 
 > Brand마켓 게시글 리스트 입니다.
 - 무한스크롤로 이전 게시글을 모두 보여줍니다.
 - 상품명으로 검색이 가능합니다. debouncing이 적용되어 있습니다.
-- 검색바 위의 게시글은 pick이 많은 순서로 정렬됩니다.
-- 최근 본 상품 3개가 순서대로 오른쪽에 나타납니다.  
-- 하트를 호버하면 pick한 숫자가 나타납니다.
+- Best상품은  pick이 많은 순서로 정렬됩니다.
 
 ### 10. Brand마켓 게시글 상세보기
 
@@ -108,7 +108,9 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 11. Brand마켓 Q&A 기능
 
-  ㄷㄱ
+  ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/100761993/183453663-c277a33f-ea29-4f17-92a0-adf6f74fa894.gif)
+ ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/100761993/183453848-e44e6bd3-3bbd-4669-a64a-72044f30ea4a.gif)
+
 
 > 중고마켓 상세보기의 댓글, 대댓글 기능입니다.
 > 회원만 이용이 가능합니다.
