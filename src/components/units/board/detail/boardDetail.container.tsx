@@ -115,7 +115,7 @@ export default function BoardDetail() {
                 },
             });
             alert("게시물이 삭제되었습니다.");
-            router.push("/boards");
+            router.push("/board");
         } catch (error: any) {
             alert(error.message);
         }
