@@ -12,6 +12,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ## 기술스택
 
+![Untitled](https://user-images.githubusercontent.com/100761993/183465608-b679c727-58a8-4592-8a5b-dc690c92c8dc.jpg)
 
 ## 페이지 구성
 
