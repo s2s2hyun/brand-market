@@ -88,7 +88,10 @@ export default function BoardCommentListUIItem(props: IBoardCommentListUIItemPro
                         </S.CommentMain>
                         <S.OptionWrapper>
                             <S.Retouch src="/images/pencle.svg" onClick={onClickUpdate} />
-                            <S.Delete src="/images/trash.svg" onClick={onClickOpenDeleteModal} />
+                            <S.Delete
+                                src="/images/comment_delete.png"
+                                onClick={onClickOpenDeleteModal}
+                            />
                         </S.OptionWrapper>
                     </S.CommentWrapper>
                     <S.CreateAt>{getDate(props.el?.createdAt)}</S.CreateAt>
