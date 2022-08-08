@@ -107,8 +107,11 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 - 작성자가 본인의 상품을 구매할 수 없습니다.
 
 ### 11. Brand마켓 Q&A 기능
-
-  ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/100761993/183453663-c277a33f-ea29-4f17-92a0-adf6f74fa894.gif)
+댓글 생성
+ ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/100761993/183453663-c277a33f-ea29-4f17-92a0-adf6f74fa894.gif)
+  
+  
+  대댓글 
  ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/100761993/183453848-e44e6bd3-3bbd-4669-a64a-72044f30ea4a.gif)
 
 
@@ -119,9 +122,9 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 - 무한스크롤이 적용되어 있습니다.
 
 ### 12. Brand마켓 게시글 쓰기
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/100761993/183454971-17d52fc6-e0f7-4644-853f-d68926dae29a.gif)
 
   
-
 > 회원만 이용이 가능합니다. 권한분기가 되어있습니다.
 - kakao-map이 상세보기 페이지와 공통 컴포넌트로 사용되고 있습니다.
 - yup이 적용되어 필수항목 미작성시 버튼이 활성화 되지 않도록 하였습니다.
@@ -130,7 +133,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 13. 중고마켓 게시글 수정 & 삭제하기
 
-ㄷㄱ 
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/100761993/183455391-d1f09868-c052-47de-bb65-7feea498047e.gif)
 
 > 회원만 이용이 가능합니다.
 - 글 작성자만 수정, 삭제가 가능합니다.
@@ -138,10 +141,19 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 14. 충전하기 & 결제하기
 
-ㄷㄱ
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/100761993/183455694-1e3c90d4-9ec8-4c8b-bf32-297bc6ee8fc1.gif)
+
 
 > 회원만 이용이 가능합니다.
 - import를 이용해 충전을 합니다(테스트모드).
 - 모달을 띄워 충전합니다.
 - 본인의 상품은 결제할 수 없습니다.
 - 포인트보다 비싼 금액의 상품을 구매할 수 없습니다.
+
+### 앞으로 고쳐야하며 해야할일
+
+1. 마이페이지 구상
+
+2. 반응형 CSS 
+
+3. 이외 스스로 부족한걸 찾아서 내것으로 만들기 
