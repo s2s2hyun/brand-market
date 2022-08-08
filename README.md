@@ -98,7 +98,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 > Brand마켓 게시글 상세보기 입니다.
 > 회원만 이용이 가능합니다. 권한 분기가 되어있습니다.
-- carousel이 적용되어 있습니다.
 - kakao-map과 daum-post-code가 적용되어 있습니다.
 - 로컬스토리지를 이용한 장바구니 담기 기능이 있으며, 중복으로 담기지 않습니다.
 - pick(찜하기)기능이 있습니다(토글버튼).
