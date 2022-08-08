@@ -109,7 +109,8 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 11. Brand마켓 Q&A 기능
 
-![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/98316357/177814961-32d63771-a8ea-4074-b569-ac53a05be328.gif)
+  ㄷㄱ
+
 > 중고마켓 상세보기의 댓글, 대댓글 기능입니다.
 > 회원만 이용이 가능합니다.
 - 본인이 작성한 글이 아닐 경우 수정, 삭제 버튼이 보이지 않습니다.
@@ -118,7 +119,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 12. Brand마켓 게시글 쓰기
 
-
+  
 
 > 회원만 이용이 가능합니다. 권한분기가 되어있습니다.
 - kakao-map이 상세보기 페이지와 공통 컴포넌트로 사용되고 있습니다.
