@@ -69,14 +69,14 @@ export const Beauty = styled.div`
 export const BorderLine = styled.div`
     margin-right: 93px;
     width: 2px;
-    height: 22px;
+    height: 2.2rem;
     background: #ffffff;
 `;
 
 export const Style = styled.div`
     margin-right: 79px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;

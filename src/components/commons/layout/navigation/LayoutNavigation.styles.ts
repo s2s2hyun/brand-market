@@ -27,7 +27,7 @@ export const Brand = styled.li`
 export const Category = styled.li`
     padding-right: 136px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -38,7 +38,7 @@ export const Category = styled.li`
 export const Life = styled.li`
     padding-right: 136px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -49,7 +49,7 @@ export const Life = styled.li`
 export const Beauty = styled.li`
     padding-right: 136px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -58,16 +58,16 @@ export const Beauty = styled.li`
 `;
 
 export const BorderLine = styled.div`
-    margin-right: 136px;
+    margin-right: 13.6rem;
     width: 2px;
-    height: 22px;
+    height: 2.2rem;
     background: #ffffff;
 `;
 
 export const Style = styled.li`
     padding-right: 122px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
@@ -77,7 +77,7 @@ export const Style = styled.li`
 
 export const Event = styled.li`
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
