@@ -17,8 +17,8 @@ export const PictureWrapper = styled.div`
 `;
 
 export const SignUpPicture = styled.img`
-    width: 846px;
-    height: 775px;
+    width: 100%;
+    height: 100%;
 `;
 
 export const SignUpWrapper = styled.div`
@@ -34,12 +34,12 @@ export const SignUpWrapper = styled.div`
 
     button {
         width: 70%;
-        height: 38.86px;
+        height: 3.886rem;
         background: #7ebcc3;
         border-radius: 7px;
         border: 2px solid #7ebcc3;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 20px;
         color: #ffffff;
     }
@@ -55,15 +55,15 @@ export const SignUpInputWrapper = styled.div`
     width: 70%;
 
     div {
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
-        padding-bottom: 17.63px;
-        padding-top: 17.63px;
+        padding-bottom: 1.763rem;
+        padding-top: 1.763rem;
     }
 
     input {
         width: 100%;
-        height: 38.86px;
+        height: 3.886rem;
         border: 2px solid #7ebcc3;
         border-radius: 7px;
     }
@@ -97,7 +97,7 @@ export const SignUpInputWrapper = styled.div`
 
 export const Error = styled.div`
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-transform: capitalize;
     color: #ef3030;
 `;

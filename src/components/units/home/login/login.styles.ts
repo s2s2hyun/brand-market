@@ -17,8 +17,8 @@ export const PictureWrapper = styled.div`
 `;
 
 export const LoginPicture = styled.img`
-    width: 949px;
-    height: 897px;
+    width: 100%;
+    height: 100%;
 `;
 
 export const LoginWrapper = styled.div`
@@ -28,16 +28,16 @@ export const LoginWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     & > div:nth-of-type(1) {
-        font-size: 36px;
+        font-size: 3.6rem;
         font-weight: 500;
-        padding-bottom: 55px;
+        padding-bottom: 5.5rem;
     }
 
     span {
         font-weight: 600;
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 19px;
-        padding-top: 13px;
+        padding-top: 1.3rem;
         color: #000000;
         & span:last-of-type {
             color: #7ebcc3;
@@ -50,18 +50,18 @@ export const InputsWrapper = styled.div`
     width: 70%;
 
     div {
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
-        padding-bottom: 21px;
+        padding-bottom: 2.1rem;
     }
 
     div:last-of-type {
-        padding-top: 21.36px;
+        padding-top: 2.136rem;
     }
 
     input {
         width: 100%;
-        height: 35.91px;
+        height: 3.591rem;
         border: 2px solid #7ebcc3;
         border-radius: 7px;
     }
@@ -87,9 +87,8 @@ export const InputsWrapper = styled.div`
         background: #7ebcc3;
         border-radius: 7px;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 20px;
-        margin-top: 24.5px;
 
         color: #ffffff;
     }
@@ -97,7 +96,7 @@ export const InputsWrapper = styled.div`
 
 export const Error = styled.div`
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-transform: capitalize;
     color: #ef3030;
 `;
