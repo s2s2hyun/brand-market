@@ -34,9 +34,9 @@ export const BrandWrite = styled.button`
 `;
 
 export const SearchWrapper = styled.div`
-    margin-right: 155px;
-    margin-top: 130px;
-    margin-bottom: 80px;
+    padding-right: 15.5rem;
+    padding-top: 13rem;
+    padding-bottom: 8rem;
 `;
 
 export const Search = styled.input`
@@ -44,7 +44,7 @@ export const Search = styled.input`
     border: none;
     border-bottom: 3px solid black;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.8rem;
     letter-spacing: -0.05em;
     padding: 20px;
     input:focus {
@@ -55,8 +55,8 @@ export const Search = styled.input`
 `;
 
 export const Lense = styled.img`
-    width: 21px;
-    height: 21px;
+    width: 2.1rem;
+    height: 2.1rem;
 `;
 
 export const Divider = styled.div`
@@ -140,7 +140,7 @@ export const SellerProduct = styled.div`
 
 export const BestTag = styled.h3`
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 100%;
     letter-spacing: -0.05em;
     margin-right: 15px;
@@ -149,7 +149,7 @@ export const BestTag = styled.h3`
 
 export const Remark = styled.p`
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 100%;
     padding-left: 20px;
     color: #555555;

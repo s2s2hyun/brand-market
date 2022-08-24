@@ -15,8 +15,8 @@ export const globalStyles = css`
     }
 
     body {
-        /* max-width: 1920px; */
-        width: 1920px;
+        max-width: 1920px;
+        /* width: 1920px; */
         margin: 0 auto;
         overflow-x: hidden;
     }

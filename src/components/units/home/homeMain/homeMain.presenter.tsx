@@ -17,6 +17,7 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
                                 id={el._id}
                                 onClick={props.onClickMoveToBrandDetail}
                             >
+                                {/* <S.ItemCalc> */}
                                 <S.PictureWrapper>
                                     <S.Picture
                                         src={
@@ -45,6 +46,7 @@ export default function HomeMainUI(props: IHomeMainUIProps) {
                                     {el.remarks ||
                                         "[당일출고/주문폭주] 노티드 캔버스 패브릭 가방 4col"}
                                 </S.Remark>
+                                {/* </S.ItemCalc> */}
                             </S.ItemWrapper>
                         ))}
                     </S.MainList>

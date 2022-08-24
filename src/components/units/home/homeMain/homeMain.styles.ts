@@ -11,10 +11,9 @@ export const ListWrapper = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* margin-left: 90px; */
     max-width: 1740px;
     width: 90%;
-    margin-bottom: 131px;
+    /* margin-bottom: 131px; */
 
     & > div:nth-of-type(2) {
         width: 100%;
@@ -23,23 +22,27 @@ export const ListWrapper = styled.section`
 
 export const NewArrival = styled.div`
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 100%;
     padding-top: 89px;
     padding-bottom: 98px;
 `;
 
 export const ItemWrapper = styled.article`
-    width: 348px;
-    height: 560px;
+    width: 34.8rem;
+    height: 56rem;
     /* margin-right: 116px;
     margin-bottom: 50px; */
     cursor: pointer;
 `;
 
+// export const ItemCalc = styled.div`
+//     width: calc(100% / 4);
+// `;
+
 export const PictureWrapper = styled.div`
-    width: 348px;
-    height: 466px;
+    width: 100%;
+    aspect-ratio: 0.85;
     background: #c4c4c4;
 `;
 
@@ -55,8 +58,8 @@ export const Picture = styled.img`
 
 export const SellerProduct = styled.div`
     display: flex;
-    margin-top: 18px;
-    padding-left: 20px;
+    padding-top: 1.8rem;
+    padding-left: 2rem;
 `;
 
 export const Price = styled.h3`
@@ -73,7 +76,7 @@ export const BestTag = styled.h3`
     font-size: 20px;
     line-height: 100%;
     letter-spacing: -0.05em;
-    margin-right: 15px;
+    padding-right: 15px;
     color: #f65656;
 `;
 
@@ -103,8 +106,8 @@ export const MainList = styled.article`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
-    height: 80%;
+    /* width: 100%;
+    height: 80%; */
 
     @media (max-width: 1180px) {
         justify-content: space-evenly;
