@@ -15,7 +15,7 @@ export const Categories = styled.ul`
     /* padding-top: 4%; */
 `;
 
-export const Navi = styled.div`
+export const Navi = styled.ul`
     display: flex;
 `;
 
