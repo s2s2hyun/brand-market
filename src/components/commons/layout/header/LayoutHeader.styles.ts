@@ -15,8 +15,9 @@ export const Logo = styled.img`
     width: 100%;
     height: 4.9rem;
     cursor: pointer;
-    /* @media (max-width: 720px) {
-    } */
+    @media (max-width: 720px) {
+        width: 80%;
+    }
 `;
 
 export const OptionWrapper = styled.div`
