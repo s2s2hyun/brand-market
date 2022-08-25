@@ -17,79 +17,94 @@ export const CompanyWrapper = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    @media (max-width: 720px) {
+        flex-direction: column;
+    }
 `;
 
 // 회사소개
 export const Company = styled.div`
-    width: 8%;
+    word-break: keep-all;
     height: 2rem;
+    padding: 0 1.5rem;
     border-right: 1px solid #dbdbdb;
-    /* border: 1px solid red; */
     text-align: left;
     font-weight: 400;
     font-size: 1.4rem;
-    letter-spacing: -0.05em;
     color: #000000;
+    @media (max-width: 720px) {
+        font-size: 14px;
+        padding-right: 10px;
+        border: none;
+    }
 `;
 
 // 이용약관
 export const Terms = styled.div`
-    width: 8%;
     height: 2rem;
-    padding-left: 2%;
-    /* border: 1px solid red; */
+    padding: 0 1.5rem;
     border-right: 1px solid #dbdbdb;
     font-weight: 400;
     font-size: 1.4rem;
-    letter-spacing: -0.05em;
     color: #000000;
+    word-break: keep-all;
+    @media (max-width: 720px) {
+        font-size: 14px;
+        padding-right: 10px;
+        border: none;
+    }
 `;
 
 // 개인정보처리방침
 export const Info = styled.div`
-    width: 12%;
-    padding-left: 2%;
+    padding: 0 1.5rem;
     height: 2rem;
-    /* border: 1px solid red; */
     border-right: 1px solid #dbdbdb;
     font-weight: 400;
     font-size: 1.4rem;
-    letter-spacing: -0.05em;
     color: #000000;
+    word-break: keep-all;
+    @media (max-width: 720px) {
+        font-size: 14px;
+        border: none;
+    }
 `;
 
 // 고객센터
 export const Law = styled.div`
-    width: 8%;
-
     height: 2rem;
-    padding-left: 2%;
-    /* border: 1px solid red; */
+    padding: 0 1.5rem;
     border-right: 1px solid #dbdbdb;
     font-weight: 400;
     font-size: 1.4rem;
-    letter-spacing: -0.05em;
     color: #000000;
+    word-break: keep-all;
+    @media (max-width: 720px) {
+        font-size: 14px;
+        border: none;
+    }
 `;
 
 // App 설치
 export const App = styled.div`
-    width: 8%;
-    padding-left: 2%;
+    padding-left: 1.5rem;
     height: 2rem;
     font-weight: 400;
     font-size: 1.4rem;
-    letter-spacing: -0.05em;
     color: #000000;
-    /* border: 1px solid red; */
+    word-break: keep-all;
+    @media (max-width: 720px) {
+        font-size: 14px;
+        border: none;
+    }
 `;
 
 export const InfoWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
-    max-width: 1200px;
-    width: 90%;
-    margin-top: 100px;
+    /* max-width: 1200px; */
+    width: 100%;
+    padding-top: 100px;
 `;
 
 export const Github = styled.img`
