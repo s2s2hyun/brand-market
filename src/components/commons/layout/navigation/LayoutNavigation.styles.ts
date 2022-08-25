@@ -21,7 +21,7 @@ export const Navi = styled.div`
 
 export const Brand = styled.li`
     padding-top: 10%;
-    padding-right: 10%;
+    padding-right: 50%;
     font-weight: 700;
     font-size: 2.2rem;
     letter-spacing: -0.05em;
@@ -30,9 +30,8 @@ export const Brand = styled.li`
     list-style: none;
 `;
 
-export const Category = styled.li`
+export const Board = styled.li`
     padding-top: 10%;
-    padding-right: 10%;
     font-weight: 700;
     font-size: 2.2rem;
     letter-spacing: -0.05em;
