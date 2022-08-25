@@ -28,6 +28,10 @@ export const Brand = styled.li`
     color: #ffffff;
     cursor: pointer;
     list-style: none;
+    @media (max-width: 720px) {
+        font-size: 20px;
+        padding-right: 20px;
+    }
 `;
 
 export const Board = styled.li`
@@ -38,6 +42,9 @@ export const Board = styled.li`
     color: #ffffff;
     cursor: pointer;
     list-style: none;
+    @media (max-width: 720px) {
+        font-size: 20px;
+    }
 `;
 
 export const Mypage = styled.li`

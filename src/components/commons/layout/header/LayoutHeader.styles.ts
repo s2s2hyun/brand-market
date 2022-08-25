@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+// import { breakPoints } from "../../media/media";
 
 export const Wrapper = styled.header`
     display: flex;
@@ -11,9 +12,11 @@ export const Wrapper = styled.header`
 export const LogoWrapper = styled.div``;
 
 export const Logo = styled.img`
-    width: 18.1rem;
+    width: 100%;
     height: 4.9rem;
     cursor: pointer;
+    /* @media (max-width: 720px) {
+    } */
 `;
 
 export const OptionWrapper = styled.div`
@@ -23,25 +26,29 @@ export const OptionWrapper = styled.div`
 export const NoLog = styled.div``;
 
 export const Login = styled.a`
-    padding-top: 37px;
-
-    padding-bottom: 46.58px;
     padding-right: 66px;
     font-weight: 600;
     font-size: 1.4rem;
     color: #000000;
     cursor: pointer;
+    @media (max-width: 720px) {
+        padding: 10px;
+        font-size: 12px;
+    }
 `;
 
 export const Signup = styled.a`
     /* padding-top: 37px;
-
     padding-bottom: 46.58px; */
     padding-right: 56px;
     font-weight: 600;
     font-size: 1.4rem;
     color: #000000;
     cursor: pointer;
+    @media (max-width: 720px) {
+        padding: 10px;
+        font-size: 12px;
+    }
 `;
 
 export const BasketWrapper = styled.div`
@@ -49,11 +56,15 @@ export const BasketWrapper = styled.div`
 `;
 
 export const Basket = styled.a`
-    padding-right: 0.5rem;
+    padding-right: 5px;
     font-weight: 600;
     font-size: 1.4rem;
     color: #000000;
     cursor: pointer;
+    @media (max-width: 720px) {
+        padding-top: 3px;
+        font-size: 12px;
+    }
 `;
 
 // export const BasketCountWrpper = styled.div``;
@@ -71,6 +82,12 @@ export const BasketCount = styled.div`
     font-size: 1.2rem;
     color: #ffffff;
     cursor: pointer;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        width: 2rem;
+        height: 2rem;
+        margin-top: 3px;
+    }
 `;
 
 export const UserInfo = styled.div`
