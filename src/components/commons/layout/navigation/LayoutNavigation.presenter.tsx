@@ -7,8 +7,8 @@ export default function NavigationUI(props: ILayoutNavagationUIProps) {
             <S.Categories>
                 <S.Navi>
                     <S.Brand onClick={props.onClickBrand}>BRAND</S.Brand>
-                    <S.Category onClick={props.onClickBoard}>BOARD</S.Category>
-                    <S.Mypage onClick={props.onClickMyPage}>#MYPAGE</S.Mypage>
+                    <S.Board onClick={props.onClickBoard}>BOARD</S.Board>
+                    {/* <S.Mypage onClick={props.onClickMyPage}>#MYPAGE</S.Mypage> */}
                 </S.Navi>
             </S.Categories>
         </S.Wrapper>
