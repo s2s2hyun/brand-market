@@ -16,8 +16,7 @@ export const BrandWrite = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 195px;
+    width: 14%;
     height: 77px;
     background: #ffffff;
     border: 1px solid #000000;
@@ -34,18 +33,17 @@ export const BrandWrite = styled.button`
 `;
 
 export const SearchWrapper = styled.div`
-    margin-right: 200px;
-    margin-top: 130px;
-    margin-bottom: 80px;
+    padding-right: 5%;
+    padding-top: 9%;
+    padding-bottom: 5%;
 `;
 
 export const Search = styled.input`
-    width: 520px;
+    width: 92%;
     border: none;
     border-bottom: 3px solid black;
     font-weight: 700;
     font-size: 18px;
-    line-height: 100%;
     letter-spacing: -0.05em;
     padding: 20px;
     input:focus {

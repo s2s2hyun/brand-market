@@ -4,7 +4,7 @@ export const Wrapper = styled.div``;
 
 export const BestWrapper = styled.section`
     /* height: 90%; */
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;

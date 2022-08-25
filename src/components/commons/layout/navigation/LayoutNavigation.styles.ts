@@ -11,13 +11,19 @@ export const Wrapper = styled.nav`
 
 export const Categories = styled.ul`
     display: flex;
+
+    /* padding-top: 4%; */
+`;
+
+export const Navi = styled.div`
+    display: flex;
 `;
 
 export const Brand = styled.li`
-    padding-right: 123px;
+    padding-top: 10%;
+    padding-right: 10%;
     font-weight: 700;
     font-size: 2.2rem;
-    line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
     cursor: pointer;
@@ -25,64 +31,23 @@ export const Brand = styled.li`
 `;
 
 export const Category = styled.li`
-    padding-right: 136px;
+    padding-top: 10%;
+    padding-right: 10%;
     font-weight: 700;
     font-size: 2.2rem;
-    line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
     cursor: pointer;
     list-style: none;
 `;
 
-export const Life = styled.li`
-    padding-right: 136px;
+export const Mypage = styled.li`
+    padding-top: 10%;
+    padding-right: 10%;
     font-weight: 700;
     font-size: 2.2rem;
-    line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
     cursor: pointer;
     list-style: none;
 `;
-
-export const Beauty = styled.li`
-    padding-right: 136px;
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    cursor: pointer;
-    list-style: none;
-`;
-
-export const BorderLine = styled.div`
-    margin-right: 13.6rem;
-    width: 2px;
-    height: 2.2rem;
-    background: #ffffff;
-`;
-
-export const Style = styled.li`
-    padding-right: 122px;
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    cursor: pointer;
-    list-style: none;
-`;
-
-export const Event = styled.li`
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    cursor: pointer;
-    list-style: none;
-`;
-
-// border-right: 1px solid #dbdbdb;
