@@ -16,7 +16,7 @@ export const Logo = styled.img`
     height: 4.9rem;
     cursor: pointer;
     @media (max-width: 720px) {
-        width: 70%;
+        width: 80%;
     }
 `;
 
@@ -24,7 +24,11 @@ export const OptionWrapper = styled.div`
     display: flex;
 `;
 
-export const NoLog = styled.div``;
+export const NoLog = styled.div`
+    @media (max-width: 720px) {
+        width: 100%;
+    }
+`;
 
 export const Login = styled.a`
     padding-right: 66px;
@@ -33,8 +37,8 @@ export const Login = styled.a`
     color: #000000;
     cursor: pointer;
     @media (max-width: 720px) {
-        padding: 10px 0px;
         font-size: 12px;
+        padding-right: 10px;
     }
 `;
 
@@ -47,13 +51,16 @@ export const Signup = styled.a`
     color: #000000;
     cursor: pointer;
     @media (max-width: 720px) {
-        padding: 4px;
         font-size: 12px;
+        padding-right: 2px;
     }
 `;
 
 export const BasketWrapper = styled.div`
     display: flex;
+    @media (max-width: 720px) {
+        width: 130px;
+    }
 `;
 
 export const Basket = styled.a`
@@ -93,34 +100,60 @@ export const BasketCount = styled.div`
 
 export const UserInfo = styled.div`
     display: flex;
+    @media (max-width: 720px) {
+        width: 100%;
+        /* display: flex; */
+    }
 `;
 
 export const WelcomeText = styled.div`
     font-weight: 600;
     font-size: 1.4rem;
-    line-height: 100%;
-    margin-right: 7px;
+    padding-right: 7px;
+    color: #000000;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        width: 50px;
+        padding-top: 2px;
+    }
 `;
 
 export const Point = styled.div`
     font-weight: 600;
     font-size: 1.4rem;
-    line-height: 100%;
-    margin-right: 16px;
+    padding-right: 16px;
+    color: #000000;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        padding-right: 3px;
+        display: none;
+    }
 `;
 
 export const Charge = styled.div`
     font-weight: 600;
     font-size: 1.4rem;
-    line-height: 100%;
-    margin-right: 32px;
+    padding-right: 32px;
+    color: #000000;
     cursor: pointer;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        padding-right: 5px;
+        width: 25%;
+        padding-top: 2px;
+    }
 `;
 
 export const LogOut = styled.div`
     font-weight: 600;
     font-size: 1.4rem;
-    line-height: 100%;
-    margin-right: 45px;
+    padding-right: 45px;
+    color: #000000;
     cursor: pointer;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        padding-right: 3px;
+        width: 50%;
+        padding-top: 2px;
+    }
 `;

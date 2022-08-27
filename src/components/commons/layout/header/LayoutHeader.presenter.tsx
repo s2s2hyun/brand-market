@@ -32,7 +32,7 @@ export default function HeaderUI(props: ILayoutHeaderUIProps) {
                         </S.NoLog>
                     ) : (
                         <S.UserInfo>
-                            <S.WelcomeText>{props.myData?.fetchUserLoggedIn.name}님 </S.WelcomeText>
+                            <S.WelcomeText>{props.myData?.fetchUserLoggedIn.name}</S.WelcomeText>
                             <S.Point>
                                 포인트{props.myData?.fetchUserLoggedIn?.userPoint?.amount} P
                             </S.Point>

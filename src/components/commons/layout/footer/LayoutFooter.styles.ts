@@ -18,7 +18,9 @@ export const CompanyWrapper = styled.div`
     justify-content: center;
     width: 100%;
     @media (max-width: 720px) {
-        flex-direction: column;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
     }
 `;
 
@@ -29,13 +31,13 @@ export const Company = styled.div`
     padding: 0 1.5rem;
     border-right: 1px solid #dbdbdb;
     text-align: left;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4rem;
     color: #000000;
     @media (max-width: 720px) {
-        font-size: 14px;
-        padding-right: 10px;
-        border: none;
+        width: 25%;
+        font-size: 13px;
+        border-right: 1px solid #000000;
     }
 `;
 
@@ -44,14 +46,14 @@ export const Terms = styled.div`
     height: 2rem;
     padding: 0 1.5rem;
     border-right: 1px solid #dbdbdb;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4rem;
     color: #000000;
     word-break: keep-all;
     @media (max-width: 720px) {
-        font-size: 14px;
-        padding-right: 10px;
-        border: none;
+        width: 25%;
+        font-size: 13px;
+        border-right: 1px solid #000000;
     }
 `;
 
@@ -60,13 +62,14 @@ export const Info = styled.div`
     padding: 0 1.5rem;
     height: 2rem;
     border-right: 1px solid #dbdbdb;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4rem;
     color: #000000;
     word-break: keep-all;
     @media (max-width: 720px) {
-        font-size: 14px;
-        border: none;
+        width: 25%;
+        font-size: 13px;
+        /* border-right: 1px solid #000000; */
     }
 `;
 
@@ -80,8 +83,10 @@ export const Law = styled.div`
     color: #000000;
     word-break: keep-all;
     @media (max-width: 720px) {
-        font-size: 14px;
+        width: 25%;
+        font-size: 13px;
         border: none;
+        display: none;
     }
 `;
 
@@ -94,8 +99,9 @@ export const App = styled.div`
     color: #000000;
     word-break: keep-all;
     @media (max-width: 720px) {
-        font-size: 14px;
+        font-size: 13px;
         border: none;
+        display: none;
     }
 `;
 
@@ -109,9 +115,16 @@ export const InfoWrapper = styled.div`
 
 export const Github = styled.img`
     cursor: pointer;
+    @media (max-width: 720px) {
+        width: 33%;
+    }
 `;
 
-export const Email = styled.img``;
+export const Email = styled.img`
+    @media (max-width: 720px) {
+        width: 80%;
+    }
+`;
 
 export const EmailWrapper = styled.div`
     .tooltip {
