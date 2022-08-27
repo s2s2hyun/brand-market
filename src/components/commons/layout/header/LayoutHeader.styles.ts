@@ -16,7 +16,7 @@ export const Logo = styled.img`
     height: 4.9rem;
     cursor: pointer;
     @media (max-width: 720px) {
-        width: 80%;
+        width: 70%;
     }
 `;
 
@@ -33,7 +33,7 @@ export const Login = styled.a`
     color: #000000;
     cursor: pointer;
     @media (max-width: 720px) {
-        padding: 10px;
+        padding: 10px 0px;
         font-size: 12px;
     }
 `;
@@ -47,7 +47,7 @@ export const Signup = styled.a`
     color: #000000;
     cursor: pointer;
     @media (max-width: 720px) {
-        padding: 10px;
+        padding: 4px;
         font-size: 12px;
     }
 `;
@@ -63,7 +63,7 @@ export const Basket = styled.a`
     color: #000000;
     cursor: pointer;
     @media (max-width: 720px) {
-        padding-top: 3px;
+        padding-top: 2px;
         font-size: 12px;
     }
 `;
@@ -87,7 +87,7 @@ export const BasketCount = styled.div`
         font-size: 12px;
         width: 2rem;
         height: 2rem;
-        margin-top: 3px;
+        margin-top: 1px;
     }
 `;
 
