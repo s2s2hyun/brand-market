@@ -17,7 +17,7 @@ export const BrandWrite = styled.button`
     align-items: center;
     justify-content: center;
 
-    width: 13rem;
+    width: 15%;
     height: 5rem;
     background: #ffffff;
     border: 1px solid #000000;
@@ -31,16 +31,25 @@ export const BrandWrite = styled.button`
     letter-spacing: -0.05em;
     cursor: pointer;
     color: #000000;
+    @media (max-width: 748px) {
+        width: 50%;
+        margin: 0px 0px 0px 5%;
+    }
 `;
 
 export const SearchWrapper = styled.div`
     padding-right: 15.5rem;
     padding-top: 13rem;
     padding-bottom: 8rem;
+    @media (max-width: 748px) {
+        padding: 0px;
+        display: flex;
+        margin-left: 50px;
+    }
 `;
 
 export const Search = styled.input`
-    width: 33rem;
+    width: 90%;
     border: none;
     border-bottom: 3px solid black;
     font-weight: 700;
@@ -52,6 +61,9 @@ export const Search = styled.input`
         border: none;
     }
     color: #000000;
+    @media (max-width: 748px) {
+        width: 80%;
+    }
 `;
 
 export const Lense = styled.img`
@@ -63,6 +75,9 @@ export const Divider = styled.div`
     border: 1px solid #555555;
     width: 90%;
     /* margin-left: 82.5px; */
+    @media (max-width: 748px) {
+        margin-top: 20px;
+    }
 `;
 
 export const BrandWrapper = styled.div`

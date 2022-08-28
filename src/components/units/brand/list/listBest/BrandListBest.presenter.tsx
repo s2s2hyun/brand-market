@@ -6,7 +6,7 @@ export default function BrandListBestUI(props: IBrandListBestUIProps) {
     return (
         <S.Wrapper>
             <S.BestWrapper>
-                <S.Best>BEST</S.Best>
+                <S.Best>BRAND 판매</S.Best>
                 <S.BestList>
                     {props.data?.fetchUseditemsOfTheBest.map((el: IUseditem) => (
                         <S.ItemBestWrapper
