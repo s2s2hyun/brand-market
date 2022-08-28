@@ -27,6 +27,8 @@ export const OptionWrapper = styled.div`
 export const NoLog = styled.div`
     @media (max-width: 720px) {
         width: 100%;
+        display: flex;
+        align-items: center;
     }
 `;
 
@@ -58,8 +60,9 @@ export const Signup = styled.a`
 
 export const BasketWrapper = styled.div`
     display: flex;
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
         width: 130px;
+        align-items: center;
     }
 `;
 
