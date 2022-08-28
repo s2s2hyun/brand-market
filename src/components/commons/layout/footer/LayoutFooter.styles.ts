@@ -6,11 +6,24 @@ export const Wrapper = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 720px) {
+        height: 0;
+    }
 `;
 
-export const LogoWrapper = styled.div``;
+export const LogoWrapper = styled.div`
+    @media (max-width: 720px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`
+    @media (max-width: 720px) {
+        width: 50%;
+    }
+`;
 
 export const CompanyWrapper = styled.div`
     display: flex;
@@ -111,12 +124,16 @@ export const InfoWrapper = styled.div`
     /* max-width: 1200px; */
     width: 100%;
     padding-top: 100px;
+    @media (max-width: 720px) {
+        padding-top: 10%;
+    }
 `;
 
 export const Github = styled.img`
+    width: 8%;
     cursor: pointer;
     @media (max-width: 720px) {
-        width: 33%;
+        width: 27%;
     }
 `;
 

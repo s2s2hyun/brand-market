@@ -9,18 +9,13 @@ export const Wrapper = styled.nav`
     background: #000000;
 `;
 
-export const Categories = styled.ul`
-    display: flex;
-
-    /* padding-top: 4%; */
-`;
+export const Categories = styled.ul``;
 
 export const Navi = styled.ul`
     display: flex;
 `;
 
 export const Brand = styled.li`
-    padding-top: 10%;
     padding-right: 50%;
     font-weight: 700;
     font-size: 2.2rem;
@@ -35,7 +30,6 @@ export const Brand = styled.li`
 `;
 
 export const Board = styled.li`
-    padding-top: 10%;
     font-weight: 700;
     font-size: 2.2rem;
     letter-spacing: -0.05em;
@@ -47,13 +41,13 @@ export const Board = styled.li`
     }
 `;
 
-export const Mypage = styled.li`
-    padding-top: 10%;
-    padding-right: 10%;
-    font-weight: 700;
-    font-size: 2.2rem;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    cursor: pointer;
-    list-style: none;
-`;
+// export const Mypage = styled.li`
+//     padding-top: 10%;
+//     padding-right: 10%;
+//     font-weight: 700;
+//     font-size: 2.2rem;
+//     letter-spacing: -0.05em;
+//     color: #ffffff;
+//     cursor: pointer;
+//     list-style: none;
+// `;

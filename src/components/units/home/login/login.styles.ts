@@ -70,6 +70,11 @@ export const InputsWrapper = styled.div`
             background-image: url(/images/emailemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
+            @media (max-width: 720px) {
+                background-image: none;
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
         }
     }
 
@@ -78,6 +83,11 @@ export const InputsWrapper = styled.div`
             background-image: url(/images/passwordemoji.svg);
             background-repeat: no-repeat;
             background-position: right;
+            @media (max-width: 720px) {
+                background-image: none;
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
         }
     }
 
