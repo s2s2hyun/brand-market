@@ -7,23 +7,43 @@ export const BoardBest = styled.div`
     justify-content: center;
     & > div:nth-of-type(1) {
         font-weight: 700;
-        font-size: 22px;
+        font-size: 2.2rem;
         line-height: 100%;
         color: #000000;
-        padding-top: 100px;
+        padding-top: 5%;
         padding-bottom: 76.63px;
+
+        @media (max-width: 751px) {
+            display: flex;
+            justify-content: center;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
     }
 `;
 
 export const BoardBestList = styled.div`
     display: flex;
     justify-content: center;
+    @media (max-width: 751px) {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10%;
+        width: 100%;
+    }
+    @media (max-width: 750px) {
+        display: none;
+    }
 `;
 
 export const BoardBestWrapper = styled.div`
     width: 25%;
     padding: 2rem;
     cursor: pointer;
+    @media (max-width: 749px) {
+        display: none;
+        padding: 1rem;
+    }
 `;
 
 export const PictureWrapper = styled.div`
@@ -38,6 +58,9 @@ export const BestPicture = styled.img`
     border-radius: 20px 20px 0px 0px;
     &.noImage {
         object-fit: contain;
+    }
+    @media (max-width: 750px) {
+        height: 100px;
     }
 `;
 
@@ -57,6 +80,14 @@ export const BestTitle = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 1.6rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 20px;
+    }
 `;
 
 export const BoxWrapper = styled.div`
@@ -67,19 +98,32 @@ export const BoxWrapper = styled.div`
 export const ProfileBox = styled.div`
     display: flex;
     padding: 0 0 27.11px 28.82px;
+    @media (max-width: 768px) {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
 `;
 
 export const Profile = styled.img`
     width: 24px;
     height: 24px;
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+    }
 `;
 
 export const ProfileName = styled.div`
     padding-left: 4px;
     font-weight: 550;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 24px;
     color: #000000;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        padding-left: 5px;
+    }
 `;
 
 export const LikeBox = styled.div``;
@@ -90,6 +134,9 @@ export const CreateAt = styled.div`
     line-height: 17px;
     color: #828282;
     padding-left: 28.82px;
+    @media (max-width: 768px) {
+        padding-top: 30px;
+    }
 `;
 
 export const RightWrapper = styled.div``;
@@ -98,12 +145,22 @@ export const LikeThumb = styled.img`
     width: 24px;
     height: 24px;
     margin-right: 42.22px;
-    margin-bottom: 2px;
+    padding-bottom: 2px;
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+        padding-left: 5px;
+    }
 `;
 
 export const LikeCount = styled.div`
     font-weight: 400;
     font-size: 16px;
-    line-height: 23px;
     color: #000000;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        margin-right: 20px;
+        padding-left: 5px;
+    }
 `;

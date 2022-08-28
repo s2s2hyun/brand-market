@@ -8,7 +8,6 @@ const PREFIX_IMAGE_URL = "https://storage.googleapis.com";
 
 export default function BoardListUI(props: IBoardListUIProps) {
     const lastPage = Math.ceil(props.dataBoardsCount?.fetchBoardsCount / 10);
-    console.log("lastPage", lastPage);
     return (
         <S.Wrapper>
             <BoardListBest />

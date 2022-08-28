@@ -6,7 +6,7 @@ export default function BoardListBestUI(props: IBoardListBestUIProps) {
     return (
         <S.Wrapper>
             <S.BoardBest>
-                <div>베스트 게시글</div>
+                <div>게시글</div>
             </S.BoardBest>
             <S.BoardBestList>
                 {props.data?.fetchBoardsOfTheBest.map((el: any) => (

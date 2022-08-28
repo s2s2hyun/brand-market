@@ -27,6 +27,9 @@ export const BestList = styled.article`
     @media (max-width: 1180px) {
         justify-content: space-evenly;
     }
+    @media (max-width: 749px) {
+        display: none;
+    }
 `;
 
 export const ItemBestWrapper = styled.article`
@@ -63,6 +66,9 @@ export const BestName = styled.p`
     padding-top: 13px;
     padding-left: 20px;
     color: #555555;
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const BestPrice = styled.h3`
@@ -71,6 +77,9 @@ export const BestPrice = styled.h3`
     letter-spacing: -0.05em;
 
     color: #000000;
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `;
 
 export const BestTag = styled.h3`
@@ -79,6 +88,9 @@ export const BestTag = styled.h3`
     letter-spacing: -0.05em;
     margin-right: 15px;
     color: #f65656;
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `;
 
 export const BestRemark = styled.p`
@@ -90,4 +102,8 @@ export const BestRemark = styled.p`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+        padding-top: 5px;
+    }
 `;

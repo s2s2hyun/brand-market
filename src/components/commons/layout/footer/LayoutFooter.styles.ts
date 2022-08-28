@@ -34,6 +34,7 @@ export const CompanyWrapper = styled.div`
         width: 100%;
         display: flex;
         justify-content: flex-start;
+        padding-left: 9%;
     }
 `;
 
@@ -82,6 +83,7 @@ export const Info = styled.div`
     @media (max-width: 720px) {
         width: 25%;
         font-size: 13px;
+        border: none;
         /* border-right: 1px solid #000000; */
     }
 `;
@@ -130,16 +132,21 @@ export const InfoWrapper = styled.div`
 `;
 
 export const Github = styled.img`
-    width: 8%;
+    width: 125px;
+    height: 125px;
     cursor: pointer;
     @media (max-width: 720px) {
-        width: 27%;
+        width: 90px;
+        height: 90px;
     }
 `;
 
 export const Email = styled.img`
+    width: 125px;
+    height: 125px;
     @media (max-width: 720px) {
-        width: 80%;
+        width: 90px;
+        height: 90px;
     }
 `;
 
