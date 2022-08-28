@@ -121,6 +121,10 @@ export const ListWrapper = styled.div`
 export const LeftWrapper = styled.div`
     display: flex;
     align-items: center;
+    @media (max-width: 750px) {
+        display: flex;
+        width: 50%;
+    }
 `;
 
 export const BoardPicture = styled.img`
@@ -129,15 +133,10 @@ export const BoardPicture = styled.img`
     border-radius: 8px;
     padding: 10px 0 10px 10px;
     @media (max-width: 750px) {
-        width: 25%;
+        width: 20%;
     }
 `;
-export const BoardName = styled.div`
-    @media (max-width: 750px) {
-        display: flex;
-        width: 70%;
-    }
-`;
+export const BoardName = styled.div``;
 
 export const BoardNumber = styled.div`
     font-weight: 700;
@@ -162,7 +161,7 @@ export const BoardTitle = styled.div`
     text-overflow: ellipsis;
     padding: 0 0 10px 32px;
     @media (max-width: 750px) {
-        width: 75%;
+        width: 100px;
         font-size: 1.8rem;
         padding-left: 10px;
     }
@@ -175,6 +174,9 @@ export const Word = styled.span`
 export const RightWrapper = styled.div`
     display: flex;
     align-items: center;
+    @media (max-width: 750px) {
+        /* width: 40%; */
+    }
 `;
 
 export const ImageIn = styled.img`
@@ -228,6 +230,9 @@ export const Writer = styled.div`
     color: #000000;
     @media (max-width: 750px) {
         padding-left: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 `;
 
@@ -239,6 +244,7 @@ export const CreateAt = styled.div`
     padding-top: 8px;
     @media (max-width: 750px) {
         padding-left: 5px;
+        display: none;
     }
 `;
 
