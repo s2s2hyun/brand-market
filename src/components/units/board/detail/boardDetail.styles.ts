@@ -160,10 +160,8 @@ export const Contents = styled.div`
 
 export const Youtube = styled(ReactPlayer)`
     margin: auto;
-    width: 50%;
-    height: 50%;
     @media (max-width: 767px) {
-        display: none;
+        width: 100%;
     }
 `;
 
