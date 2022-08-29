@@ -56,7 +56,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
                     )}
                 </S.Contents>
                 {props.data?.fetchBoard.youtubeUrl && (
-                    <S.Youtube url={props.data?.fetchBoard.youtubeUrl} />
+                    <S.Youtube url={props.data?.fetchBoard.youtubeUrl} width="50%" height="300px" />
                 )}
                 <S.LikeWrapper>
                     <S.ThumbUp>
