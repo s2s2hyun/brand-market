@@ -18,6 +18,9 @@ export const AnswerCommentDivider = styled.div`
 
 export const AnswerCommentWrapper = styled.article`
     margin-left: 200px;
+    @media (max-width: 767px) {
+        margin: 0px;
+    }
 `;
 
 export const AnswerComment = styled.div`
@@ -62,6 +65,9 @@ export const AnswerContents = styled.div`
     letter-spacing: -0.05em;
 
     color: #000000;
+    @media (max-width: 767px) {
+        width: 70%;
+    }
 `;
 
 export const AnswerInfo = styled.div``;

@@ -63,6 +63,10 @@ export const QnaButton = styled.button`
     color: #ffffff;
 
     cursor: pointer;
+    @media (max-width: 767px) {
+        font-size: 1.8rem;
+        width: 50%;
+    }
 `;
 
 export const SubDidvier = styled.div`

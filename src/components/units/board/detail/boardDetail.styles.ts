@@ -3,19 +3,28 @@ import ReactPlayer from "react-player";
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
 `;
 
 export const DetailWrapper = styled.div`
-    width: 1200px;
+    width: 100%;
     height: 100%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
+    @media (max-width: 767px) {
+        width: 95%;
+    }
 `;
 
 export const Divider = styled.div`
@@ -36,6 +45,10 @@ export const TopWrapper = styled.div`
 export const LeftWrapper = styled.div`
     display: flex;
     margin-left: 102px;
+    @media (max-width: 767px) {
+        margin: 0px;
+        padding-left: 30px;
+    }
 `;
 
 export const Photo = styled.img`
@@ -65,10 +78,14 @@ export const CreateAt = styled.div`
 export const RightWrapper = styled.div`
     padding-right: 102px;
     display: flex;
+    @media (max-width: 767px) {
+        padding-right: 30px;
+    }
 `;
 
 export const LocationWrapper = styled.div`
     /* display: none; */
+
     .tooltip {
         position: relative;
         display: inline-block;
@@ -92,6 +109,12 @@ export const LocationWrapper = styled.div`
         bottom: 100%;
         left: 50%;
         margin-left: -60px;
+        @media (max-width: 1025px) {
+            width: 110px;
+            bottom: 100%;
+            z-index: 1;
+            right: 105%;
+        }
     }
     .tooltip:hover .tooltiptext {
         visibility: visible;
@@ -104,11 +127,14 @@ export const Location = styled.img`
 
 export const Title = styled.div`
     font-weight: 500;
-    font-size: 36px;
+    font-size: 3.6rem;
     line-height: 52px;
     color: #000000;
     padding: 30px 102px 20px 102px;
     word-break: break-all;
+    @media (max-width: 767px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const Images = styled.div``;
@@ -182,7 +208,12 @@ export const ButtonWrapper = styled.div`
     justify-content: space-evenly;
     max-width: 1200px;
     width: 90%;
-
+    @media (max-width: 1023px) {
+        width: 80%;
+    }
+    @media (max-width: 767px) {
+        width: 70%;
+    }
     button {
         cursor: pointer;
         width: 179px;
@@ -194,5 +225,9 @@ export const ButtonWrapper = styled.div`
         line-height: 23px;
         color: #000000;
         margin: 44px 0 50px 0;
+        @media (max-width: 767px) {
+            width: 100%;
+            margin: 30px 0px;
+        }
     }
 `;

@@ -155,8 +155,8 @@ export default function BrandDetailUI(props: IBrandDetailUI) {
                         <S.DeliveryNoteWrapper>
                             <KakaoMapPage
                                 address={props.data?.fetchUseditem?.useditemAddress?.address}
-                                width={1476}
-                                height={791}
+                                // width={1440}
+                                // height={791}
                                 marginleft={0}
                             />
                             <p>

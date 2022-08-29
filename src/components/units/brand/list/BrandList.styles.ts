@@ -31,9 +31,17 @@ export const BrandWrite = styled.button`
     letter-spacing: -0.05em;
     cursor: pointer;
     color: #000000;
-    @media (max-width: 748px) {
+    /* @media (max-width: 748px) {
         width: 50%;
         margin: 0px 0px 0px 5%;
+    } */
+    @media (max-width: 768px) {
+        width: 30%;
+        margin-left: 30px;
+    }
+    @media (max-width: 750px) {
+        width: 90%;
+        margin-left: 10px;
     }
 `;
 
@@ -69,6 +77,11 @@ export const Search = styled.input`
 export const Lense = styled.img`
     width: 2.1rem;
     height: 2.1rem;
+    @media (max-width: 750px) {
+        width: 15px;
+        height: 15px;
+        margin-top: 30px;
+    }
 `;
 
 export const Divider = styled.div`

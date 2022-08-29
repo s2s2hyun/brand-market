@@ -52,6 +52,9 @@ export const CommentUserName = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 767px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const CommentContents = styled.div`
@@ -61,6 +64,9 @@ export const CommentContents = styled.div`
     letter-spacing: -0.05em;
     padding-left: 32px;
     color: #000000;
+    /* @media (max-width: 767px) {
+        width: 100%;
+    } */
 `;
 
 export const CommentCreateAt = styled.div`
@@ -70,6 +76,9 @@ export const CommentCreateAt = styled.div`
     letter-spacing: -0.05em;
     padding-right: 38px;
     color: #000000;
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export const CommentWrite = styled.img`
@@ -77,6 +86,10 @@ export const CommentWrite = styled.img`
     height: 20px;
 
     cursor: pointer;
+    @media (max-width: 767px) {
+        width: 15px;
+        height: 15px;
+    }
 `;
 
 export const CommentUpdate = styled.img`
@@ -85,6 +98,11 @@ export const CommentUpdate = styled.img`
     margin-right: 16px;
 
     cursor: pointer;
+    @media (max-width: 767px) {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
 `;
 
 export const CommentDelete = styled.img`
@@ -92,4 +110,8 @@ export const CommentDelete = styled.img`
     height: 20px;
 
     cursor: pointer;
+    @media (max-width: 767px) {
+        width: 15px;
+        height: 15px;
+    }
 `;
