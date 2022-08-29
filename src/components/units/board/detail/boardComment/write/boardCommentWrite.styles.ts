@@ -13,6 +13,10 @@ export const CommentTop = styled.div`
     }
     @media (max-width: 424px) {
         width: 100%;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -33,6 +37,8 @@ export const Comment = styled.div`
 
 export const InputWrapper = styled.div`
     display: flex;
+    @media (max-width: 424px) {
+    }
 `;
 
 export const Writer = styled.input`
@@ -52,7 +58,8 @@ export const Writer = styled.input`
     }
     @media (max-width: 424px) {
         padding: 0px;
-        width: 50%;
+        margin: 0px 20px;
+        width: 40%;
     }
 `;
 
@@ -72,8 +79,9 @@ export const Password = styled.input`
         line-height: 23px;
     }
     @media (max-width: 424px) {
+        margin: 0px;
         padding: 0px;
-        width: 50%;
+        width: 40%;
     }
 `;
 
