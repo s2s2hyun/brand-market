@@ -21,7 +21,7 @@ export const BrandWrite = styled.button`
     align-items: center;
     justify-content: center;
     width: 14%;
-    height: 77px;
+    height: 5rem;
     background: #ffffff;
     border: 1px solid #000000;
     margin-bottom: 17.5px;
@@ -43,6 +43,10 @@ export const BrandWrite = styled.button`
         width: 90%;
         margin-left: 10px;
     }
+    /* @media (max-width: 748px) {
+        width: 50%;
+        margin: 0px 0px 0px 5%;
+    } */
 `;
 
 export const SearchWrapper = styled.div`
@@ -82,6 +86,7 @@ export const Lense = styled.img`
     @media (max-width: 750px) {
         width: 15px;
         height: 15px;
+        margin-top: 30px;
     }
 `;
 

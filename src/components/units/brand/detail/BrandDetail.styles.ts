@@ -8,11 +8,17 @@ export const Wrapper = styled.section`
 export const TopWrapper = styled.article`
     display: flex;
     padding-top: 87px;
+    @media (max-width: 769px) {
+        padding-top: 50px;
+    }
 `;
 
 export const LeftTopWrapper = styled.article`
     width: 50%;
     margin-right: 58px;
+    @media (max-width: 769px) {
+        margin: 30px;
+    }
 `;
 
 export const ImageWrapper = styled.div``;
@@ -31,11 +37,13 @@ export const RightTopWrapper = styled.div`
 
 export const AVANDRESS = styled.div`
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 100%;
     letter-spacing: -0.05em;
     padding-bottom: 15px;
     color: #000000;
+    @media (max-width: 769px) {
+    }
 `;
 
 export const Name = styled.h3`
@@ -45,6 +53,10 @@ export const Name = styled.h3`
     letter-spacing: -0.05em;
     padding-bottom: 97px;
     color: #000000;
+    @media (max-width: 769px) {
+        font-size: 2rem;
+        padding-bottom: 10px;
+    }
 `;
 
 export const PriceHeart = styled.div`
@@ -64,6 +76,10 @@ export const Price = styled.div`
     letter-spacing: -0.05em;
     /* padding-right: 65px; */
     color: #000000;
+    @media (max-width: 767px) {
+        font-size: 1.2rem;
+        width: 60px;
+    }
 `;
 
 export const ProductPrice = styled.div`
@@ -74,10 +90,17 @@ export const ProductPrice = styled.div`
     padding-left: 65px;
 
     color: #000000;
+    @media (max-width: 767px) {
+        font-size: 1.4rem;
+        width: 100%;
+    }
 `;
 
 export const HeartLine = styled.div`
     display: flex;
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export const MyHeart = styled.div`
@@ -125,7 +148,6 @@ export const ProductHashTag = styled.h3`
     font-weight: 500;
     font-size: 16px;
     line-height: 23px;
-
     color: #f65656;
 `;
 
@@ -150,6 +172,9 @@ export const BuyButton = styled.button`
     letter-spacing: -0.05em;
     color: #ffffff;
     cursor: pointer;
+    @media (max-width: 767px) {
+        font-size: 2rem;
+    }
 `;
 
 export const DelteButton = styled.button`
@@ -162,6 +187,9 @@ export const DelteButton = styled.button`
     letter-spacing: -0.05em;
 
     color: #ffffff;
+    @media (max-width: 767px) {
+        font-size: 2rem;
+    }
 `;
 
 export const ShoppingBag = styled.button`
@@ -175,6 +203,9 @@ export const ShoppingBag = styled.button`
     color: #ffffff;
 
     cursor: pointer;
+    @media (max-width: 767px) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const Retouch = styled.button`
@@ -186,6 +217,9 @@ export const Retouch = styled.button`
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #ffffff;
+    @media (max-width: 767px) {
+        font-size: 1.4rem;
+    }
 `;
 
 export const Detail = styled.div`
@@ -196,6 +230,9 @@ export const Detail = styled.div`
     padding-top: 175px;
     padding-left: 53px;
     color: #000000;
+    @media (max-width: 767px) {
+        padding: 80px 0px 0px 20px;
+    }
 `;
 
 export const Divider = styled.div`
@@ -253,6 +290,9 @@ export const ContentsTitle = styled.h3`
     letter-spacing: -0.05em;
 
     color: #000000;
+    @media (max-width: 767px) {
+        font-size: 2.4rem;
+    }
 `;
 
 export const Contents = styled.p`
@@ -262,6 +302,9 @@ export const Contents = styled.p`
     letter-spacing: -0.05em;
 
     color: #000000;
+    @media (max-width: 767px) {
+        font-size: 1.8rem;
+    }
 `;
 
 export const DeliveryNoteWrapper = styled.article`
@@ -276,6 +319,10 @@ export const DeliveryNote = styled.h3`
     font-weight: 700;
     font-size: 32px;
     line-height: 100%;
+    @media (max-width: 767px) {
+        font-size: 1.8rem;
+        padding: 0px 0px 10px 0px;
+    }
 `;
 export const DeliveryNoteContent = styled.p`
     padding-left: 100px;
@@ -286,4 +333,8 @@ export const DeliveryNoteContent = styled.p`
     padding-bottom: 10px;
 
     color: #000000;
+    @media (max-width: 767px) {
+        font-size: 2rem;
+        padding: 0px 0px 10px 0px;
+    }
 `;
