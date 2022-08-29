@@ -11,7 +11,7 @@ export const CommentTop = styled.div`
     @media (max-width: 1205px) {
         width: 100%;
     }
-    @media (max-width: 424px) {
+    @media (max-width: 423px) {
         width: 100%;
         display: flex;
         width: 100%;
@@ -38,6 +38,7 @@ export const Comment = styled.div`
 export const InputWrapper = styled.div`
     display: flex;
     @media (max-width: 424px) {
+        margin: 0px 20px;
     }
 `;
 
