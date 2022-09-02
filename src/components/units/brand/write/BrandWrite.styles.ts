@@ -33,7 +33,7 @@ export const BrandTitle = styled.div`
 `;
 
 export const DivderLine = styled.div`
-    width: 1737.5px;
+    width: 95%;
     height: 0px;
     border: 3px solid #555555;
     margin-left: 91px;

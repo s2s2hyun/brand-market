@@ -36,7 +36,7 @@ export default function KakaoMapUI(props: { width: number; height: number }) {
         <BlockLo>
             <MapBox
                 id="map"
-                // style={{ width: `${props.width}px`, height: `${props.height}px` }}
+                style={{ width: `${props.width}px`, height: `${props.height}px` }}
             ></MapBox>
         </BlockLo>
     );
