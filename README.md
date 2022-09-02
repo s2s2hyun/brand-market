@@ -102,7 +102,8 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 9. Brand마켓 리스트
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100761993/183452820-0e133511-7b7a-441b-850a-050f7e8a6938.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/100761993/188097832-8d918bf8-6868-4f28-8e0b-95908c111519.gif)
+
 
 
 > Brand마켓 게시글 리스트 입니다.
@@ -141,9 +142,9 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 - 무한스크롤이 적용되어 있습니다.
 
 ### 12. Brand마켓 게시글 쓰기
-![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/100761993/183454971-17d52fc6-e0f7-4644-853f-d68926dae29a.gif)
 
-  
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100761993/188097113-444d0e9b-0e6b-454a-9d24-7ec51a6255d7.gif)
+
 > 회원만 이용이 가능합니다. 권한분기가 되어있습니다.
 - kakao-map이 상세보기 페이지와 공통 컴포넌트로 사용되고 있습니다.
 - yup이 적용되어 필수항목 미작성시 버튼이 활성화 되지 않도록 하였습니다.
