@@ -28,27 +28,31 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 ### 1. 홈 메인 페이지
 
 
-![ezgif com-gif-homemain](https://user-images.githubusercontent.com/100761993/183446990-c8a3b722-88a2-4498-a576-551bd30788ad.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100761993/188081262-b5eea7e6-6f58-4f64-b15d-e1c3aa00bd4e.gif)
+
 
 > 홈 메인에는 케러셀과 상품들이 바로 보여지게 됩니다.
 - 홈 메인에 보이는 상품을 클릭시 상품 디테일 페이지로 이동하게 됩니다.
 
 ### 2. 회원가입 페이지
-![ezgif com-gif-signup](https://user-images.githubusercontent.com/100761993/183447872-13e0dfa7-8eb4-4ccd-a7ab-9fbc6c5def6e.gif)
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/100761993/188083176-8bae712c-0d65-4d51-b0cb-0ce0291297b6.gif)
+
 
 > 헤더의 메뉴를 통해 회원가입이 가능합니다.
 - yup 적용으로 에러를 사전에 방지하였습니다. 
 - 올바르지 못한 값을 입력한 경우에 회원가입 버튼이 활성화 되지 않습니다.
 
 ### 3. 로그인 & 로그아웃
-![ezgif com-gif-login](https://user-images.githubusercontent.com/100761993/183448111-826c53b4-2b68-4336-adb6-23f90267645a.gif)
+
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/100761993/188083616-5386cca9-3bb0-47b2-95d2-5f79955849e5.gif)
 
 > 상단 레이아웃 헤더의 메뉴를 통해 로그인으로 이동이 가능합니다.
 - yup을 적용해 올바르지 않은 값을 입력한 경우 에러 메시지가 보여집니다.
 
 ### 4. Freeboard (자유게시판)
 
-![ezgif com-gif-board](https://user-images.githubusercontent.com/100761993/183448276-f64bd8c6-40db-41af-bd15-1b9137aba0ba.gif)
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/100761993/188084216-3b31e691-f1ba-4f83-ad29-fd83003fc9e5.gif)
 
 > 자유게시판 리스트 페이지 입니다.
 > 윗 부분의 글은 `좋아요` 순의 Best 게시글 입니다.
@@ -58,7 +62,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 5. Freeboard (게시글 상세보기)
 
-![ezgif com-gif-boardDetail](https://user-images.githubusercontent.com/100761993/183448522-078ad323-99e5-435d-b2c8-00194ae6f972.gif)
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/100761993/188084560-06a95d79-1b65-4d93-976e-17b535d804fa.gif)
 
 > 자유게시판 게시글  상세보기 페이지입니다. 
 > 비회원도 이용이 가능합니다. 
@@ -69,7 +73,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 6. Freeboard 댓글
 
-![ezgif com-gif-boardCommentWrite](https://user-images.githubusercontent.com/100761993/183448967-61ce184e-55e9-41ee-a438-1db61ba76866.gif)
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/100761993/188084941-f2932ac8-892e-47f3-9588-d02e11a6dafe.gif)
 
 > 댓글을 등록, 수정, 삭제할 수 있습니다.
 > 비회원도 이용이 가능합니다.
@@ -78,7 +82,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 7. Freeboard 등록하기
 
-![ezgif com-gif-boardWrite](https://user-images.githubusercontent.com/100761993/183449100-92d564de-3f20-4a2f-8634-b27eb59b4838.gif)
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/100761993/188086016-638e444d-9034-4c54-a937-92e18a24ce31.gif)
 
 > 비회원도 이용이 가능합니다.
 > 익명으로 작성할 수 있습니다.
@@ -88,7 +92,12 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 8. Freeboard 수정 & 삭제
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/100761993/183452469-cbc6d474-54ba-41b3-a9a8-4df80f18bce2.gif)
+-수정
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/100761993/188086741-a190133d-227f-46c7-b665-a7fb59e15131.gif)
+
+- 삭제
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/100761993/188086509-ae69a42b-8de9-47c3-8772-697bbc824a53.gif)
+
 
 
 ### 9. Brand마켓 리스트
@@ -151,7 +160,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 �
 
 ### 14. 충전하기 & 결제하기
 
-![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/100761993/183455694-1e3c90d4-9ec8-4c8b-bf32-297bc6ee8fc1.gif)
+![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/100761993/188087768-92b25289-fe00-4a32-a733-adf44c3fe270.gif)
 
 
 > 회원만 이용이 가능합니다.
