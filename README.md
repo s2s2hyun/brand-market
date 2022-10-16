@@ -3,6 +3,8 @@
 
 ### 배포URL : https://typiano.co.kr/
 
+
+
 ### 목차
 1. 실행방법
 2. 기술스택
@@ -10,6 +12,7 @@
 
 ## 실행방법
 localhost:3000에서 yarn install => graphql endpoint graphql15을 graphql로 변경 => yarn dev
+현재 백엔드 서버 닫혀서 데이터 불러오질 못하고 있습니다.
 
 ## 🛠 기술 스택
 
